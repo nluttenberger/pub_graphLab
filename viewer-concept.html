@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+  <link rel="stylesheet" href="css/svg-page-styles.css">
+  <link rel="stylesheet" href="css/ingredient-classes.css">
+  <title>Konzept</title>
+</head>
+<body>
+
+  <div id="main">
+    <div class="row mt-2 row-height">
+
+      <!-- side navigation columns //-->
+      <div class="col-xl-3">
+        <div id="logo" class="bg-frGrey p-3">
+          <img src="img/logos/fruschtique%20Logo%20weiß%20transparent.png" class="img-fluid" alt="fruschtique Logo"/>
+          <p class="text-right text-white">graphLab</p>
+        </div>
+        <p class="mt-4 ml-3 mr-3">
+          Im fruschtique-graphLab versuchen wir, Sammlungen von Rezepten zu analysieren und die
+          in diesen Rezepten auftretenden Zutatenkombinationen anhand
+          objektiver Maße zu bewerten. Hier erläutern wir unsere Herangehensweise und stellen dazu vor allem
+          unser Analyseinstrument, die sog. <mark>Zutatengraphen</mark> vor. Wir zeigen, wie solche Graphen konstruiert werden
+          und geben einen kurzen Überblick über die verwendeten statistischen Kenngrößen.
+        </p>
+        <p class="mt-2 ml-3 mr-3">
+          Darüberhinaus zeigen wir, wie wir Experimente mit Rezeptsammlungen planen und
+          durchführen. In unseren Experimenten manipulieren wir einen Zutatengraphen, um dadurch eine vertiefte Einsicht
+          in die Art und Weise der Zutatenkombination in der jeweiligen Rezeptsammlung zu gewinnen.
+        </p>
+        <p class="mt-2 mb-4 ml-3 mr-3">
+          Wir starten mit einer Definition des Begriffs "Rezeptsammlung" (rechts bzw. unten).
+        </p>
+
+        <!-- back arrow //-->
+        <a href="index.html" class="text-decoration-none">
+          <div id="foot" class="bg-frGrey p-1 mt-2">
+            <p class="text-white display-4">&larr;</p>
+          </div>
+        </a>
+      </div>
+      <!-- margin left column //-->
+      <div class="col-xl-1">
+        <p>&nbsp;</p>
+      </div>
+      <!-- text area columns //-->
+      <div id="svg" class="col-xl-7 bg-white" >
+        <!-- accordion //-->
+        <div class="accordion mt-4" id="accordion" >
+
+          <!-- card for "Rezeptsammlung" //-->
+          <div class="card">
+            <div class="card-header" id="collectionHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#collectionBody"
+                   aria-expanded="true" aria-controls="collectionBody">
+                  Rezeptsammlung
+                </a>
+              </h6>
+            </div>
+            <div id="collectionBody"  class="collapse" data-parent="#accordion" aria-labelledby="collectionHeader">
+              <div class="card-body">
+                <p>Alle Analysen, die in dieser Website dargestellt werden, beziehen sich auf bestimmte Sammlungen von
+                  Rezepten. Eine <i>Rezeptsammlung</i> kann alle Rezepte eines Kochbuchs umfassen oder nur einige Kapitel
+                  daraus; sie kann aber auch aus Rezepten verschiedener Kochbücher zusammengesetzt sein.</p>
+              </div>
+            </div>
+          </div>
+          <!-- card for "Konzept" //-->
+          <div class="card">
+            <div class="card-header" id="conceptHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#conceptBody"
+                   aria-expanded="true" aria-controls="conceptBody">
+                  Konzept
+                </a>
+              </h6>
+            </div>
+            <div id="conceptBody"  class="collapse" data-parent="#accordion" aria-labelledby="conceptHeader">
+              <div class="card-body">
+                <p>Unser Ziel ist es, nicht ein einzelnes Rezept zu analysieren, sondern eine Menge von Rezepten im
+                  Zusammenhang zu erfassen. Es soll dabei deutlich werden, mit welchem "Kochstil" wir es bei diesen Rezepten zu
+                  tun haben.</p>
+                <p>"Kochstil" beschreibt nur sehr unpräzise, um was es geht. Um dem Begriff "Kochstil" kann man viele
+                  verschiedene Aspekte des Kochens zusammenfassen. Unser Blick richtet sich auf die
+                  Zutaten: Welche Zutaten bevorzugt eine
+                  Köchin, und noch viel wichtiger: Welche Zutaten kombiniert sie mit Vorliebe? </p>
+                <p>Wenn damit also die Kombination von Zutaten im Mittelpunkt unseres Interesses steht, dann wird klar, warum
+                  wir uns nicht nur auf ein einzelnes Rezept einer Köchin konzentrieren. Es müssen schon mehrere sein,
+                  damit wir sehen, ob sich bestimmte Kombinationen wiederholen, oder ob neben die "Standardkombinationen" auch
+                  ausgefallenere Kombinationen treten.</p>
+                <p>Unsere Sichtweise beschreiben wir wie folgt: In einem Rezept treten die verwendeten Zutaten in eine
+                  "soziale Beziehung" zueinander. Die gleichen Zutaten (oder nur einige davon) können auch in anderen
+                  Rezepten auftauchen, dort aber treten sie mit noch anderen Zutaten in eine solche "soziale Beziehung". Am
+                  Ende
+                  ergibt sich ein mehr oder weniger großer "Beziehungsgraph", der alle Beziehungen aller Zutaten zeigt. Wir
+                  nennen einen solchen Graphen einen <mark>Zutatengraphen</mark>.</p>
+                <p>Zutatengraphen sind eine Variante der sog. <i>social graphs</i>, mit deren Hilfe die Beziehungen zwischen
+                  Menschen untersucht werden. Für die Darstellung von <i>social graphs</i> gibt es eine Menge von Werkzeugen,
+                  die wir für unsere Zwecke nutzen können. Wichtiger noch ist, dass für die Analyse von <i>social
+                    graphs</i> diverse statistische Kenngrößen definiert sind, die es erlauben, auch große komplexe Graphen
+                  zu studieren. Überflüssig zu sagen, dass zur Berechnung solcher Kenngrößen ebenfalls Werkzeuge existieren
+                  und von uns genutzt werden.</p>
+                <p>Im nächsten Absatz erläutern wir, wie der Zutatengraph für eine Rezeptsammlung konstruiert wird.</p>
+              </div>
+            </div>
+          </div>
+          <!-- card for "Konstruktion des Zutatengraphen" //-->
+          <div class="card">
+            <div class="card-header" id="igraphHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#igraphBody"
+                   aria-expanded="true" aria-controls="igraphBody">
+                  Konstruktion des Zutatengraphen
+                </a>
+              </h6>
+            </div>
+            <div id="igraphBody"  class="collapse" data-parent="#accordion" aria-labelledby="igraphHeader">
+              <div class="card-body">
+                <p>
+                  Ein Zutatengraph ist ein ungerichteter (Kanten-)gewichteter Graph (s. auch
+                  <a href="http://mathworld.wolfram.com/Graph.html" target="_blank">hier</a>). Die Knoten des Graphen
+                  repräsentieren die Zutaten von Rezepten. Wir sprechen von "Zutatenknoten" oder einfach: "Knoten". In der
+                  graphischen Darstellung werden die Zutatenknoten durch unterschiedlich eingefärbte Kreise (s.u.) repäsentiert.
+                  Der Kreisdurchmesser ist proportional zur Quadratwurzel aus der
+                  <a href="#" data-toggle="tooltip" title="Die Prävalenz einer Zutat ist das Verhältnis der Anzahl derjenigen Rezepte,
+                      in denen die jeweilige Zutat auftaucht, zur Gesamtanzahl der Rezepte in der Rezeptsammlung.">Prävalenz</a>
+                  ("<i>prevalence</i>") der Zutat in der jeweiligen Rezeptsammlung.
+                </p>
+                <p>
+                  Zutatenknoten stehen genau dann in einer sog. <mark>Nachbarbeziehung</mark>, wenn sie in der Zutatenliste
+                  mindestens eines Rezepts auftauchen. In der graphischen Darstellung wird die Nachbarbeziehung durch eine Linie
+                  ("Kante", "<i>edge</i>") zwischen Zutatenknoten repräsentiert. Betrachtet man die Zutaten eines Rezepts mit
+                  <i>n</i> Zutaten, dann umfasst dieses Rezept also &frac12; <i>n</i> &middot; (<i>n</i>&minus;1) Nachbarbeziehungen.
+                  Taucht eine Nachbarbeziehung in mehreren Rezepten auf, wird in der graphischen Darstellung die Linie rot
+                  eingefärbt und dicker gezeichnet; die Dicke ist proportional zur Häufigkeit der Nachbarbeziehung.
+                  Man spricht von einem Kantengewicht &gt; 1 (engl. <i>weight</i>).
+                </p>
+                <p>
+                  Der unten wiedergegebene Zutatengraph beschreibt eine Rezeptsammlung mit nur zwei Rezepten, nämlich dem
+                  Rezept für den <i><a href="http://kochbuch.fruschtique.de/recipes/Insalata%20Valtellina.html"
+                                       target="_blank">Insalata Valtellina</a></i> und dem Rezept für das <i><a
+                    href="http://kochbuch.fruschtique.de/recipes/Huhn%20in%20Aspik.html" target="_blank">Huhn in
+                    Aspik mit Frankfotter Grie Soß</a></i>. Der Beitrag des Insalata Valtellina zum Zutatengraphen
+                  wird hervorgehoben, wenn man
+                  <span class="text-primary pointer" onclick="showRecipeByName(svgGraphs[konstruktionTab],'Insalata Valtellina')">hier</span>
+                  klickt; der Beitrag des "Huhns in Aspik mit Frankfotter Grie Soß" wird hervorgehoben, wenn man
+                  <span class="text-primary pointer" onclick="showRecipeByName(svgGraphs[konstruktionTab],'Huhn in Aspik')">hier
+                  </span> klickt. Klickt man an
+                  eine beliebige leere Stelle im Graphen, wird der gesamte Graph wieder sichtbar gemacht.
+                </p>
+                <p>
+                  Man erkennt die vier Zutaten, die das Rezept für den Insalata Valtellina umfasst (wobei wir hier wie bei allen
+                  anderen Rezepten auch die Zutaten Salz, Pfeffer und Öl nicht in den Zutatengraphen aufgenommen haben, da sie
+                  in beinahe allen Rezepten auftauchen, so dass sie den Zutatengraphen unnötig unübersichtlich machen würden).
+                  Ebenso sieht man die 6 Kanten im Zutatengraphen, die anzeigen, dass die gezeigten Zutaten gemeinsam in einem
+                  Rezept auftauchen. Man sieht außerdem, dass die beiden ausgewählten Rezepte nur den Essig als gemeinsame Zutat
+                  haben.
+                </p>
+                <svg id="graphSpace01"></svg>
+                <table>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="i-meat" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Fleisch</td>
+                    <td>
+                      <div class="i-fish" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Fisch</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-herb" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Kräuter</td>
+                    <td>
+                      <div class="i-spice" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Gewürz</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-veg" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Gemüse</td>
+                    <td>
+                      <div class="i-fruit" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Frucht</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-onion" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Zwiebel</td>
+                    <td>
+                      <div class="i-nuts" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Nüsse</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-carb" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Kohlenhydrate</td>
+                    <td>
+                      <div class="i-sweet" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">süß</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-alc" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Alkohol</td>
+                    <td>
+                      <div class="i-condi" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Würze</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-milk" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Milch</td>
+                    <td>
+                      <div class="i-egg" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Ei</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="i-fat" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">Fett</td>
+                    <td>
+                      <div class="i-etc" style="width: 50px; height: 16px; cursor: pointer;"
+                           onclick="showIngredientsByCat(this,svgGraphs[konstruktionTab])"></div>
+                    </td>
+                    <td class="px-3">etc</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p class="mt-4">Aus dem gezeigten Zutatengraphen kann man ableiten, dass es genau ein Rezept gibt, in
+                  dem Parmesan gemeinsam mit Rucola verwendet wird, dass es aber kein Rezept gibt, in dem Parmesan und Petersilie
+                  gemeinsam verwendet werden.</p>
+                <p>Die Farbe eines Zutatenknotens zeigt an, zu welcher Zutatenklasse
+                  die jeweilige Zutat gehört. Die Farblegende zeigt die Zutatenklassen, die wir für unsere Zwecke definiert
+                  haben. Durch Klick auf ein Farbfeld in der Legende werden diejenigen Zutaten im Graphen hervorgehoben, die
+                  zur entsprechenden Klasse gehören. In diesem kleinen Graphen haben offensichtlich nicht alle Zutatenklassen
+                  einen Vertreter.</p>
+              </div>
+            </div>
+          </div>
+          <!-- card for "Interaktion mit dem Zutatengraphen" //-->
+          <div class="card">
+            <div class="card-header" role="tab" id="interaktionHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#interaktionBody" aria-expanded="false"
+                   aria-controls="interaktionBody">
+                  Interaktion mit dem Graphen
+                </a>
+              </h6>
+            </div>
+            <div id="interaktionBody" data-parent="#accordion" class="collapse" role="tabpanel"
+                 aria-labelledby="interaktionHeader" >
+              <div class="card-body p-4">
+                <svg id="graphSpace02"></svg>
+                <p>In diesen Tabs wird gezeigt, wie man mit dem Zutatengraphen interagieren kann:</p>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="Zutaten-tab" data-toggle="tab" href="#Zutaten" role="tab"
+                       aria-controls="Zutateb" aria-selected="true">Zutaten</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="Nachbarn-tab" data-toggle="tab" href="#Nachbarn" role="tab"
+                       aria-controls="Nachbarn" aria-selected="false">Nachbarn</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="Rezept-tab" data-toggle="tab" href="#Rezepte" role="tab"
+                       aria-controls="Rezepte" aria-selected="false">Rezepte</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="Daten-tab" data-toggle="tab" href="#Daten" role="tab"
+                       aria-controls="Daten" aria-selected="false">Daten</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <!-- Zutaten -->
+                  <div class="tab-pane p-3 fade show active" id="Zutaten" role="tabpanel" aria-labelledby="home-tab">
+                    <ul>
+                      <li>
+                        Beim Überfahren eines Zutatenknotens mit der Maus werden ihre Prävalenz, die Anzahl der Nachbarn,
+                        der Knotengrad und die <i>betweenness</i> in einem Popup angezeigt.
+                      </li>
+                      <li class="mt-3">
+                        Über dieses Eingabefeld kann man sich eine Zutat mitsamt ihren Nachbarn anzeigen lassen:
+                        <form class="form-inline my-2 my-lg-0">
+                          <input  id="igtNameInputField" list="igtNames" class="form-control form-control-sm" type="search"
+                                  placeholder="Zutat" aria-label="Search">
+                          <button class="btn btn-secondary btn-sm" type="button"
+                                  onclick="showIngredientByName(svgGraphs[interaktionTab])">anzeigen</button>
+                        </form>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-pane p-3 fade" id="Nachbarn" role="tabpanel" aria-labelledby="profile-tab">
+                    <ul>
+                      <li>
+                        Bei Links-Click auf einen Zutaten-Knoten werden seine Nachbarn hervorgehoben. Zum Wiederherstellen des
+                        unverschleierten Graphen bitte nochmals klicken.
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Rezepte -->
+                  <div class="tab-pane p-3 fade" id="Rezepte" role="tabpanel" aria-labelledby="contact-tab">
+                    <ul>
+                      <li>
+                        Bei Rechts-Click auf einen Zutaten-Knoten werden alle Rezepte angezeigt, in denen diese Zutat auftaucht.
+                      </li>
+                      <li class="mt-3">
+                        Über dieses Eingabefeld kann man sich ein Rezept im Zutaten-Graphen anzeigen lassen:
+                        <form class="form-inline my-2 my-lg-0">
+                          <input id="rcpNameInputField" list="rcpNames" class="form-control form-control-sm" type="text"
+                                 placeholder="Rezept" aria-label="Search">
+                          <button class="btn btn-secondary btn-sm" type="button"
+                                  onclick="showRecipeByName(svgGraphs[interaktionTab])">anzeigen</button>
+                        </form>
+                      </li>
+                    </ul>
+                    <div id="rcpByIgtList"></div>
+                  </div>
+                  <!-- Daten -->
+                  <div class="tab-pane p-3 fade" id="Daten" role="tabpanel" aria-labelledby="contact-tab">
+                    <p>
+                      Bei Eingabe eines unteren und oberen Werts für die unten genannten Daten werden die Zutatenknoten
+                      hervorgehoben, deren entsprechender Wert zwischen den Eingabewerten liegt. Für die Eingabe
+                      sind max. 4 Stellen ohne Nachkommastellen vorgesehen.
+                    </p>
+                    <form>
+                      <input type="text" id="uBPrev" size="4" pattern="^\d?\d?\d?\d"> &le; Prävalenz &le;
+                      <input type="text" id="oBPrev" size="4" pattern="^\d?\d?\d?\d">
+                      <button id="btnPrevBounds" class="btn btn-secondary btn-sm" type="button"
+                              onclick="showByData(svgGraphs[interaktionTab],Prävalenz)">
+                        anzeigen</button>
+                    </form>
+                    <p>
+                      Tipp: In dieser Rezeptsammlung ist der größte Prävalenzwert <span id="maxPrev"></span>%. Für die
+                      Prävalenz bitte einen Prozentwert ohne Prozentzeichen eingeben.
+                    </p>
+                    <form>
+                      <input type="text" id="uBNeigh" size="4" pattern="^\d?\d?\d?\d"> &le; Anz. Nachbarn &le;
+                      <input type="text" id="oBNeigh" size="4" pattern="^\d?\d?\d?\d">
+                      <button id="btnNeighBounds" class="btn btn-secondary btn-sm" type="button"
+                              onclick="showByData(svgGraphs[interaktionTab],Nachbarn)">anzeigen</button>
+                    </form>
+                    <p>
+                      Tipp: In dieser Rezeptsammlung tauchen Nachbar-Anzahlen zwischen 3 und <span id="maxNeigh"></span> auf.
+                    </p>
+                    <form>
+                      <input type="text" id="uBDegr" size="4" pattern="^\d?\d?\d?\d"> &le; Knotengrad &le;
+                      <input type="text" id="oBDegr" size="4" pattern="^\d?\d?\d?\d">
+                      <button id="btnDegrBounds" class="btn btn-secondary btn-sm" type="button"
+                              onclick="showByData(svgGraphs[interaktionTab],Knotengrad)">anzeigen</button>
+                    </form>
+                    <p>
+                      Tipp: In dieser Rezeptsammlung tauchen Knotengrade zwischen 3 und <span id="maxDegr"></span> auf.
+                    </p>
+                    <form>
+                      <input type="text" id="uBBetw" size="4" pattern="^\d?\d?\d?\d"> &le; <i>betweenness</i> &le;
+                      <input type="text" id="oBBetw" size="4" pattern="^\d?\d?\d?\d">
+                      <button id="btnBetwBounds" class="btn btn-secondary btn-sm" type="button"
+                              onclick="showByData(svgGraphs[interaktionTab],Betweenness)">anzeigen</button>
+                    </form>
+                    <p>
+                      Tipp: In dieser Rezeptsammlung tauchen <i>betweenness</i>-Werte zwischen 0 und <span id="maxBetw"></span>
+                      auf.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card for "Diagramme" -->
+          <div class="card">
+            <div class="card-header" role="tab" id="diagramHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#diagramBody" aria-expanded="false"
+                   aria-controls="diagramBody">
+                  Statistik
+                </a>
+              </h6>
+            </div>
+            <div id="diagramBody" class="collapse" role="tabpanel" aria-labelledby="diagramHeader"
+                 data-parent="#accordion">
+              <div class="card-body">
+                <div class="list-group list-group-flush" id="myList" role="tablist">
+                  <form style="margin: 2em">
+                    <p>
+                      <img src="img/icons/tile-rcp-text.png" style="cursor: pointer"
+                           onclick="flyInFacts('factSheet')" />
+                      <span class="ml-2">Kennzahlen für <i>all-2</i></span>
+                    </p>
+                    <p>
+                      <img src="img/icons/tile-rcp-text.png" style="cursor: pointer"
+                           onclick="flyIn('prevChartArea','barChartPrev', Prävalenz)" />
+                      <span class="ml-2">Balkendiagramm für Prävalenz, Anz. Nachbarn, Knotengrad und Betweenness</span>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card for "Experimente mit dem Zutatengraphen" //-->
+          <div class="card">
+            <div class="card-header" id="experimentHeader">
+              <h6 class="mb-0">
+                <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#experimentBody"
+                   aria-expanded="true" aria-controls="experimentBody">
+                  Experimente mit dem Zutatengraphen
+                </a>
+              </h6>
+            </div>
+            <div id="experimentBody" class="collapse" data-parent="#accordion" aria-labelledby="interaktionHeader">
+              <div class="card-body p-4">
+                <p>
+                  Um mit dem Zutatengraphen wenigstens in einem sehr geringen Umfang experimentieren zu können, kann man
+                  hier einzelne Knoten aus Graphen löschen. Dazu Klickt man einen einzelnen Knoten mit der rechten Maustaste
+                  an, und dann wird dieser Knoten zusammen mit den Kanten, die zu seinen Nachbarn führen, aus dem Graphen
+                  gelöscht. Selbstverständlich kann man nacheinander auch mehrere Knoten aus dem Knoten löschen, und man kann
+                  die die Löschaktionen in umgekehrter Reihenfolge rückgängig machen oder sogar den ursprünglichen Graphen
+                  komplett wiederherstellen.
+                </p>
+                <svg id="graphSpace03"></svg>
+                <button id="restore" type="submit" onclick="restoreGraph()">
+                  Ein Schritt zurück</button>
+                <button id="reset" type="submit" onclick="resetGraph()">
+                  Anfangszustand</button>
+                <p class="mt-4">
+                  Was passiert, wenn man einzelne Knoten aus einem Zutatengraphen löscht? Löscht man z.B. den
+                  Knoten "Pimpinelle", dann hat das keinen großen Einfluss auf den Graphen. Löscht man
+                  aber den Knoten "Essig", dann zerfällt der Graph in zwei Teile, präziser formuliert: in zwei
+                  verbundene Komponenten (in der Graphentheorie: <i>connected components</i>).
+                  Es gibt dann keine Zutat mehr, die die beiden ausgewählten Rezepte gemeinsam haben. Außerdem haben nun alle
+                  verbleibenden Knoten einen <i>betweenness</i>-Wert von 0.
+                </p>
+                <button id="recompute" type="button"
+                        onclick="recompute()">Neuberechnung der Knoteneigenschaften</button>
+                <form style="margin: 2em">
+                  <p>
+                    <img src="img/icons/tile-rcp-text.png" style="cursor: pointer"
+                         onclick="flyInFacts('factSheet')" />
+                    <span class="ml-2">Kennzahlen für <i>all-2</i></span>
+                  </p>
+                  <p>
+                    <img src="img/icons/tile-rcp-text.png" style="cursor: pointer"
+                         onclick="flyIn('prevChartArea','barChartPrev', Prävalenz)">
+                    <span class="ml-2">Balkendiagramm für Prävalenz, Knotengrad und Betweenness der Zutatenknoten des
+                          Graphen</span>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- closing tag for accordion //-->
+      </div> <!-- closing tag for text area columns //-->
+      <!-- margin right column //-->
+      <div class="col-xl-1">
+        <p>&nbsp;</p>
+      </div>
+      <div id="ChartArea" class="col-xl-5 stretchRight tr" style="visibility: hidden; min-width: 64%">
+        <a id="flyOut" style="z-index: 2010" class="tr">&times;</a>
+        <div id="combinedBarChart" style="min-width: 100%; min-height: 1000px"></div>
+      </div>
+      <!-- fact sheet -->
+      <div id="factSheet" class="chartArea col-xl-6 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+        <div style="display: flex">
+          <p class="m-2 h6">Kennzahlen für diese Rezeptsammlung</p>
+          <div onclick="flyOut('factSheet')" style="z-index: 2010; font-size: 1.8em" class="tr tout">&times;</div>
+        </div>
+        <div>
+          <table class="mt-5 mb-5 table-sm table-striped">
+            <tbody>
+            <tr class="mt-3"><td>Anzahl Rezepte</td><td id="ctRecipes" class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>Anzahl Zutaten</td><td id="ctIngredients" class="text-right pl-5"></td></tr>
+            <tr
+              class="mt-3"><td>Mittlere Anzahl Zutaten pro Rezept</td><td id="avgNumberIngredientsPerRecipe" class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>Anzahl Kanten</td><td id="ctEdges"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td class="pl-3">davon: Mehrfachkanten</td><td id="ctMultiEdges"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>Anzahl voneinander verschiedener Kanten</td><td id="ctDistinctEdges"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td class="pl-3">davon: Mehrfachkanten</td><td id="ctDistinctMultiEdges"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>mittlere Anz. Nachbarn</td><td id="avgCountNeighbors"class="text-right pl-5"></td></tr>
+            <tr
+              class="mt-3"><td>mittlere Anz. voneinander verschiedener Nachbarn</td><td
+              id="avgCountDistinctNeighbors"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>Graphdichte (voneinander verschiedene Kanten)</td><td id="density"class="text-right pl-5"></td></tr>
+            <tr class="mt-3"><td>Anzahl Graph-Komponenten</td><td id="ctComponents"class="text-right pl-5"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- diagram space for prevalence diagram -->
+      <div id="prevChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+        <div style="display: flex">
+          <p class="m-2 h6"><i>Prävalenz</i><br/>&copy; fruschtique graphLab</p>
+          <button id="btnPrev" class="m-4" type="submit" onclick="toggleBtn(Prävalenz)">
+            Nach Namen sortieren
+          </button>
+          <button id="btnNeigh" class="m-4" type="submit" onclick="sortBy(barChartPrev,dataTable,Nachbarn)">
+            Nach Anz. Nachbarn sortieren
+          </button>
+          <button id="btnDegr" class="m-4" type="submit" onclick="sortBy(barChartPrev,dataTable,Knotengrad)">
+            Nach Knotengrad sortieren
+          </button>
+          <button id="btnBetw" class="m-4" type="submit" onclick="sortBy(barChartPrev,dataTable,Betweenness)">
+            Nach Betweenness sortieren
+          </button>
+          <div onclick="flyOut('prevChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+        </div>
+        <div id="barChartPrev" style="min-width: 100%; min-height: 1200px"></div>
+      </div>
+    </div> <!-- closing tag for row //-->
+  </div> <!-- closing tag for main //-->
+  <datalist id="rcpNames"></datalist>
+  <datalist id="igtNames"></datalist>
+
+  <!-- jQuery //-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- bootstrap //-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- diagrams //-->
+  <script src="js/vendor/plotly-latest.min.js"></script>
+  <!-- jsnx //-->
+  <script src="js/vendor/jsnetworkx.js"></script>
+  <!-- svg //-->
+  <script src="js/vendor/snap.svg-min.js"></script>
+  <!-- My scripts //-->
+  <script src="js/showConcept.js"></script>
+  </body>
+</html>

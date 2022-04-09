@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.00 0.00 1984.48 773.31" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify" version="1.1" contentScriptType="text/ecmascript" contentStyleType="text/css">
+   <g id="graph0" class="graph">
+
+
+      <text text-anchor="start" x="100" font-family="Calibri,sans-serif" font-size="64"> <tspan y="100">demo4Theory</tspan> <tspan x="100" dy="1.2em">© fruschtique graphLab</tspan> </text>
+      <!-- borretsch&#45;&#45;brühe -->
+      <g id="edge1" class="edge">
+         <title>borretsch--brühe</title>
+         <path fill="none" stroke="black" d="M1676.06,672.2771L1681.83,604.558"/>
+      </g>
+      <!-- borretsch&#45;&#45;ei -->
+      <g id="edge2" class="edge">
+         <title>borretsch--ei</title>
+         <path fill="none" stroke="black" d="M1626.79,702.4084L1417.58,617.148"/>
+      </g>
+      <!-- borretsch&#45;&#45;essig -->
+      <g id="edge3" class="edge">
+         <title>borretsch--essig</title>
+         <path fill="none" stroke="black" d="M1629.61,696.5082L1161.84,427.97"/>
+      </g>
+      <!-- borretsch&#45;&#45;geflügel -->
+      <g id="edge4" class="edge">
+         <title>borretsch--geflügel</title>
+         <path fill="none" stroke="black" d="M1636.93,687.0324L1388.44,447.262"/>
+      </g>
+      <!-- borretsch&#45;&#45;gelatine -->
+      <g id="edge5" class="edge">
+         <title>borretsch--gelatine</title>
+         <path fill="none" stroke="black" d="M1623.32,715.3812L1555.19,707.7793"/>
+      </g>
+      <!-- borretsch&#45;&#45;joghurt -->
+      <g id="edge6" class="edge">
+         <title>borretsch--joghurt</title>
+         <path fill="none" stroke="black" d="M1657.88,674.3851L1501.16,156.639"/>
+      </g>
+      <!-- borretsch&#45;&#45;karotte -->
+      <g id="edge7" class="edge">
+         <title>borretsch--karotte</title>
+         <path fill="none" stroke="black" d="M1654.28,675.3814L1531.7,359.953"/>
+      </g>
+      <!-- borretsch&#45;&#45;kerbel -->
+      <g id="edge8" class="edge">
+         <title>borretsch--kerbel</title>
+         <path fill="none" stroke="black" d="M1714.47,696.8315L1791.59,653.372"/>
+      </g>
+      <!-- borretsch&#45;&#45;kresse -->
+      <g id="edge9" class="edge">
+         <title>borretsch--kresse</title>
+         <path fill="none" stroke="black" d="M1683.41,673.3305L1740.03,439.088"/>
+      </g>
+      <!-- borretsch&#45;&#45;lauch -->
+      <g id="edge10" class="edge">
+         <title>borretsch--lauch</title>
+         <path fill="none" stroke="black" d="M1670.41,672.3031L1653.2,124.124"/>
+      </g>
+      <!-- borretsch&#45;&#45;paprika -->
+      <g id="edge11" class="edge">
+         <title>borretsch--paprika</title>
+         <path fill="none" stroke="black" d="M1684.27,673.4885L1805.84,207.149"/>
+      </g>
+      <!-- borretsch&#45;&#45;petersilie -->
+      <g id="edge12" class="edge">
+         <title>borretsch--petersilie</title>
+         <path fill="none" stroke="black" d="M1695.86,678.2239L1881.87,347.154"/>
+      </g>
+      <!-- borretsch&#45;&#45;pimpinelle -->
+      <g id="edge13" class="edge">
+         <title>borretsch--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1706.04,685.9439L1875.94,512.282"/>
+      </g>
+      <!-- borretsch&#45;&#45;sauerampfer -->
+      <g id="edge14" class="edge">
+         <title>borretsch--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1671.44,672.1276L1667.56,284.908"/>
+      </g>
+      <!-- borretsch&#45;&#45;schnittlauch -->
+      <g id="edge15" class="edge">
+         <title>borretsch--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1646.22,679.11L1389.84,263.265"/>
+      </g>
+      <!-- borretsch&#45;&#45;wein -->
+      <g id="edge16" class="edge">
+         <title>borretsch--wein</title>
+         <path fill="none" stroke="black" d="M1643.87,681.2327L1549.02,547.481"/>
+      </g>
+      <!-- brühe&#45;&#45;ei -->
+      <g id="edge20" class="edge">
+         <title>brühe--ei</title>
+         <path fill="none" stroke="black" d="M1637.67,562.671L1420.63,592.248"/>
+      </g>
+      <!-- brühe&#45;&#45;essig -->
+      <g id="edge21" class="edge">
+         <title>brühe--essig</title>
+         <path fill="none" stroke="black" d="M1638.74,543.27L1167.1,415.199"/>
+      </g>
+      <!-- brühe&#45;&#45;geflügel -->
+      <g id="edge22" class="edge">
+         <title>brühe--geflügel</title>
+         <path fill="none" stroke="black" d="M1641.1,536.852L1398.05,432.595"/>
+      </g>
+      <!-- brühe&#45;&#45;gelatine -->
+      <g id="edge23" class="edge">
+         <title>brühe--gelatine</title>
+         <path fill="none" stroke="black" d="M1647.98,587.118L1544.53,671.6623"/>
+      </g>
+      <!-- brühe&#45;&#45;joghurt -->
+      <g id="edge24" class="edge">
+         <title>brühe--joghurt</title>
+         <path fill="none" stroke="black" d="M1666.15,511.675L1506.87,154.438"/>
+      </g>
+      <!-- brühe&#45;&#45;karotte -->
+      <g id="edge25" class="edge">
+         <title>brühe--karotte</title>
+         <path fill="none" stroke="black" d="M1657.76,516.47L1542.25,354.154"/>
+      </g>
+      <!-- brühe&#45;&#45;kerbel -->
+      <g id="edge26" class="edge">
+         <title>brühe--kerbel</title>
+         <path fill="none" stroke="black" d="M1729.53,577.736L1790.33,607.94"/>
+      </g>
+      <!-- brühe&#45;&#45;kresse -->
+      <g id="edge27" class="edge">
+         <title>brühe--kresse</title>
+         <path fill="none" stroke="black" d="M1704.02,510.789L1733.43,437.048"/>
+      </g>
+      <!-- brühe&#45;&#45;lauch -->
+      <g id="edge28" class="edge">
+         <title>brühe--lauch</title>
+         <path fill="none" stroke="black" d="M1682.48,507.365L1655.14,123.997"/>
+      </g>
+      <!-- brühe&#45;&#45;paprika -->
+      <g id="edge29" class="edge">
+         <title>brühe--paprika</title>
+         <path fill="none" stroke="black" d="M1701.37,509.898L1802.67,206.361"/>
+      </g>
+      <!-- brühe&#45;&#45;petersilie -->
+      <g id="edge30" class="edge">
+         <title>brühe--petersilie</title>
+         <path fill="none" stroke="black" d="M1717.91,519.527L1873.76,341.241"/>
+      </g>
+      <!-- brühe&#45;&#45;pimpinelle -->
+      <g id="edge31" class="edge">
+         <title>brühe--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1731.83,539.994L1864.17,493.56"/>
+      </g>
+      <!-- brühe&#45;&#45;sauerampfer -->
+      <g id="edge32" class="edge">
+         <title>brühe--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1683.08,507.516L1669.94,284.769"/>
+      </g>
+      <!-- brühe&#45;&#45;schnittlauch -->
+      <g id="edge33" class="edge">
+         <title>brühe--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1652.13,520.937L1398.06,256.874"/>
+      </g>
+      <!-- brühe&#45;&#45;wein -->
+      <g id="edge34" class="edge">
+         <title>brühe--wein</title>
+         <path fill="none" stroke="black" d="M1639.08,542.37L1567.55,521.43"/>
+      </g>
+      <!-- ei&#45;&#45;essig -->
+      <g id="edge35" class="edge">
+         <title>ei--essig</title>
+         <path fill="none" stroke="black" d="M1333.98,569.192L1158.05,434.144"/>
+      </g>
+      <!-- ei&#45;&#45;geflügel -->
+      <g id="edge36" class="edge">
+         <title>ei--geflügel</title>
+         <path fill="none" stroke="black" d="M1367.52,550.097L1358.38,461.811"/>
+      </g>
+      <!-- ei&#45;&#45;gelatine -->
+      <g id="edge37" class="edge">
+         <title>ei--gelatine</title>
+         <path fill="none" stroke="black" d="M1411.06,628.486L1468.41,672.7034"/>
+      </g>
+      <!-- ei&#45;&#45;joghurt -->
+      <g id="edge38" class="edge">
+         <title>ei--joghurt</title>
+         <path fill="none" stroke="black" d="M1383.63,551.476L1475.92,157.221"/>
+      </g>
+      <!-- ei&#45;&#45;karotte -->
+      <g id="edge39" class="edge">
+         <title>ei--karotte</title>
+         <path fill="none" stroke="black" d="M1394.2,555.313L1492.4,357.993"/>
+      </g>
+      <!-- ei&#45;&#45;kerbel -->
+      <g id="edge40" class="edge">
+         <title>ei--kerbel</title>
+         <path fill="none" stroke="black" d="M1421.05,602.034L1785.32,626.321"/>
+      </g>
+      <!-- ei&#45;&#45;kresse -->
+      <g id="edge41" class="edge">
+         <title>ei--kresse</title>
+         <path fill="none" stroke="black" d="M1415.28,575.468L1708.87,415.141"/>
+      </g>
+      <!-- ei&#45;&#45;lauch -->
+      <g id="edge42" class="edge">
+         <title>ei--lauch</title>
+         <path fill="none" stroke="black" d="M1395.4,555.977L1628.72,118.548"/>
+      </g>
+      <!-- ei&#45;&#45;paprika -->
+      <g id="edge43" class="edge">
+         <title>ei--paprika</title>
+         <path fill="none" stroke="black" d="M1407.15,564.746L1783.52,194.189"/>
+      </g>
+      <!-- ei&#45;&#45;petersilie -->
+      <g id="edge44" class="edge">
+         <title>ei--petersilie</title>
+         <path fill="none" stroke="black" d="M1415.29,575.225L1863.2,328.116"/>
+      </g>
+      <!-- ei&#45;&#45;pimpinelle -->
+      <g id="edge45" class="edge">
+         <title>ei--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1420.25,588.034L1862.4,488.226"/>
+      </g>
+      <!-- ei&#45;&#45;sauerampfer -->
+      <g id="edge46" class="edge">
+         <title>ei--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1403.24,561.028L1636.46,273.949"/>
+      </g>
+      <!-- ei&#45;&#45;schnittlauch -->
+      <g id="edge47" class="edge">
+         <title>ei--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1371.48,550.272L1365.28,270.33"/>
+      </g>
+      <!-- ei&#45;&#45;wein -->
+      <g id="edge48" class="edge">
+         <title>ei--wein</title>
+         <path fill="none" stroke="black" d="M1414.26,573.198L1479.46,533.169"/>
+      </g>
+      <!-- essig&#45;&#45;geflügel -->
+      <g id="edge49" class="edge">
+         <title>essig--geflügel</title>
+         <path fill="none" stroke="black" d="M1169.02,403.843L1304.75,410.903"/>
+      </g>
+      <!-- essig&#45;&#45;gelatine -->
+      <g id="edge50" class="edge">
+         <title>essig--gelatine</title>
+         <path fill="none" stroke="black" d="M1157.99,434.141L1468.45,672.8143"/>
+      </g>
+      <!-- essig&#45;&#45;joghurt -->
+      <g id="edge51" class="edge">
+         <title>essig--joghurt</title>
+         <path fill="none" stroke="black" d="M1157.6,367.628L1448.73,139.818"/>
+      </g>
+      <!-- essig&#45;&#45;karotte -->
+      <g id="edge52" class="edge">
+         <title>essig--karotte</title>
+         <path fill="none" stroke="black" d="M1167.91,389.539L1466.44,324.83"/>
+      </g>
+      <!-- essig&#45;&#45;kerbel -->
+      <g id="edge53" class="edge">
+         <title>essig--kerbel</title>
+         <path fill="none" stroke="black" d="M1166.62,417.463L1787.33,614.769"/>
+      </g>
+      <!-- essig&#45;&#45;kresse -->
+      <g id="edge54" class="edge">
+         <title>essig--kresse</title>
+         <path fill="none" stroke="black" d="M1168.91,400.253L1702.55,392.595"/>
+      </g>
+      <!-- essig&#45;&#45;lauch -->
+      <g id="edge55" class="edge">
+         <title>essig--lauch</title>
+         <path fill="none" stroke="black" d="M1161.14,372.992L1609.85,100.864"/>
+      </g>
+      <!-- essig&#45;&#45;paprika -->
+      <g id="edge56" class="edge">
+         <title>essig--paprika</title>
+         <path fill="none" stroke="black" d="M1166.05,383.511L1771.78,176.019"/>
+      </g>
+      <!-- essig&#45;&#45;petersilie -->
+      <g id="edge58" class="edge">
+         <title>essig--petersilie</title>
+         <path fill="none" stroke="black" d="M1168.65,394.478L1857.56,310.508"/>
+      </g>
+      <!-- essig&#45;&#45;pimpinelle -->
+      <g id="edge59" class="edge">
+         <title>essig--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1168.94,406.223L1861.52,472.824"/>
+      </g>
+      <!-- essig&#45;&#45;sauerampfer -->
+      <g id="edge61" class="edge">
+         <title>essig--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1166.86,385.527L1620.38,250.194"/>
+      </g>
+      <!-- essig&#45;&#45;schnittlauch -->
+      <g id="edge62" class="edge">
+         <title>essig--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1158.91,369.378L1324.75,250.068"/>
+      </g>
+      <!-- essig&#45;&#45;wein -->
+      <g id="edge63" class="edge">
+         <title>essig--wein</title>
+         <path fill="none" stroke="black" d="M1167.15,414.762L1473.85,495.399"/>
+      </g>
+      <!-- essig&#45;&#45;parmesan -->
+      <g id="edge57" class="edge">
+         <title>essig--parmesan</title>
+         <path fill="none" stroke="black" d="M1060.83,401.046L123.771,401.37"/>
+      </g>
+      <!-- essig&#45;&#45;rucola -->
+      <g id="edge60" class="edge">
+         <title>essig--rucola</title>
+         <path fill="none" stroke="black" d="M1062.68,386.261L245.333,155.171"/>
+      </g>
+      <!-- geflügel&#45;&#45;gelatine -->
+      <g id="edge64" class="edge">
+         <title>geflügel--gelatine</title>
+         <path fill="none" stroke="black" d="M1376.2,456.381L1483.98,659.209"/>
+      </g>
+      <!-- geflügel&#45;&#45;joghurt -->
+      <g id="edge65" class="edge">
+         <title>geflügel--joghurt</title>
+         <path fill="none" stroke="black" d="M1372.95,368.967L1467.38,154.455"/>
+      </g>
+      <!-- geflügel&#45;&#45;karotte -->
+      <g id="edge66" class="edge">
+         <title>geflügel--karotte</title>
+         <path fill="none" stroke="black" d="M1394.75,387.958L1472.53,340.071"/>
+      </g>
+      <!-- geflügel&#45;&#45;kerbel -->
+      <g id="edge67" class="edge">
+         <title>geflügel--kerbel</title>
+         <path fill="none" stroke="black" d="M1397.72,433.378L1789.62,609.66"/>
+      </g>
+      <!-- geflügel&#45;&#45;kresse -->
+      <g id="edge68" class="edge">
+         <title>geflügel--kresse</title>
+         <path fill="none" stroke="black" d="M1402.19,410.791L1702.86,394.522"/>
+      </g>
+      <!-- geflügel&#45;&#45;lauch -->
+      <g id="edge69" class="edge">
+         <title>geflügel--lauch</title>
+         <path fill="none" stroke="black" d="M1385.58,376.947L1619.38,112.089"/>
+      </g>
+      <!-- geflügel&#45;&#45;paprika -->
+      <g id="edge70" class="edge">
+         <title>geflügel--paprika</title>
+         <path fill="none" stroke="black" d="M1396.26,390.059L1775.3,183.473"/>
+      </g>
+      <!-- geflügel&#45;&#45;petersilie -->
+      <g id="edge71" class="edge">
+         <title>geflügel--petersilie</title>
+         <path fill="none" stroke="black" d="M1401.43,403.968L1857.82,314.075"/>
+      </g>
+      <!-- geflügel&#45;&#45;pimpinelle -->
+      <g id="edge72" class="edge">
+         <title>geflügel--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1401.8,419.005L1861.68,471.925"/>
+      </g>
+      <!-- geflügel&#45;&#45;sauerampfer -->
+      <g id="edge73" class="edge">
+         <title>geflügel--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1395.68,389.539L1624.69,260.201"/>
+      </g>
+      <!-- geflügel&#45;&#45;schnittlauch -->
+      <g id="edge74" class="edge">
+         <title>geflügel--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1356.14,364.551L1361.47,270.148"/>
+      </g>
+      <!-- geflügel&#45;&#45;wein -->
+      <g id="edge75" class="edge">
+         <title>geflügel--wein</title>
+         <path fill="none" stroke="black" d="M1395.64,437.235L1478.32,483.8"/>
+      </g>
+      <!-- gelatine&#45;&#45;joghurt -->
+      <g id="edge76" class="edge">
+         <title>gelatine--joghurt</title>
+         <path fill="none" stroke="black" d="M1505.29,653.905L1488.64,158.613"/>
+      </g>
+      <!-- gelatine&#45;&#45;karotte -->
+      <g id="edge77" class="edge">
+         <title>gelatine--karotte</title>
+         <path fill="none" stroke="black" d="M1507.82,653.66L1513.15,363.044"/>
+      </g>
+      <!-- gelatine&#45;&#45;kerbel -->
+      <g id="edge78" class="edge">
+         <title>gelatine--kerbel</title>
+         <path fill="none" stroke="black" d="M1554.46,691.8023L1786.26,640.161"/>
+      </g>
+      <!-- gelatine&#45;&#45;kresse -->
+      <g id="edge79" class="edge">
+         <title>gelatine--kresse</title>
+         <path fill="none" stroke="black" d="M1537.15,664.008L1721.28,430.19"/>
+      </g>
+      <!-- gelatine&#45;&#45;lauch -->
+      <g id="edge80" class="edge">
+         <title>gelatine--lauch</title>
+         <path fill="none" stroke="black" d="M1517.86,655.017L1640.68,123.113"/>
+      </g>
+      <!-- gelatine&#45;&#45;paprika -->
+      <g id="edge81" class="edge">
+         <title>gelatine--paprika</title>
+         <path fill="none" stroke="black" d="M1531.08,660.296L1793.94,202.227"/>
+      </g>
+      <!-- gelatine&#45;&#45;petersilie -->
+      <g id="edge82" class="edge">
+         <title>gelatine--petersilie</title>
+         <path fill="none" stroke="black" d="M1541.27,668.136L1871.35,338.948"/>
+      </g>
+      <!-- gelatine&#45;&#45;pimpinelle -->
+      <g id="edge83" class="edge">
+         <title>gelatine--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1549.3,678.7492L1867.57,501.149"/>
+      </g>
+      <!-- gelatine&#45;&#45;sauerampfer -->
+      <g id="edge84" class="edge">
+         <title>gelatine--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1522.72,656.423L1651.28,282.232"/>
+      </g>
+      <!-- gelatine&#45;&#45;schnittlauch -->
+      <g id="edge85" class="edge">
+         <title>gelatine--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1493.11,655.865L1378.02,268.243"/>
+      </g>
+      <!-- gelatine&#45;&#45;wein -->
+      <g id="edge86" class="edge">
+         <title>gelatine--wein</title>
+         <path fill="none" stroke="black" d="M1510.4,653.781L1517.37,556.426"/>
+      </g>
+      <!-- joghurt&#45;&#45;karotte -->
+      <g id="edge87" class="edge">
+         <title>joghurt--karotte</title>
+         <path fill="none" stroke="black" d="M1493.38,158.108L1507.67,266.242"/>
+      </g>
+      <!-- joghurt&#45;&#45;kerbel -->
+      <g id="edge88" class="edge">
+         <title>joghurt--kerbel</title>
+         <path fill="none" stroke="black" d="M1513.93,150.217L1806.7,588.878"/>
+      </g>
+      <!-- joghurt&#45;&#45;kresse -->
+      <g id="edge89" class="edge">
+         <title>joghurt--kresse</title>
+         <path fill="none" stroke="black" d="M1520.23,145.303L1718.15,356.383"/>
+      </g>
+      <!-- joghurt&#45;&#45;lauch -->
+      <g id="edge90" class="edge">
+         <title>joghurt--lauch</title>
+         <path fill="none" stroke="black" d="M1534.63,99.929L1604.15,85.419"/>
+      </g>
+      <!-- joghurt&#45;&#45;paprika -->
+      <g id="edge91" class="edge">
+         <title>joghurt--paprika</title>
+         <path fill="none" stroke="black" d="M1535.15,117.182L1769.89,152.835"/>
+      </g>
+      <!-- joghurt&#45;&#45;petersilie -->
+      <g id="edge92" class="edge">
+         <title>joghurt--petersilie</title>
+         <path fill="none" stroke="black" d="M1531.03,130.345L1861.7,284.139"/>
+      </g>
+      <!-- joghurt&#45;&#45;pimpinelle -->
+      <g id="edge93" class="edge">
+         <title>joghurt--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1523.8,141.851L1873.27,445.579"/>
+      </g>
+      <!-- joghurt&#45;&#45;sauerampfer -->
+      <g id="edge94" class="edge">
+         <title>joghurt--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1526.97,137.921L1627.22,208.29"/>
+      </g>
+      <!-- joghurt&#45;&#45;schnittlauch -->
+      <g id="edge95" class="edge">
+         <title>joghurt--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1450.82,142.815L1400.12,188.98"/>
+      </g>
+      <!-- joghurt&#45;&#45;wein -->
+      <g id="edge96" class="edge">
+         <title>joghurt--wein</title>
+         <path fill="none" stroke="black" d="M1491.12,158.261L1516.74,459.393"/>
+      </g>
+      <!-- karotte&#45;&#45;kerbel -->
+      <g id="edge97" class="edge">
+         <title>karotte--kerbel</title>
+         <path fill="none" stroke="black" d="M1548.88,348.826L1799.06,595.284"/>
+      </g>
+      <!-- karotte&#45;&#45;kresse -->
+      <g id="edge98" class="edge">
+         <title>karotte--kresse</title>
+         <path fill="none" stroke="black" d="M1560.38,329.614L1705.22,376.827"/>
+      </g>
+      <!-- karotte&#45;&#45;lauch -->
+      <g id="edge99" class="edge">
+         <title>karotte--lauch</title>
+         <path fill="none" stroke="black" d="M1538.33,272.33L1627.4,117.659"/>
+      </g>
+      <!-- karotte&#45;&#45;paprika -->
+      <g id="edge100" class="edge">
+         <title>karotte--paprika</title>
+         <path fill="none" stroke="black" d="M1557.61,292.395L1774.61,182.23"/>
+      </g>
+      <!-- karotte&#45;&#45;petersilie -->
+      <g id="edge101" class="edge">
+         <title>karotte--petersilie</title>
+         <path fill="none" stroke="black" d="M1562.86,313.279L1857.25,305.856"/>
+      </g>
+      <!-- karotte&#45;&#45;pimpinelle -->
+      <g id="edge102" class="edge">
+         <title>karotte--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1559.08,333.047L1864.99,458.965"/>
+      </g>
+      <!-- karotte&#45;&#45;sauerampfer -->
+      <g id="edge103" class="edge">
+         <title>karotte--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1557.49,292.297L1623.79,258.396"/>
+      </g>
+      <!-- karotte&#45;&#45;schnittlauch -->
+      <g id="edge104" class="edge">
+         <title>karotte--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1472.7,288.901L1405.67,247.376"/>
+      </g>
+      <!-- karotte&#45;&#45;wein -->
+      <g id="edge105" class="edge">
+         <title>karotte--wein</title>
+         <path fill="none" stroke="black" d="M1515.76,363.275L1519.14,459.01"/>
+      </g>
+      <!-- kerbel&#45;&#45;kresse -->
+      <g id="edge106" class="edge">
+         <title>kerbel--kresse</title>
+         <path fill="none" stroke="black" d="M1817.96,583.733L1767.42,437.981"/>
+      </g>
+      <!-- kerbel&#45;&#45;lauch -->
+      <g id="edge107" class="edge">
+         <title>kerbel--lauch</title>
+         <path fill="none" stroke="black" d="M1818.64,583.272L1666.85,121.653"/>
+      </g>
+      <!-- kerbel&#45;&#45;paprika -->
+      <g id="edge108" class="edge">
+         <title>kerbel--paprika</title>
+         <path fill="none" stroke="black" d="M1832.21,580.652L1819.73,208.952"/>
+      </g>
+      <!-- kerbel&#45;&#45;petersilie -->
+      <g id="edge109" class="edge">
+         <title>kerbel--petersilie</title>
+         <path fill="none" stroke="black" d="M1844.39,581.962L1895.26,352.09"/>
+      </g>
+      <!-- kerbel&#45;&#45;pimpinelle -->
+      <g id="edge110" class="edge">
+         <title>kerbel--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1855.67,585.979L1888.16,521.069"/>
+      </g>
+      <!-- kerbel&#45;&#45;sauerampfer -->
+      <g id="edge111" class="edge">
+         <title>kerbel--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1814.88,584.824L1686.02,280.953"/>
+      </g>
+      <!-- kerbel&#45;&#45;schnittlauch -->
+      <g id="edge112" class="edge">
+         <title>kerbel--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1797,597.553L1400.88,253.545"/>
+      </g>
+      <!-- kerbel&#45;&#45;wein -->
+      <g id="edge113" class="edge">
+         <title>kerbel--wein</title>
+         <path fill="none" stroke="black" d="M1788.34,611.847L1566.17,525.392"/>
+      </g>
+      <!-- kresse&#45;&#45;lauch -->
+      <g id="edge114" class="edge">
+         <title>kresse--lauch</title>
+         <path fill="none" stroke="black" d="M1736.83,345.548L1666.33,121.969"/>
+      </g>
+      <!-- kresse&#45;&#45;paprika -->
+      <g id="edge115" class="edge">
+         <title>kresse--paprika</title>
+         <path fill="none" stroke="black" d="M1764.85,345.276L1804.59,207.095"/>
+      </g>
+      <!-- kresse&#45;&#45;petersilie -->
+      <g id="edge116" class="edge">
+         <title>kresse--petersilie</title>
+         <path fill="none" stroke="black" d="M1794.02,367.818L1863.32,328.629"/>
+      </g>
+      <!-- kresse&#45;&#45;pimpinelle -->
+      <g id="edge117" class="edge">
+         <title>kresse--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1794.35,415.055L1867.05,454.304"/>
+      </g>
+      <!-- kresse&#45;&#45;sauerampfer -->
+      <g id="edge118" class="edge">
+         <title>kresse--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1728.17,348.954L1690.27,279.061"/>
+      </g>
+      <!-- kresse&#45;&#45;schnittlauch -->
+      <g id="edge119" class="edge">
+         <title>kresse--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1707.02,372.369L1408.7,241.247"/>
+      </g>
+      <!-- kresse&#45;&#45;wein -->
+      <g id="edge120" class="edge">
+         <title>kresse--wein</title>
+         <path fill="none" stroke="black" d="M1708.07,413.687L1564.42,485.866"/>
+      </g>
+      <!-- lauch&#45;&#45;paprika -->
+      <g id="edge121" class="edge">
+         <title>lauch--paprika</title>
+         <path fill="none" stroke="black" d="M1694.96,97.521L1774.73,138.098"/>
+      </g>
+      <!-- lauch&#45;&#45;petersilie -->
+      <g id="edge122" class="edge">
+         <title>lauch--petersilie</title>
+         <path fill="none" stroke="black" d="M1687.81,108.085L1869.34,271.788"/>
+      </g>
+      <!-- lauch&#45;&#45;pimpinelle -->
+      <g id="edge123" class="edge">
+         <title>lauch--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1678.11,116.63L1883.59,436.412"/>
+      </g>
+      <!-- lauch&#45;&#45;sauerampfer -->
+      <g id="edge124" class="edge">
+         <title>lauch--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1656.34,124.17L1662.43,187.757"/>
+      </g>
+      <!-- lauch&#45;&#45;schnittlauch -->
+      <g id="edge125" class="edge">
+         <title>lauch--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1608.33,97.544L1407.9,199.465"/>
+      </g>
+      <!-- lauch&#45;&#45;wein -->
+      <g id="edge126" class="edge">
+         <title>lauch--wein</title>
+         <path fill="none" stroke="black" d="M1637.55,122.17L1534.92,461.284"/>
+      </g>
+      <!-- paprika&#45;&#45;petersilie -->
+      <g id="edge127" class="edge">
+         <title>paprika--petersilie</title>
+         <path fill="none" stroke="black" d="M1843.45,201.945L1880.46,262.938"/>
+      </g>
+      <!-- paprika&#45;&#45;pimpinelle -->
+      <g id="edge128" class="edge">
+         <title>paprika--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1831.65,206.979L1896.44,430.728"/>
+      </g>
+      <!-- paprika&#45;&#45;sauerampfer -->
+      <g id="edge129" class="edge">
+         <title>paprika--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1774.41,182.169L1710.39,214.43"/>
+      </g>
+      <!-- paprika&#45;&#45;schnittlauch -->
+      <g id="edge130" class="edge">
+         <title>paprika--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1769.94,166.683L1412.53,215.136"/>
+      </g>
+      <!-- paprika&#45;&#45;wein -->
+      <g id="edge131" class="edge">
+         <title>paprika--wein</title>
+         <path fill="none" stroke="black" d="M1786.56,197.027L1552.51,470.743"/>
+      </g>
+      <!-- petersilie&#45;&#45;pimpinelle -->
+      <g id="edge133" class="edge">
+         <title>petersilie--pimpinelle</title>
+         <path fill="none" stroke="black" d="M1906.95,353.241L1908.8,428.941"/>
+      </g>
+      <!-- petersilie&#45;&#45;sauerampfer -->
+      <g id="edge134" class="edge">
+         <title>petersilie--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1858.89,291.206L1713.84,249.657"/>
+      </g>
+      <!-- petersilie&#45;&#45;schnittlauch -->
+      <g id="edge135" class="edge">
+         <title>petersilie--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1857.7,297.272L1412.15,229.033"/>
+      </g>
+      <!-- petersilie&#45;&#45;wein -->
+      <g id="edge136" class="edge">
+         <title>petersilie--wein</title>
+         <path fill="none" stroke="black" d="M1862.73,327.342L1563.9,485.04"/>
+      </g>
+      <!-- pimpinelle&#45;&#45;sauerampfer -->
+      <g id="edge137" class="edge">
+         <title>pimpinelle--sauerampfer</title>
+         <path fill="none" stroke="black" d="M1875.44,443.179L1701.5,270.449"/>
+      </g>
+      <!-- pimpinelle&#45;&#45;schnittlauch -->
+      <g id="edge138" class="edge">
+         <title>pimpinelle--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1865.78,456.768L1408.43,242.419"/>
+      </g>
+      <!-- pimpinelle&#45;&#45;wein -->
+      <g id="edge139" class="edge">
+         <title>pimpinelle--wein</title>
+         <path fill="none" stroke="black" d="M1861.49,481.257L1569.35,503.986"/>
+      </g>
+      <!-- sauerampfer&#45;&#45;schnittlauch -->
+      <g id="edge140" class="edge">
+         <title>sauerampfer--schnittlauch</title>
+         <path fill="none" stroke="black" d="M1618.41,233.921L1412.74,224.024"/>
+      </g>
+      <!-- sauerampfer&#45;&#45;wein -->
+      <g id="edge141" class="edge">
+         <title>sauerampfer--wein</title>
+         <path fill="none" stroke="black" d="M1644.06,278.982L1543.97,464.84"/>
+      </g>
+      <!-- schnittlauch&#45;&#45;wein -->
+      <g id="edge142" class="edge">
+         <title>schnittlauch--wein</title>
+         <path fill="none" stroke="black" d="M1387.65,264.516L1497.5,465.106"/>
+      </g>
+      <!-- bresaola&#45;&#45;essig -->
+      <g id="edge17" class="edge">
+         <title>bresaola--essig</title>
+         <path fill="none" stroke="black" d="M245.995,647.737L1062.74,415.84"/>
+      </g>
+      <!-- bresaola&#45;&#45;parmesan -->
+      <g id="edge18" class="edge">
+         <title>bresaola--parmesan</title>
+         <path fill="none" stroke="black" d="M178.382,617.242L96.0367,445.31"/>
+      </g>
+      <!-- bresaola&#45;&#45;rucola -->
+      <g id="edge19" class="edge">
+         <title>bresaola--rucola</title>
+         <path fill="none" stroke="black" d="M199.253,612.154L198.569,190.628"/>
+      </g>
+      <!-- parmesan&#45;&#45;rucola -->
+      <g id="edge132" class="edge">
+         <title>parmesan--rucola</title>
+         <path fill="none" stroke="black" d="M95.9484,357.373L177.645,185.723"/>
+      </g>
+      <!-- borretsch -->
+      <g id="borretsch" class="node">
+         <title/>
+         <ellipse cx="1671.93" cy="720.806" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1671.93" y="727.706" font-family="Arial" font-size="28.00">Borretsch</text>
+      </g>
+      <!-- brühe -->
+      <g id="brühe" class="node">
+         <title/>
+         <ellipse cx="1685.95" cy="556.091" rx="48.5" ry="48.5" class="i-condi"/>
+         <text text-anchor="middle" x="1685.95" y="562.991" font-family="Arial" font-size="28.00">Brühe</text>
+      </g>
+      <!-- ei -->
+      <g id="ei" class="node">
+         <title/>
+         <ellipse cx="1372.56" cy="598.8" rx="48.5" ry="48.5" class="i-egg"/>
+         <text text-anchor="middle" x="1372.56" y="605.7" font-family="Arial" font-size="28.00">Ei</text>
+      </g>
+      <!-- essig -->
+      <g id="essig" class="node">
+         <title/>
+         <ellipse cx="1114.91" cy="401.028" rx="54" ry="54" class="i-condi"/>
+         <text text-anchor="middle" x="1114.91" y="407.928" font-family="Arial" font-size="28.00">Essig</text>
+      </g>
+      <!-- geflügel -->
+      <g id="geflügel" class="node">
+         <title/>
+         <ellipse cx="1353.38" cy="413.433" rx="48.5" ry="48.5" class="i-meat"/>
+         <text text-anchor="middle" x="1353.38" y="420.333" font-family="Arial" font-size="28.00">Geflügel</text>
+      </g>
+      <!-- gelatine -->
+      <g id="gelatine" class="node">
+         <title/>
+         <ellipse cx="1506.92" cy="702.3933" rx="48.5" ry="48.5" class="i-etc"/>
+         <text text-anchor="middle" x="1506.92" y="709.2933" font-family="Arial" font-size="28.00">Gelatine</text>
+      </g>
+      <!-- joghurt -->
+      <g id="joghurt" class="node">
+         <title/>
+         <ellipse cx="1487" cy="109.87" rx="48.5" ry="48.5" class="i-milk"/>
+         <text text-anchor="middle" x="1487" y="116.77" font-family="Arial" font-size="28.00">Joghurt</text>
+      </g>
+      <!-- karotte -->
+      <g id="karotte" class="node">
+         <title/>
+         <ellipse cx="1514.04" cy="314.511" rx="48.5" ry="48.5" class="i-veg"/>
+         <text text-anchor="middle" x="1514.04" y="321.411" font-family="Arial" font-size="28.00">Karotte</text>
+      </g>
+      <!-- kerbel -->
+      <g id="kerbel" class="node">
+         <title/>
+         <ellipse cx="1833.85" cy="629.557" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1833.85" y="636.457" font-family="Arial" font-size="28.00">Kerbel</text>
+      </g>
+      <!-- kresse -->
+      <g id="kresse" class="node">
+         <title/>
+         <ellipse cx="1751.44" cy="391.893" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1751.44" y="398.793" font-family="Arial" font-size="28.00">Kresse</text>
+      </g>
+      <!-- lauch -->
+      <g id="lauch" class="node">
+         <title/>
+         <ellipse cx="1651.68" cy="75.5" rx="48.5" ry="48.5" class="i-veg"/>
+         <text text-anchor="middle" x="1651.68" y="82.4" font-family="Arial" font-size="28.00">Lauch</text>
+      </g>
+      <!-- paprika -->
+      <g id="paprika" class="node">
+         <title/>
+         <ellipse cx="1818.09" cy="160.156" rx="48.5" ry="48.5" class="i-veg"/>
+         <text text-anchor="middle" x="1818.09" y="167.056" font-family="Arial" font-size="28.00">Paprika</text>
+      </g>
+      <!-- petersilie -->
+      <g id="petersilie" class="node">
+         <title/>
+         <ellipse cx="1905.76" cy="304.632" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1905.76" y="311.532" font-family="Arial" font-size="28.00">Petersilie</text>
+      </g>
+      <!-- pimpinelle -->
+      <g id="pimpinelle" class="node">
+         <title/>
+         <ellipse cx="1909.98" cy="477.484" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1909.98" y="484.384" font-family="Arial" font-size="28.00">Pimpinelle</text>
+      </g>
+      <!-- sauerampfer -->
+      <g id="sauerampfer" class="node">
+         <title/>
+         <ellipse cx="1667.07" cy="236.262" rx="48.5" ry="48.5" class="i-herb"/>
+         <text text-anchor="middle" x="1667.07" y="243.162" font-family="Arial" font-size="28.00">Sauerampfer</text>
+      </g>
+      <!-- schnittlauch -->
+      <g id="schnittlauch" class="node">
+         <title/>
+         <ellipse cx="1364.2" cy="221.689" rx="48.5" ry="48.5" class="i-onion"/>
+         <text text-anchor="middle" x="1364.2" y="228.589" font-family="Arial" font-size="28.00">Schnittlauch</text>
+      </g>
+      <!-- wein -->
+      <g id="wein" class="node">
+         <title/>
+         <ellipse cx="1520.85" cy="507.759" rx="48.5" ry="48.5" class="i-alc"/>
+         <text text-anchor="middle" x="1520.85" y="514.659" font-family="Arial" font-size="28.00">Wein</text>
+      </g>
+      <!-- bresaola -->
+      <g id="bresaola" class="node">
+         <title/>
+         <ellipse cx="199.333" cy="660.986" rx="48.5" ry="48.5" class="i-meat"/>
+         <text text-anchor="middle" x="199.333" y="667.886" font-family="Arial" font-size="28.00">Bresaola</text>
+      </g>
+      <!-- parmesan -->
+      <g id="parmesan" class="node">
+         <title/>
+         <ellipse cx="75" cy="401.386" rx="48.5" ry="48.5" class="i-milk"/>
+         <text text-anchor="middle" x="75" y="408.286" font-family="Arial" font-size="28.00">Parmesan</text>
+      </g>
+      <!-- rucola -->
+      <g id="rucola" class="node">
+         <title/>
+         <ellipse cx="198.49" cy="141.927" rx="48.5" ry="48.5" class="i-veg"/>
+         <text text-anchor="middle" x="198.49" y="148.827" font-family="Arial" font-size="28.00">Rucola</text>
+      </g>
+   </g>
+</svg>

@@ -1,0 +1,1847 @@
+{
+    "ingredients": [
+        {
+            "id": "borretsch",
+            "label": "Borretsch",
+            "occurs": "1"
+        },
+        {
+            "id": "bresaola",
+            "label": "Bresaola",
+            "occurs": "1"
+        },
+        {
+            "id": "brühe",
+            "label": "Brühe",
+            "occurs": "1"
+        },
+        {
+            "id": "ei",
+            "label": "Ei",
+            "occurs": "1"
+        },
+        {
+            "id": "essig",
+            "label": "Essig",
+            "occurs": "2"
+        },
+        {
+            "id": "geflügel",
+            "label": "Geflügel",
+            "occurs": "1"
+        },
+        {
+            "id": "gelatine",
+            "label": "Gelatine",
+            "occurs": "1"
+        },
+        {
+            "id": "joghurt",
+            "label": "Joghurt",
+            "occurs": "1"
+        },
+        {
+            "id": "karotte",
+            "label": "Karotte",
+            "occurs": "1"
+        },
+        {
+            "id": "kerbel",
+            "label": "Kerbel",
+            "occurs": "1"
+        },
+        {
+            "id": "kresse",
+            "label": "Kresse",
+            "occurs": "1"
+        },
+        {
+            "id": "lauch",
+            "label": "Lauch",
+            "occurs": "1"
+        },
+        {
+            "id": "paprika",
+            "label": "Paprika",
+            "occurs": "1"
+        },
+        {
+            "id": "parmesan",
+            "label": "Parmesan",
+            "occurs": "1"
+        },
+        {
+            "id": "petersilie",
+            "label": "Petersilie",
+            "occurs": "1"
+        },
+        {
+            "id": "pimpinelle",
+            "label": "Pimpinelle",
+            "occurs": "1"
+        },
+        {
+            "id": "rucola",
+            "label": "Rucola",
+            "occurs": "1"
+        },
+        {
+            "id": "sauerampfer",
+            "label": "Sauerampfer",
+            "occurs": "1"
+        },
+        {
+            "id": "schnittlauch",
+            "label": "Schnittlauch",
+            "occurs": "1"
+        },
+        {
+            "id": "wein",
+            "label": "Wein",
+            "occurs": "1"
+        }
+    ],
+    "recipes": [
+        {
+            "recipeName": "Huhn in Aspik",
+            "ingredients": [
+                "geflügel",
+                "ei",
+                "karotte",
+                "lauch",
+                "paprika",
+                "gelatine",
+                "brühe",
+                "wein",
+                "essig",
+                "joghurt",
+                "petersilie",
+                "schnittlauch",
+                "kerbel",
+                "pimpinelle",
+                "sauerampfer",
+                "kresse",
+                "borretsch"
+            ]
+        },
+        {
+            "recipeName": "Insalata Valtellina",
+            "ingredients": [
+                "bresaola",
+                "rucola",
+                "parmesan",
+                "essig"
+            ]
+        }
+    ],
+    "svg": {
+        "#xmlns": "http://www.w3.org/2000/svg",
+        "#version": "1.1",
+        "#viewBox": "0.00 0.00 1984.48 773.31",
+        "#preserveAspectRatio": "xMidYMid meet",
+        "#zoomAndPan": "magnify",
+        "#contentScriptType": "text/ecmascript",
+        "#contentStyleType": "text/css",
+        "g": {
+            "#class": "graph",
+            "#id": "graph0",
+            "text": {
+                "#text-anchor": "start",
+                "#x": "68",
+                "#font-family": "Calibri,sans-serif",
+                "#font-size": "36",
+                "tspan": [
+                    {
+                        "#y": "100",
+                        "#text-content": "demo4Theory"
+                    },
+                    {
+                        "#x": "68",
+                        "#dy": "1.2em",
+                        "#text-content": "© fruschtique graphLab"
+                    }
+                ]
+            },
+            "g": [
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--brühe",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1676.06,672.2771L1681.83,604.558"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--ei",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1626.79,702.4084L1417.58,617.148"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--essig",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1629.61,696.5082L1161.84,427.97"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--geflügel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1636.93,687.0324L1388.44,447.262"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--gelatine",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1623.32,715.3812L1555.19,707.7793"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1657.88,674.3851L1501.16,156.639"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1654.28,675.3814L1531.7,359.953"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1714.47,696.8315L1791.59,653.372"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1683.41,673.3305L1740.03,439.088"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1670.41,672.3031L1653.2,124.124"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1684.27,673.4885L1805.84,207.149"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1695.86,678.2239L1881.87,347.154"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1706.04,685.9439L1875.94,512.282"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1671.44,672.1276L1667.56,284.908"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1646.22,679.11L1389.84,263.265"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "borretsch--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1643.87,681.2327L1549.02,547.481"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "bresaola--essig",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M245.995,647.737L1062.74,415.84"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "bresaola--parmesan",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M178.382,617.242L96.0367,445.31"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "bresaola--rucola",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M199.253,612.154L198.569,190.628"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--ei",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1637.67,562.671L1420.63,592.248"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--essig",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1638.74,543.27L1167.1,415.199"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--geflügel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1641.1,536.852L1398.05,432.595"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--gelatine",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1647.98,587.118L1544.53,671.6623"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1666.15,511.675L1506.87,154.438"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1657.76,516.47L1542.25,354.154"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1729.53,577.736L1790.33,607.94"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1704.02,510.789L1733.43,437.048"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1682.48,507.365L1655.14,123.997"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1701.37,509.898L1802.67,206.361"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1717.91,519.527L1873.76,341.241"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1731.83,539.994L1864.17,493.56"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1683.08,507.516L1669.94,284.769"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1652.13,520.937L1398.06,256.874"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "brühe--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1639.08,542.37L1567.55,521.43"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--essig",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1333.98,569.192L1158.05,434.144"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--geflügel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1367.52,550.097L1358.38,461.811"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--gelatine",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1411.06,628.486L1468.41,672.7034"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1383.63,551.476L1475.92,157.221"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1394.2,555.313L1492.4,357.993"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1421.05,602.034L1785.32,626.321"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1415.28,575.468L1708.87,415.141"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1395.4,555.977L1628.72,118.548"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1407.15,564.746L1783.52,194.189"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1415.29,575.225L1863.2,328.116"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1420.25,588.034L1862.4,488.226"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1403.24,561.028L1636.46,273.949"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1371.48,550.272L1365.28,270.33"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "ei--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1414.26,573.198L1479.46,533.169"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--geflügel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1169.02,403.843L1304.75,410.903"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--gelatine",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1157.99,434.141L1468.45,672.8143"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1157.6,367.628L1448.73,139.818"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1167.91,389.539L1466.44,324.83"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1166.62,417.463L1787.33,614.769"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1168.91,400.253L1702.55,392.595"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1161.14,372.992L1609.85,100.864"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1166.05,383.511L1771.78,176.019"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--parmesan",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1060.83,401.046L123.771,401.37"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1168.65,394.478L1857.56,310.508"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1168.94,406.223L1861.52,472.824"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--rucola",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1062.68,386.261L245.333,155.171"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1166.86,385.527L1620.38,250.194"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1158.91,369.378L1324.75,250.068"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "essig--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1167.15,414.762L1473.85,495.399"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--gelatine",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1376.2,456.381L1483.98,659.209"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1372.95,368.967L1467.38,154.455"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1394.75,387.958L1472.53,340.071"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1397.72,433.378L1789.62,609.66"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1402.19,410.791L1702.86,394.522"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1385.58,376.947L1619.38,112.089"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1396.26,390.059L1775.3,183.473"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1401.43,403.968L1857.82,314.075"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1401.8,419.005L1861.68,471.925"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1395.68,389.539L1624.69,260.201"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1356.14,364.551L1361.47,270.148"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "geflügel--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1395.64,437.235L1478.32,483.8"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--joghurt",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1505.29,653.905L1488.64,158.613"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1507.82,653.66L1513.15,363.044"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1554.46,691.8023L1786.26,640.161"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1537.15,664.008L1721.28,430.19"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1517.86,655.017L1640.68,123.113"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1531.08,660.296L1793.94,202.227"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1541.27,668.136L1871.35,338.948"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1549.3,678.7492L1867.57,501.149"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1522.72,656.423L1651.28,282.232"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1493.11,655.865L1378.02,268.243"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "gelatine--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1510.4,653.781L1517.37,556.426"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--karotte",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1493.38,158.108L1507.67,266.242"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1513.93,150.217L1806.7,588.878"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1520.23,145.303L1718.15,356.383"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1534.63,99.929L1604.15,85.419"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1535.15,117.182L1769.89,152.835"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1531.03,130.345L1861.7,284.139"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1523.8,141.851L1873.27,445.579"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1526.97,137.921L1627.22,208.29"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1450.82,142.815L1400.12,188.98"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "joghurt--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1491.12,158.261L1516.74,459.393"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--kerbel",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1548.88,348.826L1799.06,595.284"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1560.38,329.614L1705.22,376.827"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1538.33,272.33L1627.4,117.659"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1557.61,292.395L1774.61,182.23"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1562.86,313.279L1857.25,305.856"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1559.08,333.047L1864.99,458.965"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1557.49,292.297L1623.79,258.396"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1472.7,288.901L1405.67,247.376"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "karotte--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1515.76,363.275L1519.14,459.01"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--kresse",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1817.96,583.733L1767.42,437.981"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1818.64,583.272L1666.85,121.653"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1832.21,580.652L1819.73,208.952"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1844.39,581.962L1895.26,352.09"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1855.67,585.979L1888.16,521.069"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1814.88,584.824L1686.02,280.953"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1797,597.553L1400.88,253.545"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kerbel--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1788.34,611.847L1566.17,525.392"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--lauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1736.83,345.548L1666.33,121.969"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1764.85,345.276L1804.59,207.095"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1794.02,367.818L1863.32,328.629"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1794.35,415.055L1867.05,454.304"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1728.17,348.954L1690.27,279.061"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1707.02,372.369L1408.7,241.247"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "kresse--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1708.07,413.687L1564.42,485.866"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--paprika",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1694.96,97.521L1774.73,138.098"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1687.81,108.085L1869.34,271.788"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1678.11,116.63L1883.59,436.412"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1656.34,124.17L1662.43,187.757"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1608.33,97.544L1407.9,199.465"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "lauch--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1637.55,122.17L1534.92,461.284"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "paprika--petersilie",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1843.45,201.945L1880.46,262.938"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "paprika--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1831.65,206.979L1896.44,430.728"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "paprika--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1774.41,182.169L1710.39,214.43"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "paprika--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1769.94,166.683L1412.53,215.136"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "paprika--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1786.56,197.027L1552.51,470.743"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "parmesan--rucola",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M95.9484,357.373L177.645,185.723"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "petersilie--pimpinelle",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1906.95,353.241L1908.8,428.941"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "petersilie--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1858.89,291.206L1713.84,249.657"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "petersilie--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1857.7,297.272L1412.15,229.033"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "petersilie--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1862.73,327.342L1563.9,485.04"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "pimpinelle--sauerampfer",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1875.44,443.179L1701.5,270.449"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "pimpinelle--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1865.78,456.768L1408.43,242.419"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "pimpinelle--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1861.49,481.257L1569.35,503.986"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "sauerampfer--schnittlauch",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1618.41,233.921L1412.74,224.024"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "sauerampfer--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1644.06,278.982L1543.97,464.84"
+                    }
+                },
+                {
+                    "#class": "edge",
+                    "#id": "schnittlauch--wein",
+                    "path": {
+                        "#fill": "none",
+                        "#stroke": "black",
+                        "#d": "M1387.65,264.516L1497.5,465.106"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "borretsch",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1671.93",
+                        "#cy": "720.806",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1671.93",
+                        "#y": "727.706",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Borretsch"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "bresaola",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-meat",
+                        "#cx": "199.333",
+                        "#cy": "660.986",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "199.333",
+                        "#y": "667.886",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Bresaola"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "brühe",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-condi",
+                        "#cx": "1685.95",
+                        "#cy": "556.091",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1685.95",
+                        "#y": "562.991",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Brühe"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "ei",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-egg",
+                        "#cx": "1372.56",
+                        "#cy": "598.8",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1372.56",
+                        "#y": "605.7",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Ei"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "essig",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-condi",
+                        "#cx": "1114.91",
+                        "#cy": "401.028",
+                        "#rx": "54",
+                        "#ry": "54"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1114.91",
+                        "#y": "407.928",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Essig"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "geflügel",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-meat",
+                        "#cx": "1353.38",
+                        "#cy": "413.433",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1353.38",
+                        "#y": "420.333",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Geflügel"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "gelatine",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-etc",
+                        "#cx": "1506.92",
+                        "#cy": "702.3933",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1506.92",
+                        "#y": "709.2933",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Gelatine"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "joghurt",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-milk",
+                        "#cx": "1487",
+                        "#cy": "109.87",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1487",
+                        "#y": "116.77",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Joghurt"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "karotte",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-veg",
+                        "#cx": "1514.04",
+                        "#cy": "314.511",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1514.04",
+                        "#y": "321.411",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Karotte"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "kerbel",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1833.85",
+                        "#cy": "629.557",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1833.85",
+                        "#y": "636.457",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Kerbel"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "kresse",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1751.44",
+                        "#cy": "391.893",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1751.44",
+                        "#y": "398.793",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Kresse"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "lauch",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-veg",
+                        "#cx": "1651.68",
+                        "#cy": "75.5",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1651.68",
+                        "#y": "82.4",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Lauch"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "paprika",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-veg",
+                        "#cx": "1818.09",
+                        "#cy": "160.156",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1818.09",
+                        "#y": "167.056",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Paprika"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "parmesan",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-milk",
+                        "#cx": "75",
+                        "#cy": "401.386",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "75",
+                        "#y": "408.286",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Parmesan"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "petersilie",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1905.76",
+                        "#cy": "304.632",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1905.76",
+                        "#y": "311.532",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Petersilie"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "pimpinelle",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1909.98",
+                        "#cy": "477.484",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1909.98",
+                        "#y": "484.384",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Pimpinelle"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "rucola",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-veg",
+                        "#cx": "198.49",
+                        "#cy": "141.927",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "198.49",
+                        "#y": "148.827",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Rucola"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "sauerampfer",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-herb",
+                        "#cx": "1667.07",
+                        "#cy": "236.262",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1667.07",
+                        "#y": "243.162",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Sauerampfer"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "schnittlauch",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-onion",
+                        "#cx": "1364.2",
+                        "#cy": "221.689",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1364.2",
+                        "#y": "228.589",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Schnittlauch"
+                    }
+                },
+                {
+                    "#class": "node",
+                    "#id": "wein",
+                    "title": {},
+                    "ellipse": {
+                        "#class": "i-alc",
+                        "#cx": "1520.85",
+                        "#cy": "507.759",
+                        "#rx": "48.5",
+                        "#ry": "48.5"
+                    },
+                    "text": {
+                        "#text-anchor": "middle",
+                        "#x": "1520.85",
+                        "#y": "514.659",
+                        "#font-family": "Arial",
+                        "#font-size": "28.00",
+                        "#text-content": "Wein"
+                    }
+                }
+            ]
+        }
+    }
+}

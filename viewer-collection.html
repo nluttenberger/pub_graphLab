@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+    <link rel="stylesheet" href="css/svg-page-styles.css">
+    <link rel="stylesheet" href="css/ingredient-classes.css">
+  </head>
+  <body onload="makeURL();fetchGraph();fetchSource();">
+    <main>
+      <!-- ------------------------------------------//-->
+      <!-- single row                                //-->
+      <!-- ------------------------------------------//-->
+      <div class="row mt-2 row-height">
+        <!-- ------------------------------------------//-->
+        <!-- columns for navigation accordion          //-->
+        <!-- ------------------------------------------//-->
+        <div class="col-xl-3">
+          <!-- fruschtique logo //-->
+          <div id="logo" class="bg-frBlue p-3">
+            <img src="img/logos/fruschtique%20Logo%20weiß%20transparent.png" class="img-fluid" alt="fruschtique Logo" />
+            <p class="text-right text-white">graphLab</p>
+          </div>
+          <!-- heading //-->
+          <h4 class="m-3 pointer">Graph <span class="font-italic rcpColl"></span></h4>
+          <!-- accordion for navigation //-->
+          <div id="accordion" role="tablist" class="mt-4">
+            <!-- Quelle //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="quelleHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#quelleBody" aria-expanded="false"
+                     aria-controls="quelleBody">Rezeptsammlung</a>
+                </h6>
+              </div>
+              <div id="quelleBody" class="collapse" role="tabpanel" aria-labelledby="quelleHeader" data-parent="#accordion">
+                <!--<div class="card-body">
+
+                </div>-->
+              </div>
+            </div>
+            <!-- Farblegende //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="farblegendeHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#farblegendeBody" aria-expanded="false"
+                     aria-controls="farblegendeBody">Knotenfärbung (Legende)</a>
+                </h6>
+              </div>
+              <div id="farblegendeBody" class="collapse" role="tabpanel"
+                   aria-labelledby="farblegendeHeader" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Die Farbe eines Zutatenknotens zeigt an, zu welcher Zutatenklasse
+                    die jeweilige Zutat gehört &ndash; click it!</p>
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="i-meat" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Fleisch</td>
+                      <td>
+                        <div class="i-fish" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Fisch</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-herb" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Kräuter</td>
+                      <td>
+                        <div class="i-spice" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Gewürz</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-veg" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Gemüse</td>
+                      <td>
+                        <div class="i-fruit" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Frucht</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-onion" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Zwiebel</td>
+                      <td>
+                        <div class="i-nuts" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Nüsse</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-carb" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Kohlenhydrate</td>
+                      <td>
+                        <div class="i-sweet" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">süß</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-alc" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Alkohol</td>
+                      <td>
+                        <div class="i-condi" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Würze</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-milk" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Milch</td>
+                      <td>
+                        <div class="i-egg" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Ei</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="i-fat" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">Fett</td>
+                      <td>
+                        <div class="i-etc" style="width: 50px; height: 16px; cursor: pointer;"
+                             onclick="showIngredientsByCat(this, svgGraphs[konstruktionTab])"></div>
+                      </td>
+                      <td class="px-3">etc</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Interaktion //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="interaktionHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#interaktionBody" aria-expanded="false" aria-controls="interaktionBody">
+                    Interaktion mit dem Graphen</a>
+                </h6>
+              </div>
+              <div id="interaktionBody" class="collapse" role="tabpanel" aria-labelledby="interaktionHeader" data-parent="#accordion">
+                <div class="card-body p-0">
+                  <ul class="nav nav-tabs" id="interactionTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="Faerbung-tab" data-toggle="tab" href="#Faerbung" role="tab"
+                         aria-controls="Färbung" aria-selected="true">Färbung</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="Zutaten-tab" data-toggle="tab" href="#Zutaten" role="tab"
+                         aria-controls="Zutaten" aria-selected="true">Zutaten</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="Nachbarn-tab" data-toggle="tab" href="#Nachbarn" role="tab"
+                         aria-controls="Nachbarn" aria-selected="false">Nachbarn</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="Rezept-tab" data-toggle="tab" href="#Rezepte" role="tab"
+                         aria-controls="Rezepte" aria-selected="false">Rezepte</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="Daten-tab" data-toggle="tab" href="#Daten" role="tab"
+                         aria-controls="Daten" aria-selected="false">Daten</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="interactionTabContent">
+                    <!-- Knotenfärbung -->
+                    <div class="tab-pane p-3 fade show active" id="Faerbung" role="tabpanel" aria-labelledby="Faerbung-tab">
+                      <button id="btnPrevGraph" class="btn-light btn-sm" type="button" onclick="toggleGraph()">
+                        Prävalenzgraph</button>
+                      <br>
+                      <p class="mt-3">
+                        Bei Druck auf den Knopf wird der Graph anders eingefärbt: Die Knotenfarbe steht für den
+                        Prävalenzwert <i>p</i> der jeweiligen Zutat. Wir bezeichnen diesen Graphen als Prävalenzgraphen.</p>
+                      <p>Zur Einteilung der Prävalenzwerte in vier unterschiedliche Prävalenzklassen sortieren unsere
+                        Prävalenzwerte <i>p</i> in aufsteigender Reihenfolge, ordnen jedem Wert eine fortlaufende Ordinalzahl
+                        <i>o</i> von 1 bis <i>n</i> zu und lesen die Prävalenzwerte an den drei folgenden Stellen ab:
+                        <i>o</i><sub>1</sub>=<i>n</i>/4, <i>o</i><sub>2</sub>=<i>n</i>/2 und <i>o</i><sub>3</sub>=3<i>n</i>/4.
+                        Die drei an diesen Stellen abgelesenen Prävalenzwerte bezeichnen wir mit Q1, Q2 und Q3. </p>
+                      <table>
+                        <tbody>
+                        <tr>
+                          <td><div class="prev1"
+                                   onclick="showIngredientsByPrev('prev1', svgGraphs[konstruktionTab])"></div></td>
+                          <td class="px-3"><i>p</i> &le; Q1</td>
+                        </tr>
+                        <tr>
+                          <td><div class="prev2"
+                                   onclick="showIngredientsByPrev('prev2', svgGraphs[konstruktionTab])"></div></td>
+                          <td class="px-3">Q1 &lt; <i>p</i> &le; Q2</td>
+                        </tr>
+                        <tr>
+                          <td><div class="prev3"
+                                   onclick="showIngredientsByPrev('prev3', svgGraphs[konstruktionTab])"></div></td>
+                          <td class="px-3">Q2 &lt; <i>p</i> &le; Q3</td>
+                        </tr>
+                        <tr>
+                          <td><div class="prev4"
+                                   onclick="showIngredientsByPrev('prev4', svgGraphs[konstruktionTab])"></div></td>
+                          <td class="px-3">Q3 &lt; <i>p</i></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <p class="mt-3">Ebenso wie im Zutatengraphen kann man sich auch im Prävalenzgraphen Rezepte anzeigen
+                        lassen. Durch Rechts-Click auf einen Zutatenknoten werden im linken Bildschirmrand unterhalb des
+                        graphLab-Menus alle diejenigen Rezepte aufgelistet, in denen diese Zutat verwendet wird. Durch
+                        Click auf einen Rezeptnamen werden die zugehörigen Zutaten im Prävalenzgraphen hervorgehoben.</p>
+                      <p>Betrachtet man nun die Rezept-Zutaten im Prävalenzgraphen, dann erkennt schnell, ob im jeweiligen
+                        Rezept nicht nur Zutaten mit hoher Prävalenz verarbeitet werden, sondern auch solche mit niedriger
+                        Prävalenz. Vielleicht gilt ja die Aussage, dass Rezepte mit spezielleren Zutaten die interessanteren
+                        sind. Vielleicht aber sind gerade die Rezepte mit den "Allerweltszutaten" die leckersten.</p>
+                      <p>Durch Klick auf den Knopf kann man zwischen Prävalenzgraph und Zutatengraph hin- und herschalten.</p>
+                    </div>
+                    <!-- Zutaten -->
+                    <div class="tab-pane p-3 fade" id="Zutaten" role="tabpanel" aria-labelledby="home-tab">
+                      <ul>
+                        <li>
+                          Beim Überfahren eines Zutatenknotens mit der Maus werden ihre Prävalenz, die Anzahl der Nachbarn,
+                          der Knotengrad und die <i>betweenness</i> in einem Popup angezeigt.
+                        </li>
+                        <li class="mt-3">
+                          Über dieses Eingabefeld kann man sich eine Zutat anzeigen lassen:
+                          <form class="form-inline my-2 my-lg-0">
+                            <input id="igtNameInputField" list="igtNames" class="form-control form-control-sm" type="search" placeholder="Zutat" aria-label="Search">
+                            <button class="btn btn-secondary btn-sm" type="button" onclick="showIngredientByName(svgGraphs[konstruktionTab])">anzeigen</button>
+                          </form>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Nachbarn -->
+                    <div class="tab-pane p-3 fade" id="Nachbarn" role="tabpanel" aria-labelledby="profile-tab">
+                      <ul>
+                        <li>
+                          Bei Links-Click auf einen Zutaten-Knoten werden seine Nachbarn hervorgehoben. Zum Wiederherstellen des
+                          unverschleierten Graphen bitte nochmals klicken.
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Rezepte -->
+                    <div class="tab-pane p-3 fade" id="Rezepte" role="tabpanel" aria-labelledby="contact-tab">
+                      <ul>
+                        <li>
+                          Bei Rechts-Click auf einen Zutaten-Knoten werden alle Rezepte angezeigt, in denen diese Zutat auftaucht.
+                        </li>
+                        <li class="mt-3">
+                          Über dieses Eingabefeld kann man sich ein Rezept im Zutaten-Graphen anzeigen lassen:
+                          <form class="form-inline my-2 my-lg-0">
+                            <input id="rcpNameInputField" list="rcpNames" class="form-control form-control-sm" type="text" placeholder="Rezept" aria-label="Search">
+                            <button class="btn btn-secondary btn-sm" type="button" onclick="showRecipeByName(svgGraphs[konstruktionTab])">anzeigen</button>
+                          </form>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Daten -->
+                    <div class="tab-pane p-3 fade" id="Daten" role="tabpanel" aria-labelledby="contact-tab">
+                      <p>
+                        Bei Eingabe eines unteren und oberen Werts für die unten genannten Daten werden die Zutatenknoten
+                        hervorgehoben, deren entsprechender Wert zwischen den Eingabewerten liegt. Für die Eingabe
+                        sind max. 4 Stellen ohne Nachkommastellen vorgesehen.
+                      </p>
+                      <form>
+                        <input type="text" id="uBPrev" size="4" pattern="^\d?\d?\d?\d"> &le; Prävalenz &le;
+                        <input type="text" id="oBPrev" size="4" pattern="^\d?\d?\d?\d">
+                        <button id="btnPrevBounds" class="btn btn-secondary btn-sm" type="button" onclick="showByData(svgGraphs[konstruktionTab],Prävalenz)">
+                          anzeigen</button>
+                      </form>
+                      <p>
+                        Tipp: In dieser Rezeptsammlung ist der größte Prävalenzwert <span id="maxPrev"></span>%. Für die
+                        Prävalenz bitte einen Prozentwert ohne Prozentzeichen eingeben.
+                      </p>
+                      <form>
+                        <input type="text" id="uBNeigh" size="4" pattern="^\d?\d?\d?\d"> &le; Anz. Nachbarn &le;
+                        <input type="text" id="oBNeigh" size="4" pattern="^\d?\d?\d?\d">
+                        <button id="btnNeighBounds" class="btn btn-secondary btn-sm" type="button" onclick="showByData(svgGraphs[konstruktionTab],Nachbarn)">anzeigen</button>
+                      </form>
+                      <p>
+                        Tipp: In dieser Rezeptsammlung tauchen Nachbar-Anzahlen zwischen 2 und <span id="maxNeigh"></span> auf.
+                      </p>
+                      <form>
+                        <input type="text" id="uBDegr" size="4" pattern="^\d?\d?\d?\d"> &le; Knotengrad &le;
+                        <input type="text" id="oBDegr" size="4" pattern="^\d?\d?\d?\d">
+                        <button id="btnDegrBounds" class="btn btn-secondary btn-sm" type="button" onclick="showByData(svgGraphs[konstruktionTab],Knotengrad)">anzeigen</button>
+                      </form>
+                      <p>
+                        Tipp: In dieser Rezeptsammlung tauchen Knotengrade zwischen 2 und <span id="maxDegr"></span> auf.
+                      </p>
+                      <form>
+                        <input type="text" id="uBBetw" size="4" pattern="^\d?\d?\d?\d"> &le; <i>betweenness</i> &le;
+                        <input type="text" id="oBBetw" size="4" pattern="^\d?\d?\d?\d">
+                        <button id="btnBetwBounds" class="btn btn-secondary btn-sm" type="button" onclick="showByData(svgGraphs[konstruktionTab],Betweenness)">anzeigen</button>
+                      </form>
+                      <p>
+                        Tipp: In dieser Rezeptsammlung tauchen <i>betweenness</i>-Werte zwischen 0 und <span class="maxBetw"></span>
+                        auf.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Deskriptive Statistik //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="diagramHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#diagramBody" aria-expanded="false" aria-controls="diagramBody">
+                    Deskriptive Statistik</a>
+                </h6>
+              </div>
+              <div id="diagramBody" class="collapse" role="tabpanel" aria-labelledby="diagramHeader" data-parent="#accordion">
+                <div class="card-body p-0">
+                  <ul class="nav nav-tabs" id="statisticsTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="factSheetTab" data-toggle="tab" href="#factsheetBody" role="tab"
+                         aria-controls="figures" aria-selected="true">Kennzahlen</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="iNodesTab" data-toggle="tab" href="#iNodesStatBody" role="tab"
+                         aria-controls="iNodes" aria-selected="true">Zutatenknoten</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="iRelationsTab" data-toggle="tab" href="#iRelStatBody" role="tab"
+                         aria-controls="iRelations" aria-selected="true">Zutatenbeziehungen</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="statisticsTabContent">
+                    <!-- Kennzahlen //-->
+                    <div class="tab-pane p-3 fade show active" id="factsheetBody" role="tabpanel" aria-labelledby="home-tab">
+                      <form style="margin: 2em">
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer"  alt="bars"
+                               onclick="flyInFacts('factSheet')" />
+                          <span class="ml-2">Kennzahlen für <span class="font-italic rcpColl"></span></span>
+                        </p>
+                      </form>
+                    </div>
+                    <!-- Zutatenknoten-Statistik //-->
+                    <div class="tab-pane p-3 fade" id="iNodesStatBody" role="tabpanel" aria-labelledby="home-tab">
+                      <form style="margin: 2em">
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInBar('prevChartArea','barChartPrev', Prävalenz)" />
+                          <span class="ml-2">Zutaten-Prävalenz</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInBar('neighChartArea','barChartNeigh', Nachbarn)" />
+                          <span class="ml-2">Anz. Nachbarn der Zutatenknoten</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInBar('degrChartArea','barChartDegr', Knotengrad)" />
+                          <span class="ml-2">Grad der Zutatenknoten</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInBar('betweenChartArea','barChartBetween', Betweenness)" />
+                          <span class="ml-2">Betweenness der Zutatenknoten</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInScatter('scatterChartArea','scatterMatrix')" />
+                          <span class="ml-2">Parameterabhängigkeiten</span>
+                        </p>
+                      </form>
+                    </div>
+                    <!-- Zutatenbeziehungen-Statistik -->
+                    <div class="tab-pane p-3 fade" id="iRelStatBody" role="tabpanel" aria-labelledby="home-tab">
+                      <form style="margin: 2em">
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInMultipleEdges ('multipleEdgesChartArea','barChartMultipleEdges')" />
+                          <span class="ml-2">Mehrfach-Zutatenbeziehungen
+                            <br>(die ersten 200)</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInMultipleEdgesHeatmap ('heatmapChartArea','heatmapMultipleEdges')" />
+                          <span class="ml-2">Bubblediagramm Mehrfach-Zutatenbeziehungen</span>
+                        </p>
+                        <p>
+                          <img src="img/icons/tile-rcp-text.png" style="cursor: pointer" alt="bars"
+                               onclick="flyInHistogram('multipleEdgesHistoArea',
+                       'histoMultipleEdges','undefined', 'wt')" />
+                          <span class="ml-2">Histogramm Mehrfach-Zutatenbeziehungen</span>
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Kulinarische Interpretation //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="interpretationHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#interpretationBody" aria-expanded="false" aria-controls="interpretationBody">
+                    Kulinarische Interpretation</a>
+                </h6>
+              </div>
+              <div id="interpretationBody" class="collapse" role="tabpanel" aria-labelledby="interpretationHeader" data-parent="#accordion">
+                <!--<div class="card-body">
+
+                </div>-->
+              </div>
+            </div>
+            <!-- Community detection //-->
+            <div class="card">
+              <div class="card-header" role="tab" id="comDectHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#comDectBody" aria-expanded="false"
+                     aria-controls="comDectBody">Community Detection</a>
+                </h6>
+              </div>
+              <div id="comDectBody" class="collapse" role="tabpanel" aria-labelledby="comDectHeader" data-parent="#accordion">
+                <div class="card-body">
+                  <p>
+                    Zunächst gibt es hier nur die Berechnung der <i>clustering coefficients</i> der Zutaten.
+                  </p>
+                  <button id="btnCC" class="btn-light btn-sm" type="button" onclick="clustCoeff();">
+                    Clustering Coefficients</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- list of selected recipes //-->
+          <div id="rcpByIgtList" class="list-group list-group-flush mt-4 mb-4"></div>
+          <!-- link to index page //-->
+          <a href="index.html" class="text-decoration-none">
+            <div id="foot" class="bg-frBlue p-1 mt-2">
+              <p class="text-white display-4">&larr;</p>
+            </div>
+          </a>
+        </div>
+        <!-- ------------------------------------------//-->
+        <!-- columns for svg graphs                    //-->
+        <!-- ------------------------------------------//-->
+        <div id="svgDIV" class="col-xl-9 shadow bg-white" style="position: relative">
+          <h6><span class="font-italic rcpColl"></span>
+            <br />&copy; fruschtique graphLab</h6>
+          <svg id="graphSpace01"></svg>
+        </div>
+        <!-- ------------------------------------------//-->
+        <!-- out-of-flow spaces for diagrams and other //-->
+        <!-- ------------------------------------------//-->
+        <!-- fact sheet //-->
+        <div id="factSheet" class="chartArea col-xl-6 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <h6>Kennzahlen für die Rezeptsammlung <span class="font-italic rcpColl"></span>
+              <br />&copy; fruschtique graphLab</h6>
+            <div onclick="flyOut('factSheet')" style="z-index: 2010; font-size: 1.8em" class="tr tout">&times;</div>
+          </div>
+          <div>
+            <table class="mt-5 mb-5 table-sm table-striped">
+              <tbody>
+                <tr class="mt-3">
+                  <td>Anzahl Rezepte</td>
+                  <td id="ctRecipes" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Anzahl Zutaten</td>
+                  <td id="ctIngredients" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Mittlere Anzahl Zutaten pro Rezept</td>
+                  <td id="avgNumberIngredientsPerRecipe" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Anzahl Kanten</td>
+                  <td id="ctEdges" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td class="pl-3">davon: Mehrfachkanten</td>
+                  <td id="ctMultiEdges" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Anzahl voneinander verschiedener Kanten</td>
+                  <td id="ctDistinctEdges" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td class="pl-3">davon: Mehrfachkanten</td>
+                  <td id="ctDistinctMultiEdges" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>mittlere Anz. Nachbarn</td>
+                  <td id="avgCountNeighbors" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>mittlere Anz. voneinander verschiedener Nachbarn</td>
+                  <td id="avgCountDistinctNeighbors" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Graphdichte (voneinander verschiedene Kanten)</td>
+                  <td id="density" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Zutatenentropie</td>
+                  <td id="entropy" class="text-right pl-5"></td>
+                </tr>
+                <tr class="mt-3">
+                  <td>Anzahl Graph-Komponenten</td>
+                  <td id="ctComponents" class="text-right pl-5"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- diagram space for prevalence diagram //-->
+        <div id="prevChartArea" class="chartArea col-xl-7 stretchRight tr shadow mb-5 p-0 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex" class="p-3">
+            <h6><span class="font-italic rcpColl"></span> Zutatenprävalenz
+              <br/>&copy; fruschtique graphLab</h6>
+            <button id="btnPrev" class="btn-light btn-sm m-4" type="button" onclick="toggleBtn(Prävalenz)">
+              Nach Namen sortieren</button>
+            <button class="btn-light btn-sm m-4" type="button"
+                    onclick="flyInHistogram('prevChartArea', 'histoPrev', 'barChartPrev', 'pv')">Histogramm</button>
+            <div onclick="flyOut('prevChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div style="position: relative">
+            <div id="barChartPrev" class="shadow"
+                 style="min-width: 100%; min-height: 3600px; position: absolute; top: 0px; left: 0px;"></div>
+            <div id="histoPrev" class="shadow"
+                 style="min-width: 100%; min-height: 1000px;  position: absolute; top: 0px; left: 0px;"></div>
+          </div>
+        </div>
+        <!-- diagram space for neighbor count diagram //-->
+        <div id="neighChartArea" class="chartArea col-xl-7 stretchRight tr shadow mb-5 p-0 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex" class="p-3">
+            <h6><span class="font-italic rcpColl"></span> Anzahl Nachbarn Zutatenknoten
+              <br/>&copy; fruschtique graphLab</h6>
+            <button id="btnNeigh" class="btn-light btn-sm m-4" type="button" onclick="toggleBtn(Nachbarn)">
+              Nach Namen sortieren</button>
+            <button class="btn-light btn-sm m-4" type="button"
+                    onclick="flyInHistogram('neighChartArea', 'histoNeigh', 'barChartNeigh', 'ng')">Histogramm</button>
+            <div onclick="flyOut('neighChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div style="position: relative">
+            <div id="barChartNeigh" class="shadow"
+                 style="min-width: 100%; min-height: 3600px; position: absolute; top: 0; left: 0;"></div>
+            <div id="histoNeigh" class="shadow"
+                 style="min-width: 100%; min-height: 1000px; position: absolute; top: 0; left: 0;"></div>
+          </div>
+        </div>
+        <!-- diagram space for degree diagram //-->
+        <div id="degrChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-0 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex" class="p-3">
+            <h6><span class="font-italic rcpColl"></span> Knotengrad Zutatenknoten
+              <br/>&copy; fruschtique graphLab</h6>
+            <button id="btnDegr" class="btn-light btn-sm m-4" type="button" onclick="toggleBtn(Knotengrad)">
+              Nach Namen sortieren</button>
+            <button class="btn-light btn-sm m-4" type="button"
+                    onclick="flyInHistogram('degrChartArea', 'histoDegr', 'barChartDegr', 'dg')">Histogramm</button>
+            <div onclick="flyOut('degrChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div style="position: relative">
+            <div id="barChartDegr" class="shadow"
+                 style="min-width: 100%; min-height: 3600px; position: absolute; top: 0; left: 0;"></div>
+            <div id="histoDegr" class="shadow"
+                 style="min-width: 100%; min-height: 1000px; position: absolute; top: 0; left: 0;"></div>
+          </div>
+        </div>
+        <!-- diagram space for betweenness diagram //-->
+        <div id="betweenChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-0 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex" class="p-3">
+            <h6><span class="font-italic rcpColl"></span> Betweenness Zutatenknoten
+              <br/>&copy; fruschtique graphLab</h6>
+            <button id="btnBetw" class="btn-light btn-sm m-4" type="button" onclick="toggleBtn(Betweenness)">
+              Nach Namen sortieren</button>
+            <button class="btn-light btn-sm m-4" type="button"
+                    onclick="flyInHistogram('betweenChartArea', 'histoBetween', 'barChartBetween', 'bt')">Histogramm</button>
+            <div onclick="flyOut('betweenChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div style="position: relative">
+            <div id="barChartBetween" class="shadow"
+                 style="min-width: 100%; min-height: 3600px; position: absolute; top: 0; left: 0;"></div>
+            <div id="histoBetween" class="shadow"
+                 style="min-width: 100%; min-height: 1000px; position: absolute; top: 0; left: 0;"></div>
+          </div>
+        </div>
+        <!-- diagram space for scatter plot matrix //-->
+        <div id="scatterChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Scatterplot Matrix<br />&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('scatterChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="scatterMatrix" style="min-width: 100%; min-height: 1000px"></div>
+        </div>
+        <!-- diagram space for multiple edges bar chart //-->
+        <div id="multipleEdgesChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Mehrfachkanten
+              <br/>&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('multipleEdgesChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="barChartMultipleEdges" style="min-width: 100%; min-height: 3600px"></div>
+        </div>
+        <!-- diagram space for multiple edges bubble diagram //-->
+        <div id="heatmapChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Mehrfachkanten Bubblediagramm
+              <br/>&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('heatmapChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="heatmapMultipleEdges" style="min-width: 100%; min-height: 1000px"></div>
+        </div>
+        <!-- diagram space for multiple edges histogram //-->
+        <div id="multipleEdgesHistoArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Mehrfachkanten-Histogramm
+              <br/>&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('multipleEdgesHistoArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="histoMultipleEdges" style="min-width: 100%; min-height: 1000px"></div>
+        </div>
+        <!-- diagram space for shared ingredients diagram //-->
+        <div id="siChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex" class="p-3">
+            <h6><span class="font-italic rcpColl"></span> Shared Ingredients
+              <br/>&copy; fruschtique graphLab</h6>
+            <button id="btnSISortNames" class="btn-light btn-sm m-4" type="button" onclick="visuESDataSort('barChartSharedIngredients',
+             nam, excl, 1)">Nach Namen sortieren</button>
+            <button id="btnSISortAbs" class="btn-light btn-sm m-4" type="button" onclick="visuESDataSort('barChartSharedIngredients',
+             excl, shared, -1)">Nach excl. Ingdt. sortieren</button>
+            <button id="btnSISortRel" class="btn-light btn-sm m-4" type="button" onclick="visuESDataSort('barChartSharedIngredients',
+             shared, excl, -1)">Nach shared Ingdt. sortieren</button>
+            <div onclick="flyOut('siChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="barChartSharedIngredients" style="min-width: 100%; min-height: 3600px"></div>
+        </div>
+        <!-- diagram space for distributions //-->
+        <div id="distChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Histogramm SI-Zahlen
+              <br />&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('distChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="histoSI" style="min-width: 100%; min-height: 1000px"></div>
+        </div>
+        <!-- diagram space for Lorenz curve //-->
+        <div id="LorenzCurveIngredientsArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Lorenz-Kurven<br />&copy; fruschtique graphLab</p>
+            <div onclick="flyOut('LorenzCurveIngredientsArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="lineChartLorenzCurveIngredients" style="min-width: 100%; max-height: 600px"></div>
+        </div>
+        <!-- diagram space for clustering coefficients diagram //-->
+        <div id="clCoChartArea" class="chartArea col-xl-7 stretchRight tr shadow p-3 mb-5 bg-white rounded" style="visibility: hidden">
+          <div style="display: flex">
+            <p class="m-2"><span class="font-italic rcpColl"></span> Clustering Coefficients gewichteter Zutatengraph<br/>
+              &copy; fruschtique graphLab</p>
+            <div onclick="flyOut('clCoChartArea')" style="z-index: 2010; font-size: 1.8em" class="tr">&times;</div>
+          </div>
+          <div id="barChartClusteringCoefficients" style="min-width: 100%; min-height: 2400px"></div>
+        </div>
+      </div>
+    </main>
+    <datalist id="rcpNames"></datalist>
+    <datalist id="igtNames"></datalist>
+    <!-- diagrams //-->
+    <script src="js/vendor/plotly-latest.min.js"></script>
+    <!-- jsnx //-->
+    <script src="js/vendor/jsnetworkx.js"></script>
+    <!-- svg //-->
+    <script src="js/vendor/snap.svg-min.js"></script>
+    <!-- statistics //-->
+    <script src="https://unpkg.com/simple-statistics@7.1.0/dist/simple-statistics.min.js"></script>
+    <!-- bootstrap and jQuery //-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- My scripts //-->
+    <script src="js/showMaster.js"></script>
+  </body>
+</html>

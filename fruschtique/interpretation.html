@@ -1,0 +1,135 @@
+<div class="card-body">
+  <ul class="nav nav-tabs" id="interpretationsList" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="interByIngredient" data-toggle="tab" href="#byIngredients" role="tab"
+         aria-controls="interByIngredient" aria-selected="true">Zutaten</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="interByRecipe" data-toggle="tab" href="#byRecipes" role="tab"
+         aria-controls="interByRecipe" aria-selected="false" onclick="createEStable()">SI-Zahl</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="interLorenz" data-toggle="tab" href="#byLorenz" role="tab"
+         aria-controls="interMethod" aria-selected="true"
+         onclick="flyInLorenz('LorenzCurveIngredientsArea','lineChartLorenzCurveIngredients')">Lorenz-Kurve</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="interpretations">
+    <!-- Zutaten -->
+    <div class="tab-pane p-3 fade show active" id="byIngredients" role="tabpanel"
+         aria-labelledby="ingredients-tab">
+      <p>In der Rezeptsammlung <span class="rcpColl font-italic"></span> setzen sich die <b>big five</b> wie
+        folgt zusammen: </p>
+      <ol>
+        <li>Verwende ich die Prävalenz-Werte, dann sind Zwiebel, Knoblauch, Chili, Ei und Brühe die <span
+          class="spanBtn" onclick="showBigFive(Prävalenz)">
+                          <i>big five<sub>P</sub></i></span>.</li>
+        <li>Wenn man die Anzahl der Nachbarn benutzt, um die <span class="spanBtn"
+                                                                   onclick="showBigFive(Nachbarn)">
+                          <i>big five<sub>N</sub></i></span> zu ermitteln, zeigen sich die selben fünf Zutaten.</li>
+        <li>Wenn man den Knotengrad benutzt, um die <span class="spanBtn"
+                                                          onclick="showBigFive(Knotengrad)">
+                          <i>big five<sub>D</sub></i></span> zu ermitteln, zeigen sich wieder die selben fünf Zutaten.</li>
+        <li>Wenn man schließlich den <i>betweenness</i>-Wert benutzt, um die <span class="spanBtn"
+                                                                                   onclick="showBigFive(Betweenness)">
+                          <i>big five<sub>B</sub></i></span> zu ermitteln, zeigen sich wieder die selben fünf Zutaten.</li>
+
+      </ol>
+      <p>Mittelerde wird von den <span class="spanBtn" onclick="showMittelerde()">hier</span> gezeigten
+        Zutaten gebildet. Immerhin gehören <span id="cntMiddle"></span> Zutaten in diese Klasse.</p>
+      <p>Die Nullknoten sind die <span class="spanBtn" onclick="showNullknoten()">hier</span> gezeigten
+        Zutaten. Immerhin gehören <span id="cntZero"></span> Zutaten in diese Klasse. Die Nullknoten sind über 14 von insgesamt
+        16 Zutatenklassen verteilt. Es gibt 0,625 Nullknoten je Mittelerde-Knoten.
+      </p>
+      <p>Wie gesagt, finde ich Rezepte mit spezielleren Zutaten besonders interessant. Will sagen,
+        ich favorisiere Rezepte, die mindestens eine Zutat aus der Menge der Nullknoten haben. Ein
+        Beispiel: Eine gute
+        Tomatensauce kocht man mit <span class="spanBtn" onclick="showIngredient('tomate',
+                        svgGraphs[konstruktionTab])">Tomaten</span> in der einen oder anderen
+        Form, dazu kommen bestimmt einige von den <i>big five</i> und dann vielleicht noch einige Kollegen von
+        "Mittelerde", z.B. <span class="text-primary pointer" onclick="showIngredient('oregano', svgGraphs[konstruktionTab])">Oregano</span>
+        (<i>betweenness</i>=<span id="oreganoBetw"></span>), <span class="text-primary pointer"
+                                                                   onclick="showIngredient('rosmarin',
+                        svgGraphs[konstruktionTab])">Rosmarin</span>
+        (<i>betweenness</i>=<span id="rosmarinBetw"></span>) und/oder <span class="text-primary pointer"
+                                                                            onclick="showIngredient('thymian',
+                        svgGraphs[konstruktionTab])">Thymian</span> (<i>betweenness
+        </i>=<span id="thymianBetw"></span>). Wirklich: keine schlechte Sauce!</p>
+      <p>
+        Aber es fehlt ihr das gewisse Extra.
+        Und das bringen die "Nullknoten". Zu einer ganz besonderen Tomatensauce wird diese <span
+        class="text-primary pointer" onclick="showRecipeByName(svgGraphs[konstruktionTab],'Tomatensauce')">Tomatensauce</span>
+        erst mit
+        einigen Spänen von der <span class="text-primary pointer" onclick="showIngredient('tonkabohne', svgGraphs[konstruktionTab])">Tonkabohne</span> &ndash;
+        und die hat einen <i>betweenness</i>-Wert von Null. Weil sie nur in genau einem Rezept auftaucht. </p>
+      <p>
+        Betrachten wir nun die Frage, welche kulinarische Aussage der Grad eines Zutatenknotens im Zutatengraphen
+        hat bzw. haben kann.</p>
+      <p>
+        Es gibt Zutaten, die mit vielen anderen Zutaten zusammen auftreten, und es gibt Zutaten, die sehr
+        wählerisch sind. Die <span class="text-primary pointer" onclick="showIngredient('zwiebel', svgGraphs[konstruktionTab])">Zwiebel</span>
+        z.B. wird vielfältig kombiniert: Sie hat <span id="zwiebelNeigh"></span> Nachbarn. Im Gegensatz dazu steht die
+        scheue
+        <span class="text-primary pointer" onclick="showIngredient('nelken', svgGraphs[konstruktionTab])">Gewürznelke</span>:
+        Sie hat nur <span id="nelkenNeigh"></span> Nachbarn.</p>
+      <p>
+        Eine erste Annahme könnte sein: Die Zwiebel ist eine "Allerweltszutat", da sie eine so hohe Anzahl von
+        Nachbarn hat, und die Gewürznelke ist etwas ganz Besonderes.</p>
+      <p>
+        Ein genauerer Blick stellt die oben getroffene Annahme jedoch in
+        Frage. Der <span class="text-primary pointer"
+                         onclick="showIngredient('lorbeer', svgGraphs[konstruktionTab])">Lorbeer</span> z.B. hat
+        immerhin <span id="lorbeerNeigh"></span> Nachbarn. Ist der Lorbeer wegen seiner hohen
+        Anzahl von Nachbarn fast so etwas wie eine Allerweltszutat? Dagegen spricht, dass der Lorbeer nur in
+        wenigen Rezepten auftaucht; er hat eine Prävalenz von <span id="lorbeerPrev"></span>%. Die
+        Zwiebel dagegen hat eine Prävalenz von sage und schreibe <span id="zwiebelPrev"></span>%!
+        Die hohe Anzahl der Nachbarn des Lorbeer erklärt sich durch die Tatsache, dass unter den 8 Rezepten mit Lorbeer
+        eines ist, das sehr viele Zutaten hat, hier das Rezept für die <span
+        class="text-primary pointer"
+        onclick="showRecipeByName(svgGraphs[konstruktionTab],'Kohlsuppe asiatisch')">Kohlsuppe
+                        asiatisch</span>. Dieses Rezept hat <span id="kohlsuppeAnzZutaten"></span> Zutaten, also
+        mehr als doppelt so viele wie die mittlere Anzahl von Zutaten pro Rezept. Will sagen: <span
+        id="kohlsuppeAnzZutaten1"></span> von den <span id="lorbeerNeigh1"></span>
+        Nachbarn des Lorbeer werden allein von der Kohlsuppe beigesteuert.</p>
+      <p>
+        Um eine Zutat als Allerweltszutat zu klassifizieren, reicht es also nicht aus,
+        nur die Anzahl ihrer Nachbarn zu betrachten. Es führt eher zum Ziel, auch ihre Prävalenz anzuschauen.
+        Dabei zeigt sich aber, Prävalenz und Anzahl der Nachbarn nicht immer miteinander korreliert
+        zu sein scheinen.</p>
+    </div>
+    <!-- SI-Zahl //-->
+    <div class="tab-pane p-3 fade show" id="byRecipes" role="tabpanel" aria-labelledby="recipes-tab">
+      <p>
+        Bei Click auf den Kopf "Zutaten" zeigen wir in einem Balkendiagramm, wieviele exklusive und wieviele gemeinsame
+        Zutaten die in der Sammlung befindlichen Rezepte haben.</p>
+      <p>
+        Bei Click auf den Knopf "SI gewichtet" zeigen wir in einem Balkendiagramm die Anzahl der
+        exklusiven Zutaten und die gewichtete Anzahl der gemeinsamen Zutaten je Rezept; als Gewicht dient die
+        Auftretenshäufigkeit der gemeinsamen Zutaten.</p>
+      <p>
+        Schließlich wird bei Click auf den Knopf "Histogramm" ein Histogramm für Anzahl der gemeinsamen Zutaten je Rezept
+        gezeigt.</p>
+      <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SI')">Zutaten</button>
+      <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SIwei')">SI gewichtet</button>
+      <button class="btn-light btn-sm" type="button" onclick="flyInHistogram('distChartArea',
+                       'histoSI','undefined', 'si')">Histogramm SI-Zahlen</button>
+    </div>
+    <!-- Lorenz-Kurve und Gini-Koeffizient //-->
+    <div class="tab-pane p-3 fade show" id="byLorenz" role="tabpanel" aria-labelledby="Lorenz-tab">
+      <p>Man sieht die Lorenz-Kurven für die Zutaten und für die Zutatenbeziehungen. Die zugehörigen
+        Gini-Koeffizienten haben die folgenden Werte:</p>
+      <table>
+        <tr>
+          <td>Gini-Koeffizient für die Zutaten</td>
+          <td  style="padding-left: 1em" id="GiniZutaten"><td>
+        </tr>
+        <tr>
+          <td>Gini-Koeffizient für die Zutatenbeziehungen</td>
+          <td style="padding-left: 1em" id="GiniBeziehungen"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

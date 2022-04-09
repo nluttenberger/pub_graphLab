@@ -1,0 +1,31 @@
+<div class="card-body">
+  <p>Warum eine Rezeptsammlung mit dem Stichwort "Pensionsfrucht"? Also einem Stichwort, das eine Frucht bezeichnet, die es
+    so gar nicht gibt. (Man könnte natürlich sagen, dass auch im Zustand der Pension noch Früchte wachsen, insbesondere
+    geistige, und zum Beispiel auf diese Website verweisen. Aber das ist hier nicht gemeint. Vielmehr ist das Wort
+    "Pensionsfrucht" in einem Gespräch entstanden, in dem es um "Passionsfrucht" ging. Also ein netter Versprecher.)</p>
+  <p>Zunächst habe ich tatsächlich bei Chefkoch das Suchwort "Passionsfrucht" eingegeben. Und wurde mit 670 Treffern belohnt.
+    Beim genaueren Hinsehen stellte sich jedoch heraus, dass sich die allermeisten der gefundenen Rezepte nicht mit der
+    Passionsfrucht beschäftigen, sondern mit "Maracuja". Das ist eine Frucht, mit der man die Passionsfrucht gut substituieren
+    kann, die aber doch nicht dieselbe ist wie die Passionsfrucht, siehe
+    <a href="https://de.wikipedia.org/wiki/Passiflora_edulis" target="_blank">hier</a>. Chefkoch hat offensichtlich zu
+    bestimmten Zutaten ein Zusatzverzeichnis, in dem Zutaten angegeben werden, die aus kulinarischer Sicht als Ersatz
+    dienen können. Bei der Suche mit dem von der Benutzerin eingegebnen Suchwort wird auch dieses Verzeichnis
+    (sofern vorhanden) konsultiert. Wir nennen dieses Verzeichnis hier "Substitutionsregister".</p>
+  <p>Ich hätte nun aus den 670 angezeigten Rezepten alle diejenigen entfernen können, die sich nur mit Maracuja, aber nicht
+    mit Passionsfrucht beschäftigen. Was für eine Arbeit!</p>
+  <p>Es gibt einen anderen Weg, der leichter zum Ziel führt. Wie man bei der Beschreibung der Rezeptsammlung ckMaronensuppe
+    sehen kann, schließt Chefkoch in das Suchergebnis auch solche Begriffe ein, die eine Levenshtein-Distanz von 2 zu dem
+    Suchwort haben, das die Benutzerin eingegeben hat. "Pensionsfrucht" hat eine Levenshtein-Distanz von 2 zu
+    "Passionsfrucht". Also werden mit dem Suchwort "Pensionsfrucht" alle Rezepte gefunden, die sich mit der Passionsfrucht
+    beschäftigen. Und das Schöne ist, dass es zu "Pensionsfrucht" keinen anderen Begriff als "Passionsfrucht" gibt, der eine
+    Levenshtein-Distanz von 2 zur Pensionsfrucht hat. Zusätzlich gilt, dass Chefkoch bei der Suche mit dem errechneten
+    Begriff nicht das Substitutionsregister konsultiert, das möglicherweise zum errechneten Begriff gehört. </p>
+  <p>Das Ergebnis: Die Rezeptsammlung für den Graphen <span class="font-italic rcpColl"></span> enthält 98 von den insgesamt
+    119 Rezepten, die von der Plattform <a href="chefkoch.de" target="_blank">chefkoch.de</a> nach Eingabe des Suchworts
+    "Pensionsfrucht" aufgelistet werden. Aus der Ergebnisliste wurden manuell diejenigen Rezepte entfernt, </p>
+    <ul>
+      <li>die nur "Passionsfrucht-Essig" verwenden, aber keine Passionsfrüchte;</li>
+      <li>die "Passionsfrucht" nur im Rezeptnamen haben, aber nicht in der Zutatenliste.</li>
+    </ul>
+  <p>Die Rezepte wurden am 10.9.2021 abgerufen.</p>
+</div>

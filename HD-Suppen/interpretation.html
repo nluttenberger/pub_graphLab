@@ -1,0 +1,88 @@
+    <div class="card-body">
+      <ul class="nav nav-tabs" id="interpretationsList" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="interByIngredient" data-toggle="tab" href="#byIngredients" role="tab"
+             aria-controls="interByIngredient" aria-selected="true">Zutaten</a></li>
+        <li class="nav-item">
+          <a class="nav-link" id="interByRecipe" data-toggle="tab" href="#byRecipes" role="tab"
+             aria-controls="interByRecipe" aria-selected="false" onclick="createEStable()">SI-Zahl</a></li>
+        <li class="nav-item">
+          <a class="nav-link" id="interLorenz" data-toggle="tab" href="#byLorenz" role="tab"
+             aria-controls="interMethod" aria-selected="true"
+             onclick="flyInLorenz('LorenzCurveIngredientsArea','lineChartLorenzCurveIngredients')">Lorenz-Kurve</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="interpretations">
+        <!-- Zutaten -->
+        <div class="tab-pane p-3 fade show active" id="byIngredients" role="tabpanel"
+             aria-labelledby="ingredients-tab">
+          <p>In der Rezeptsammlung <span class="rcpColl font-italic"></span> setzen sich die <b>big five</b> wie
+            folgt zusammen: </p>
+          <ol>
+            <li>Verwende ich die Prävalenz-Werte, dann sind Zucker, Ei, Zimt, Butter und Brot die <span
+              class="spanBtn" onclick="showNodesBetwBounds (svgGraphs[konstruktionTab],2,35,5000)">
+                          <i>big five<sub>P</sub></i></span>.</li>
+            <li>Verwende ich die Werte für die Anzahl der Nachbarn, sind Ei, Butter, Weizenmehl, Brot und Zitrone
+              die <span class="spanBtn" onclick="showNodesBetwBounds (svgGraphs[konstruktionTab],3,60,5000)"><i>big
+                          five<sub>N</sub></i></span>. Dies sind die gleichen Zutaten wie bei den
+              <i>big five<sub>B</sub></i>.</li>
+            <li>Verwende ich den Knotengrad, dann sind Ei, Butter, Weizenmehl, Zucker und Brot die <span
+              class="spanBtn" onclick="showNodesBetwBounds (svgGraphs[konstruktionTab],4,267,5000)"><i>big
+                          five<sub>D</sub></i></span>.</li>
+            <li>Verwende ich die <i>betweenness</i>-Werte, dann sind Ei, Butter, Weizenmehl, Brot und Zitrone die
+              <span class="spanBtn" onclick="showNodesBetwBounds (svgGraphs[konstruktionTab],5,380,5000)"><i>big
+                          five<sub>B</sub></i></span>.</li>
+          </ol>
+          <p>Mittelerde wird von den <span class="spanBtn" onclick="showMittelerde()">hier</span> gezeigten
+            Zutaten gebildet. Immerhin gehören <span id="cntMiddle"></span> Zutaten in diese Klasse.</p>
+          <p>Die Nullknoten  sind die <span class="spanBtn" onclick="showNullknoten()">hier</span> gezeigten
+            Zutaten. Immerhin gehören <span id="cntZero"></span> Zutaten in diese Klasse.</p>
+          <p>Wie gesagt, finde ich Rezepte mit spezielleren Zutaten besonders interessant. Will sagen,
+            ich favorisiere Rezepte, die mindestens eine Zutat aus der Menge der Nullknoten haben. Man schaue
+            sich die <span class="spanBtn"
+                           onclick="showRecipeByName(svgGraphs[konstruktionTab], 'Kerry-Suppe')">Kerry-Suppe</span>
+            an; die kommt zwar nicht ohne die Butter aus und verwendet aus Mittelerde immerhin Petersilie,
+            Fleischbrühe, Huhn, Zwiebel und Pfeffer, aber sie verwendet auch die Nullknoten
+            Tamarinde, Curcuma und Koriandersamen.</p>
+          <p>Aber vielleicht ist das ja nur meine Sichtweise; vielleicht sind ja gerade die
+            Rezepte mit den "Allerweltszutaten" die leckersten. Man schaue sich z.B. die
+            <span class="spanBtn"
+                  onclick="showRecipeByName(svgGraphs[konstruktionTab], 'Milchsuppe')">Milchsuppe</span>
+            an. Vielleicht gibt es ja Leute, die die gerne mögen &hellip;</p>
+        </div>
+        <!-- SI-Zahl //-->
+        <div class="tab-pane p-3 fade show" id="byRecipes" role="tabpanel" aria-labelledby="recipes-tab">
+          <p>
+            Bei Click auf den Kopf "Zutaten" zeigen wir in einem Balkendiagramm, wieviele exklusive und wieviele gemeinsame
+            Zutaten die in der Sammlung befindlichen Rezepte haben.</p>
+          <p>
+            Bei Click auf den Knopf "SI gewichtet" zeigen wir in einem Balkendiagramm die Anzahl der
+            exklusiven Zutaten und die gewichtete Anzahl der gemeinsamen Zutaten je Rezept; als Gewicht dient die
+            Auftretenshäufigkeit der gemeinsamen Zutaten.</p>
+          <p>
+            Schließlich wird bei Click auf den Knopf "Histogramm" ein Histogramm für Anzahl der gemeinsamen Zutaten je Rezept
+            gezeigt.</p>
+          <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SI')">Zutaten</button>
+          <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SIwei')">SI gewichtet</button>
+          <button class="btn-light btn-sm" type="button" onclick="flyInHistogram('distChartArea',
+                       'histoSI','undefined', 'si')">Histogramm SI-Zahlen</button>
+        </div>
+        <!-- Lorenz-Kurve und Gini-Koeffizient //-->
+        <div class="tab-pane p-3 fade show" id="byLorenz" role="tabpanel" aria-labelledby="Lorenz-tab">
+          <p>Man sieht die Lorenz-Kurven für die Zutaten und für die Zutatenbeziehungen. Die zugehörigen
+            Gini-Koeffizienten haben die folgenden Werte:</p>
+          <table>
+            <tr>
+              <td>Gini-Koeffizient für die Zutaten</td>
+              <td  style="padding-left: 1em" id="GiniZutaten"><td>
+            </tr>
+            <tr>
+              <td>Gini-Koeffizient für die Zutatenbeziehungen</td>
+              <td style="padding-left: 1em" id="GiniBeziehungen"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>

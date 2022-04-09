@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+  <link rel="stylesheet" href="css/svg-page-styles.css">
+  <link rel="stylesheet" href="css/ingredient-classes.css">
+  <title>Architektur und Dateninterpretation</title>
+</head>
+  <body>
+    <div id="main">
+
+      <div class="row mt-2 row-height">
+
+        <!-- side navigation columns //-->
+        <div class="col-xl-3">
+          <div id="logo" class="bg-frGrey p-3">
+            <img src="img/logos/fruschtique%20Logo%20weiß%20transparent.png" class="img-fluid" alt="fruschtique Logo"/>
+            <p class="text-right text-white">graphLab</p>
+          </div>
+          <p class="mt-4 ml-3 mr-3">Hier dokumentieren wir die graphLab-Architektur sowie Programmierung und Design
+            dieser Webseiten. Wir erläutern zusätzlich, wie das notwendige Datenmaterial erzeugt wird und wie die gewonnenen
+            Daten interpretiert werden können.</p>
+          <a href="index.html" class="text-decoration-none"><div id="foot" class="bg-frGrey p-1 mt-2">
+            <p class="text-white display-4">&larr;</p>
+          </div></a>
+        </div>
+        <!-- white space column //-->
+        <div class="col-xl-1">&nbsp;</div>
+
+        <!-- display columns //-->
+        <div id="svg" class="col-xl-7 bg-white mt-4">
+          <!-- accordion //-->
+          <div class="accordion mt-4" id="accordion" >
+
+            <!-- card for "Architektur" //-->
+            <div class="card">
+              <div class="card-header" id="architectureHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#architectureBody"
+                     aria-expanded="true" aria-controls="architectureBody">
+                    fruschtique-Architektur
+                  </a>
+                </h6>
+              </div>
+              <div id="architectureBody"  class="collapse" data-parent="#accordion" aria-labelledby="architectureHeader">
+                <div class="card-body"  style="height: 84vh">
+                    <object class="mt-4" width="100%" height="100%" type="application/pdf"
+                            data="pdf/fr%20Architecture.pdf" >
+                    </object>
+                </div>
+              </div>
+            </div>
+
+            <!-- card for "Kulinarische Interpretation" //-->
+            <div class="card">
+              <div class="card-header" id="interpretationHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#interpretationBody"
+                     aria-expanded="true" aria-controls="interpretationBody">
+                    Kulinarische Interpretation
+                  </a>
+                </h6>
+              </div>
+              <div id="interpretationBody"  class="collapse" data-parent="#accordion" aria-labelledby="interpretationHeader">
+                <div class="card-body" style="height: 84vh">
+                  <object class="mt-4" width="100%" height="100%" type="application/pdf"
+                          data="pdf/fr%20Culinary%20Interpretation.pdf" >
+                  </object>
+                </div>
+              </div>
+            </div>
+
+            <!-- card for "Historische Kochbücher" //-->
+            <div class="card">
+              <div class="card-header" id="historicHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#historicBody"
+                     aria-expanded="true" aria-controls="historicBody">
+                    Historische Kochbücher
+                  </a>
+                </h6>
+              </div>
+              <div id="historicBody"  class="collapse" data-parent="#accordion" aria-labelledby="historicHeader">
+                <div class="card-body" style="height: 84vh">
+                  <object class="mt-4" width="100%" height="100%" type="application/pdf"
+                          data="pdf/fr%20Historic%20Cookbooks.pdf" >
+                  </object>
+                </div>
+              </div>
+            </div>
+
+            <!-- card for "Linked Data format" //-->
+            <div class="card">
+              <div class="card-header" id="rdfHeader">
+                <h6 class="mb-0">
+                  <a class="collapsed text-dark no-deco" data-toggle="collapse" href="#rdfBody"
+                     aria-expanded="true" aria-controls="historicBody">
+                    Linked Data-Format für Zutatengraphen
+                  </a>
+                </h6>
+              </div>
+              <div id="rdfBody"  class="collapse" data-parent="#accordion" aria-labelledby="rdfHeader">
+                <div class="card-body" style="height: 84vh">
+                  <object class="mt-4" width="100%" height="100%" type="application/pdf"
+                          data="pdf/fr%20Linked%20Data%20Format.pdf" >
+                  </object>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- closing tag for accordion //-->
+        </div> <!-- closing tag for references list columns //-->
+
+        <!-- margin right columns //-->
+        <div class="col-xl-1">
+          <p>&nbsp;</p>
+        </div>
+
+      </div> <!-- closing tag for row //-->
+    </div> <!-- closing tag for main //-->
+
+    <!-- bootstrap and jQuery //-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>

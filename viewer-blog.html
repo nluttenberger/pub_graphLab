@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" >
+    <link rel="stylesheet" href="css/svg-page-styles.css">
+    <link rel="stylesheet" href="css/ingredient-classes.css">
+    <title>Blog</title>
+  </head>
+  <body>
+  <div id="main">
+    <!-- row //-->
+    <div class="row mt-2 row-height">
+      <!-- navigation columns-->
+      <div class="col-xl-3 left">
+        <!-- fruschtique logo //-->
+        <div id="logo" class="bg-frBlue p-3">
+          <img src="img/logos/fruschtique%20Logo%20weiß%20transparent.png" class="img-fluid" alt="fruschtique Logo"/>
+          <p class="text-right text-white">graphLab</p>
+        </div>
+          <p class="mt-4 ml-3 mr-3">"<i>Über die allmähliche Verfertigung der Gedanken beim Reden</i>" heißt ein berühmter
+            Aufsatz von Heinrich von Kleist. Man kann ihn
+              <a href="https://gutenberg.spiegel.de/buch/-589/1" target="_blank">hier</a>
+            finden. Könnte ich so brillant schreiben wie Heinrich von Kleist, würde ich gerne einen Aufsatz mit
+            dem Titel "<i>Über die allmähliche Verfertigung der Gedanken beim Bloggen</i>"
+            schreiben. Leider kann ich nicht so brillant schreiben wie Heinrich von Kleist, und deshalb ziehe ich es vor, einige
+            Gedanken, die mir bei der Verfertigung der graphLab-Seiten durch den Kopf gegangen sind, hier direkt
+            aufzuschreiben. Also keine Erörterung zum Thema "Wie ich rede, schreibe, blogge bzw. denke", sondern schlicht
+            einige Gedanken.</p>
+          <a href="index.html" class="text-decoration-none"><div id="foot" class="bg-frGrey p-1 mt-2">
+            <p class="text-white display-4">&larr;</p>
+          </div></a>
+        </div>
+
+        <!-- display columns //-->
+
+        <!-- margin left column //-->
+        <div class="col-xl-1">
+          <p>&nbsp;</p>
+        </div>
+
+        <!-- blog post columns //-->
+        <div id="svg" class="col-xl-5" >
+          <dl class="mt-4">
+            <dt class="mt-4" id="version10">2021-07-02</dt>
+            <dd class="ml-4">
+              <p>Hurra! Heute traue ich mich, die hier und jetzt vorhandene Software als <b>graphLab 1.0</b> anzukündigen! Ich
+                glaube, dass ein Zustand erreicht ist, der diese Ankündigung rechtfertigt. Ich kündige an, obwohl ich weiß,
+                dass noch manches fehlt, und obwohl ich noch eine Menge Ideen im Kopf habe.</p>
+              <p>Ich habe noch einmal nachgeschaut: Im Februar 2018 habe ich die ersten Ideen zu graphLab im Kochbuch
+                dargestellt, im Herbst 2019 war das Layout der Website im großen und ganzen klar, und jetzt im Sommer 2021
+                kann ich das Erreichte unter der Versionsnr. 1.0 zusammenfassen. Ich bin mächtig stolz auf das, was ich in
+                diesen rund 3&frac12; Jahren erreicht habe. Nebenbei habe ich ja noch gearbeitet (bis Frühjahr 2019) und ein
+                Haus gebaut.</p>
+              <p>Über die Weiterentwicklung von graphLab werde ich in einem nächsten Blogbeitrag berichten.</p>
+            </dd>
+            <dt class="mt-4" id="SI-Zahl">2020-02-25</dt>
+            <dd class="ml-4">
+              <p>
+                Unter dem Stichpunkt "Kulinarische Bewertung" gehe ich derzeit nur auf die Bedeutung einzelner Zutaten ein. Es
+                wird nun Zeit, auch die in der Rezeptsammlung enthaltenen Rezepte zu bewerten. Ich stelle mir folgendes
+                Vorgehen vor:
+              </p>
+              <ul>
+                <li>
+                  Ein Rezept wird umso besser bewertet, je weniger Zutaten verwendet werden, die auch in anderen Rezepten
+                  verwendet werden. Zutaten, die in mehreren Rezepten verwendet werden, nenne ich <i>gemeinsame Zutaten</i> oder
+                  <i>shared ingredients</i>.
+                </li>
+                <li>
+                  Zum numerischen Vergleich der Rezepte untereinander berechne ich die sog. SI-Zahl, die ein Maß für die
+                  mehrfach verwendeten Zutaten ist. Dabei gilt: Je kleiner die SI-Zahl (s.u.) ist, desto besser.
+                </li>
+                <li>
+                  Ob eine Zutat  <i>i</i> in die Menge der <i>shared ingredients</i> gehört, erkenne ich an der Prävalenz
+                  <i>prev<sub>i</sub></i> der Zutat. Gilt für eine Zutat <i>prev<sub>i</sub></i> &gt; (1/<i>#rcp</i>), dann gehört
+                  diese Zutat in die Menge der <i>shared ingredients</i>. Dabei bezeichnet <i>#rcp</i> die Anzahl der Rezepte in
+                  der jeweiligen Rezeptsammlung.
+                </li>
+                <li>
+                  Für jedes Rezept bilde ich die folgenden Varianten der SI-Zahl:
+                  <ul>
+                    <li>
+                      <strong>SI</strong>: absolute SI-Zahl: Anzahl der <i>shared ingredients</i> in der Zutatenliste des Rezepts
+                    </li>
+                    <li>
+                      <strong>SI<sub>r</sub></strong>: relative SI-Zahl: absolute SI-Zahl bezogen auf die Anzahl der Zutaten des Rezepts
+                    </li>
+                    <li>
+                      <strong>SI<sub>w</sub></strong>: gewichtete SI-Zahl: In die Berechnung der SI-Zahl geht für jede gemeinsame Zutat ihre
+                      Auftretenshäufigkeit in der Rezeptsammlung ein.
+                    </li>
+                    <li>
+                      <strong>SI<sub>rw</sub></strong>: gewichtete SI-Zahl bezogen auf die Anzahl der Zutaten des Rezepts
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </dd>
+            <dt class="mt-4">2020-02-11</dt>
+            <dd class="ml-4">
+              <p>
+                Die zuvor dargestellte Lösung 4 funktioniert zwar, aber irgendwie war es mir doch unheimlich, mit zwei
+                mathematischen Graphen operieren zu müssen. Deshalb habe ich mich der Lösung 2 zugewendet. Die
+                offline-Aufbereitung der Daten mit XSLT war kein großes Problem, und auch die beschriebene Zusammensetzung
+                des finalen Graphen aus einzelnen Cliquen hat rasch funktioniert. Ein Problem war jedoch nur schwer zu lösen:
+                die Zuordnung von Bezeichnern zu den Kanten des mathematischen Graphen. Doch dazu im übernächsten
+                Absatz.
+              </p>
+              <p>
+                Was habe ich bislang erreicht? Aus den Rezept-Daten erzeuge ich ein jsnx <code>MultiGraph</code>. Jede Kante
+                trägt einen (nicht eindeutigen) Bezeichner, der aus den beiden jeweils eindeutigen Bezeichnern der Knoten
+                zusammengebaut wird, die diese Kante verbindet. Der Kantenbezeichner wird so gebaut, dass der
+                Knotenbezeichner, der zuerst im Alphabet kommt, auch zuerst im Kantenbezeichner steht. Ein Beispiel: Die
+                Kante, die die Zutat mit dem Bezeichner <code>artischocke</code> mit der Zutat mit dem Bezeichner <code>essig
+              </code> verbindet, trägt den Bezeichner <code>artischocke--essig</code> (und nicht: <code><s>essig
+                -artischocke</s></code>). Ich nenne diese Art von Kantenbezeichnern "normierte Bezeichner". Dank der normierten
+                Kantenbezeichner ergeben sich Graph-Kennzahlen, wie sie auch vom Programm Gephi errechnet werden. Im Bild sieht
+                man einen Vergleich der Kennzahlen mit nicht-normierten und normierten Kantenbezeichnungen.
+              </p>
+              <img src="img/blog/Kennzahl-Vergleich.JPG">
+              <p>
+                Doch nun zum Problem: Zuordnung von Bezeichnern zu den Kanten des mathematischen Graphen. Leider bin ich über
+                einige Probleme im jsnx-API bzw. in der zugehörigen Dokumentation gestolpert.
+              </p>
+              <p>
+                Im jsnx-API ist nicht immer klar, was eine jsnx-Funktion ist, und was eine Graph-Funktion ist. Ein Beispiel:
+                In meinem nun mittlerweile funktionieren Code stehen die beiden folgenden Zeilen unmittelbar untereinander:
+                <table class="table table-bordered">
+              <tbody>
+              <tr>
+                <td>
+                  <code>jsnx.relabelNodes(H,mapping,false);<br>
+                    H.edges(true)</code><br>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+              <p>
+                <code>relabelNodes</code> ist eine jsnx-Funktion, in der der zu bearbeitende Graph in der Parameterliste genannt
+                wird. <code>edges</code> ist im Gegensatz dazu eine Funktion des Graphen <code>H</code>. Die Graph-Funktion
+                <code>
+                edges</code> trägt im Beispiel oben den Parameter <code>true</code>, der anzeigt, dass auch die Kanten-Attribute
+                angezeigt werden sollen. Diese Graph-Funktion wird nur in der <i>Getting started</i>-Seite erläutert; in der
+                API-Dokumentation taucht sie nicht auf.
+              </p>
+              <p>
+                Leider gibt es nun im jsnx-API nicht nur die Graph-Funktion <code>edges</code>, sondern auch eine
+                jsnx-Funktion <code>edges</code>. In der API-Dokumentation heißt es dazu: "<i>Return
+                a list of edges adjacent to nodes in nbunch. Return all edges if nbunch is unspecified or nbunch=None.</i>"
+                Meine Erwartung war, dass mir die jsnx-Funktion <code>edges</code> das gleiche Ergebnis liefert wie die
+                Graph-Funktion <code>edges</code>, wenn ich nur <code>nbunch</code> weglasse. Das war eine falsche Annahme,
+                und ich habe einen Tag gebraucht, um diesen Fehler zu finden, bzw. dieses Problem zu beheben. Nun weiß ich
+                Bescheid.
+              </p>
+              <p>
+                Weiter oben habe ich gesagt, dass aus den Rezept-Daten einen <code>MultiGraph</code> erzeuge. Nun war doch
+                gerade die Überlegung, dass ich aus einem <code>MultiGraph</code> nur schwierig die voneinander verschiedenen
+                Kanten ermitteln kann, der Ausgangspunkt zur Überlegung, den mathematischen Graphen auf andere Art und Weise
+                zu bauen. Ja &hellip; Mittlerweile ist mir die js-Funktion <code>reduce</code> untergekommen, und damit kann
+                ich auch aus einem <code>MultiGraph</code> die voneinander verschiedenen Kanten errechnen. Wer hätte das
+                gedacht?
+              </p>
+            </dd>
+            <dt class="mt-4">2020-01-28</dt>
+            <dd class="ml-4">
+              <p>
+                Hier nun eine weitere Überlegung zum Thema: Datenstrukturen für Graphen. Dieses Mal geht es
+                nur um den "mathematischen" Graphen. Für die Erzeugung dieses Graphen und für den Zugriff darauf verwende ich
+                das <a href="http://jsnetworkx.org/api/#/v/v0.3.4" target="_blank">jsnetworkx-API</a> (im folgenden: jsnx-API).
+                Um den Graphen erzeugen zu können, hole ich mir vom Server eine JSON-Datenstruktur mit Graph-Daten (Knoten
+                und Kanten des Zutatengraphen), die sich auf einfache Weise
+                in die Graph-Klasse <code>MultiGraph</code> des jsnx-API "einfüttern" lässt. MultiGraph steht für eine
+                "<i>undirected graph class that can store multiedges</i>". In der JSON-Datenstruktur sind also für die
+                Zutatenkombinationen, die in mehreren Rezepten auftauchen, mehrere gleiche Kanten gespeichert. Das funktioniert.
+                Aber &hellip;
+              </p>
+              <p>
+                Bei der Berechnung der Graph-Kennzahlen ist mir aufgefallen, dass es nur mit sehr großem Aufwand möglich
+                ist, die Mehrfach-Kanten zu entfernen. Das möchte ich tun, um darstellen zu können, wie viele
+                unterschiedliche Kanten es im Graphen gibt. Damit hätte ich ein Maß für die Anzahl unterschiedliche
+                Zutatenkombinationen, oder anders ausgedrückt: die Anzahl der voneinander verschiedenen <i>food pairings</i>.
+                Wenn ich den sehr großen Aufwand nicht treiben möchte, habe ich vier Möglichkeiten:
+              </p>
+              <p>
+              <ol>
+                <li class="mt-2">
+                  Ich erweitere die JSON-Datenstruktur um ein Datenfeld, in das ich geeignete Daten aufnehme. Diese Daten
+                  kann ich offline erzeugen. Die JSON-Datenstruktur wird dadurch größer, und die Übertragung dauert länger.
+                  Das ist aber nur ein kleines Problem. Das größere Problem entsteht, wenn Experimente durchgeführt werden,
+                  bei denen einzelne Zutaten gelöscht werden. Zur Auswertung eines Experiments muss ja die Anzahl der im
+                  Graphen verbliebenen voneinander verschiedenen <i>food pairings</i> berechnet werden. Naja, und diese Zahl
+                  kann ich dann nicht vom Server holen &hellip;
+                </li>
+                <li>
+                  Ich schreibe in meine JSON-Datenstruktur nicht wie bislang Graph-Daten, sondern Rezept-Daten, also
+                  z.B. ein Array mit Elementen aus Rezept-Namen und zugehörigen Zutatenlisten. Vorteil: Ich habe alle
+                  Rezeptinformationen im Browser zur Verfügung und kann damit zusätzlich z.B. ein Kommando <code>
+                  showRecipe(ingredientList)</code> programmieren, mit dem ich Rezepte vollständig im svg-Graphen sichtbar mache.
+                  Kann ich aber im Browser aus den Rezept-Daten auch den mathematischen Graphen erzeugen und damit auch die
+                  Anzahl der voneinander verschiedenen <i>food pairings</i> errechnen? Eine erste Recherche hat folgendes
+                  ergeben: Im jsnx-API kann man aus einer Knotenliste einen vollständigen Graphen automatisch erzeugen.
+                  (In Wirklichkeit ist es etwas komplizierter, aber das spielt hier keine Rolle.) Ich könnte also für jedes
+                  Rezept aus der zugeordneten Zutatenliste einen vollständigen (Teil-) Graphen erzeugen (graphtheoretisch:
+                  eine Clique). Die Teilgraphen (also die Cliquen) lassen sich mit den dafür vorgesehenen jsnx-Funktionen zu
+                  einem Gesamtgraphen vereinigen. Nachteil: Die Erzeugung des mathematischen Graphen muss ich komplett
+                  neu programmieren.
+                </li>
+                <li>
+                  Bei der offline-Erzeugung der Graph-Daten schreibe ich mehrfach auftretende <i>food pairings</i> nicht als
+                  mehrfach auftretende Kanten, sondern je <i>food pairing</i> nur eine Kante. Dieser Kante verpasse ich ein
+                  Attribut <code>weight</code>, dem ein Wert zugeordnet ist, der die Auftretenshäufigkeit dieser Kante
+                  anzeigt. Im Browser erzeuge ich aus diesen Graph-Daten keinen <code>MultiGraph</code>, sondern
+                  einen (Basis-) <code>Graph</code>. Damit kann ich die Anzahl der voneinander verschiedenen <i>food
+                  pairings</i>
+                  leicht errechnen. Allerdings wird es etwas komplizierter, wenn ich die Gesamtanzahl der Kanten im Graphen
+                  errechnen will.
+                </li>
+                <li>
+                  Ich erzeuge einen zweiten mathematischen Graphen, und zwar keinen MultiGraph, sondern einen
+                  Graphen der Klasse <code>Graph</code> (auch bezeichnet als "Basis-Graph"):
+                  <code>let H = new jsnx.Graph()</code>. Mit den jsnx-Funktionen <code>addNodesFrom()</code> bzw. <code>
+                  addEdgesFrom()</code> füge ich diesem Graphen Knoten und Kanten aus dem MultiGraph <code>G</code> hinzu:
+                  <code>H.addNodesFrom(G.nodes(true));</code> bzw. <code>H.addEdgesFrom(G.edges(true));</code>. Ich gehe
+                  davon aus, dass diese beiden Funktionen mehrfach auftretende Kanten schlicht nicht in den Zielgraphen
+                  übernehmen. Die API-Beschreibung sagt zumindest folgendes: "<i>There are no errors when adding nodes or
+                  edges that already exist</i>" und: "<i>Adding the same edge twice has no effect but any edge data will be
+                  updated when each duplicate edge is added</i>". Diese Lösung benötigt möglicherweise viel Speicher, aber
+                  &hellip; Speicher kostet ja nichts. Allerdings muss ich nun bei jeder Lösch- und Update-Operation zwei
+                  mathematische Graphen und den svg-Graphen in die Hand nehmen.
+                </li>
+              </ol>
+              </p>
+              <p>Also ran an die Arbeit. Ich werde zuerst die Lösung 4 ausprobieren.
+              </p>
+            </dd>
+            <dt class="mt-4">2019-10-16</dt>
+            <dd class="ml-4">Hurra! graphLab ist online! Es fehlt zwar noch ganz viel, aber immerhin ist klar, dass die
+              Netzpräsenz funktionieren wird.
+            </dd>
+            <dt class="mt-4">2019-10-07</dt>
+            <dd class="ml-4">
+              Mir ist klar geworden, dass ich "Graph" und "graphische Repräsentation des Graphen" noch
+              strikter auseinander halten muss, als ich es schon versucht habe. In der Programmierung der Experiment-Seiten,
+              bei denen diese Trennung besonders wichtig ist, wird es also ein svg-Element geben, das die graphische
+              Repräsentation übernimmt, und ein graph-Element, das die mathematische Graphstruktur enthält. Das bedeutet,
+              dass z.B. das Entfernen von Knoten in beiden Elementen durchgeführt werden muss. Lästig, aber konzeptuell richtig.
+            </dd>
+          </dl>
+        </div> <!-- closing tag for blog post columns //-->
+
+        <!-- margin right columns //-->
+        <div class="col-xl-4">
+          <p>&nbsp;</p>
+        </div>
+
+      </div> <!-- closing tag for row //-->
+    </div> <!-- closing tag for main //-->
+
+  <!-- bootstrap and jQuery //-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>

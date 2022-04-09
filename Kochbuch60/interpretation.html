@@ -1,0 +1,92 @@
+  <div class="card-body">
+    <ul class="nav nav-tabs" id="interpretationsList" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="interByIngredient" data-toggle="tab" href="#byIngredients" role="tab"
+           aria-controls="interByIngredient" aria-selected="true">Zutaten</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="interByRecipe" data-toggle="tab" href="#byRecipes" role="tab"
+           aria-controls="interByRecipe" aria-selected="false" onclick="createEStable()">SI-Zahl</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="interLorenz" data-toggle="tab" href="#byLorenz" role="tab"
+           aria-controls="interMethod" aria-selected="true"
+           onclick="flyInLorenz('LorenzCurveIngredientsArea','lineChartLorenzCurveIngredients')">Lorenz-Kurve</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="interpretations">
+      <!-- Zutaten //-->
+      <div class="tab-pane p-3 fade show active" id="byIngredients" role="tabpanel"
+           aria-labelledby="ingredients-tab">
+        <p>In der Rezeptsammlung <span class="font-italic rcpColl"></span> setzen sich die <span class="spanBtn"
+                                                                                       onclick="showBigFive(Prävalenz)"><i>big five</i></span> aus Zwiebel,
+          Weizenmehl, Lorbeer, Sahne und Ei zusammen, unabhängig davon ob man die Prävalenz, die Anzahl der
+          Nachbarn, den Knotengrap oder die <i>betweenness</i> zur Berechnung heranzieht. Auch wenn Zwiebel,
+          Weizenmehl, Lorbeer, Sahne und Ei unabhängig von der gewählten Maßzahl hier stets
+          die <i>big five</i> bilden, soll doch hervorgehoben werden, dass die Reihenfolge unterschiedlich
+          ist.</p>
+        <p>Ungewöhnlich ist ist das Auftauchen von Lorbeer unter den <i>big five</i>. Es lohnt ein Blick in
+          die Liste der 19 Rezepte (von insgesamt 83 Rezepten), die Lorbeer verwenden: immerhin 5 Fischrezepte, 3
+          Wildgerichte, 3 Rezepte mit Hase, Kaninchen bzw. Ziege und 2 Gerichte mit Innereien bzw. Blut. Diese
+          Zusammensetzung der k60-Rezeptsammlung ist sicherlich "non-standard".</p>
+        <p>Mittelerde wird von den <span class="spanBtn" onclick="showMittelerde()">hier</span> gezeigten
+          Zutaten gebildet. Immerhin gehören <span id="cntMiddle"></span> Zutaten in diese Klasse. Die wichtigsten Vertreter
+          von <span class="spanBtn" onclick="showMittelerde()">Mittelerde</span> sind Essig, Fleischbrühe, Butter, Petersilie
+          und Tomate. Auch das scheint mir ein Hinweis auf eine sehr deftige Küche zu sein.</p>
+        <p>Die Nullknoten  sind die <span class="spanBtn" onclick="showNullknoten()">hier</span> gezeigten
+          Zutaten. Immerhin gehören <span id="cntZero"></span> Zutaten in diese Klasse. Vielseitig!</p>
+        <p>Wie gesagt, finde ich Rezepte mit spezielleren Zutaten besonders interessant. Will sagen,
+          ich favorisiere Rezepte, die mindestens eine Zutat aus der Menge der Nullknoten haben. Man schaue
+          sich die <span class="spanBtn" onclick="showRecipeByName(svgGraphs[konstruktionTab],
+                        'Pizza Frutti di mare')">Pizza Frutti di Mare</span> an; die kommt ganz ohne die <i>big five</i> aus
+          und verwendet aus Mittelerde nur den Fisch.</p>
+      </div>
+      <!-- SI-Zahl //-->
+      <div class="tab-pane p-3 fade show" id="byRecipes" role="tabpanel" aria-labelledby="recipes-tab">
+        <p>
+          Bei Click auf den Kopf "Zutaten" zeigen wir in einem Balkendiagramm, wieviele exklusive und wieviele gemeinsame
+          Zutaten die in der Sammlung befindlichen Rezepte haben.</p>
+        <p>
+          Bei Click auf den Knopf "SI gewichtet" zeigen wir in einem Balkendiagramm die Anzahl der
+          exklusiven Zutaten und die gewichtete Anzahl der gemeinsamen Zutaten je Rezept; als Gewicht dient die
+          Auftretenshäufigkeit der gemeinsamen Zutaten.</p>
+        <p>
+          Schließlich wird bei Click auf den Knopf "Histogramm" ein Histogramm für Anzahl der gemeinsamen Zutaten je Rezept
+          gezeigt.</p>
+        <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SI')">Zutaten</button>
+        <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SIwei')">SI gewichtet</button>
+        <button class="btn-light btn-sm" type="button" onclick="flyInHistogram('distChartArea',
+                       'histoSI','undefined', 'si')">Histogramm SI-Zahlen</button>
+      </div>
+      <!-- Lorenz-Kurve und Gini-Koeffizient //-->
+      <div class="tab-pane p-3 fade show" id="byLorenz" role="tabpanel" aria-labelledby="Lorenz-tab">
+        <p>Man sieht die Lorenz-Kurven für die Zutaten und für die Zutatenbeziehungen. Die zugehörigen
+          Gini-Koeffizienten haben die folgenden Werte:</p>
+        <table>
+          <tr>
+            <td>Gini-Koeffizient für die Zutaten</td>
+            <td  style="padding-left: 1em" id="GiniZutaten"><td>
+          </tr>
+          <tr>
+            <td>Gini-Koeffizient für die Zutatenbeziehungen</td>
+            <td style="padding-left: 1em" id="GiniBeziehungen"></td>
+          </tr>
+        </table>
+        <p class="mt-4">Die Lorenzkurve für die Zutaten verrät, dass die "letzten" 10% der Zutaten in ca. 40% der
+          Rezepte auftauchen. Man kann das aber auch umgekehrt lesen: 90% der Zutaten verteilen sich über ca. 60%
+          der Rezepte. </p>
+        <p>Die Interpretation ist schwierig, sie gelingt nur im Vergleich zu anderen Rezeptsammlungen.
+          Bei der fruschtique-Rezeptsammlung z.B. verteilen sich "nur" etwas mehr als 54% der Zutaten
+          über 90% der Rezepte. Man könnte argumentieren, dass damit die k60-Rezeptsammlung im Vorteil
+          ist, da sich hier ein größerer Anteil der Zutaten über 90% der Rezepte verteilt.</p>
+        <p>Allerdings ist der Gini-Koeffizient für die Zutaten für die
+          fruschtique-Rezeptsammlung mit 0.587 ein wenig größer als der hier erreichte Wert, da die
+          Lorenzkurve der fruschtique-Rezeptsammlung einen etwas größeren "Bauch" hat und damit ein größere
+          Ungleichheit in der Zutatenverteilung anzeigt. Die k60-Rezeptsammlung
+          schneidet damit also etwas schlechter ab: Eine größere Ungleichheit in der Zutatenverteilung
+          signalisiert möglicherweise ein interessanteres Kochbuch. </p>
+      </div>
+    </div>
+  </div>
