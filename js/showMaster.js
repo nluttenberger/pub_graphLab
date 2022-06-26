@@ -264,7 +264,7 @@
     occ.clear();
     for (let ingredient of graph.ingredients) {
       occ.set (ingredient.id, parseInt(ingredient.occurs));
-      prev.set (ingredient.id, Math.round(100000 * ingredient.occurs / ctRecipes) / 1000);
+      prev.set (ingredient.id, Math.round(100000 * parseInt(ingredient.occurs) / ctRecipes) / 1000);
     }
     degr.clear();
     degr = jsnx.degree(G);
