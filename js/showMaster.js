@@ -453,6 +453,8 @@
   function showIngredient(ingredient, s) {
     // ingredient node click handler
     // left click: show node and its neighbours
+    fog.remove();
+    fog = null;
     fog = s.g();
     handleFog(s);
     let el = s.select('#'.concat(ingredient));
@@ -526,7 +528,6 @@
 
   function showIngredientsByPrev(prevClass, s) {
     // click handler for prevalence legend entries
-    console.log (prevClass);
     fog = s.g();
     handleFog(s);
     s.selectAll("[class='node']").forEach(function (el) {
@@ -797,7 +798,7 @@
       /*$('#graph0').detach();
       Gclone.appendTo('#graphSpace01');
       clack();*/
-      resetGraph()
+      resetGraph();
       $('#' + 'btnPrevGraph').html('Prävalenzgraph');
       btnGraph = 'p';
       } else {
