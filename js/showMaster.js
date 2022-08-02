@@ -463,14 +463,14 @@
     });
     fog.append(elClone);
     // right click: remove shown node
-    elClone.node.oncontextmenu = function (event) {
+   /* elClone.node.oncontextmenu = function (event) {
       event.preventDefault();
       fog.remove();
       fog = null;
       let elId = elCloneId.substr(0, elCloneId.indexOf('-'));
       // remove node from all svg graph instances and jsnx graph
       remove(elId, s);
-    };
+    };*/
     // append ingredient node neighbour and edge clones to fog
     let keller =[];
     s.selectAll("[class='edge']").forEach(function (el) {
@@ -697,13 +697,13 @@
         elClone.attr({"id": elCloneId});
         fog.append(elClone);
         // right click handler to remove shown node
-        elClone.node.oncontextmenu = function (event) {
+        /*elClone.node.oncontextmenu = function (event) {
           event.preventDefault();
           fog.remove();
           fog = null;
           let elId = elCloneId.substr(0, elCloneId.indexOf('-'));
           remove(elId);
-        }
+        }*/
       }
     })
   }
