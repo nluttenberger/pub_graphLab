@@ -453,8 +453,6 @@
   function showIngredient(ingredient, s) {
     // ingredient node click handler
     // left click: show node and its neighbours
-    fog.remove();
-    fog = null;
     fog = s.g();
     handleFog(s);
     let el = s.select('#'.concat(ingredient));
@@ -528,6 +526,8 @@
 
   function showIngredientsByPrev(prevClass, s) {
     // click handler for prevalence legend entries
+    fog.remove();
+    fog = null;
     fog = s.g();
     handleFog(s);
     s.selectAll("[class='node']").forEach(function (el) {
