@@ -526,8 +526,6 @@
 
   function showIngredientsByPrev(prevClass, s) {
     // click handler for prevalence legend entries
-    fog.remove();
-    fog = null;
     fog = s.g();
     handleFog(s);
     s.selectAll("[class='node']").forEach(function (el) {
