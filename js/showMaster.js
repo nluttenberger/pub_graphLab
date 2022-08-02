@@ -770,17 +770,16 @@
     svgGraphs[konstruktionTab].selectAll("g").forEach(function (node) {
       if (node.attr('class') === 'node') {
         let ndId;
+        let val;
         ndId = node.attr('id');
-        if (prev.get (ndId) <= q14 ) {
-          node.select('ellipse').attr({class : 'prev1'});
-        } else {
-          if (prev.get (ndId) <= q12 && prev.get (ndId) > q14) {
-            node.select('ellipse').attr({class : 'prev2'});
-          } else {
-            if (prev.get (ndId) <= q34 && prev.get (ndId) > q12) {
-              node.select('ellipse').attr({class : 'prev3'});
-            } else {
-              node.select('ellipse').attr({class : 'prev4'});
+        val = prev.get (ndId);
+        if (val <= q14) {
+          node.select('ellipse').attr({class : 'prev1'});} else {
+        if (val <= q12) {
+          node.select('ellipse').attr({class : 'prev2'});} else {
+        if (val <= q34) {
+          node.select('ellipse').attr({class : 'prev3'});} else {
+        node.select('ellipse').attr({class : 'prev4'});
             }
           }
         }
