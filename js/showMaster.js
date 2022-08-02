@@ -794,9 +794,10 @@
     if (s.select("#foggy") !== null)
       s.select("#foggy").remove();
     if (btnGraph === 'i') {
-      $('#graph0').detach();
+      /*$('#graph0').detach();
       Gclone.appendTo('#graphSpace01');
-      clack();
+      clack();*/
+      resetGraph()
       $('#' + 'btnPrevGraph').html('Prävalenzgraph');
       btnGraph = 'p';
       } else {
