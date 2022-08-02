@@ -781,7 +781,7 @@
         if (val <= q34) {
           node.select('ellipse').attr({class : 'prev3'});} else {
         node.select('ellipse').attr({class : 'prev4'});
-        alert ('assigned prev4')
+        console.log ('assigned prev4', ndId)
             }
           }
         }
