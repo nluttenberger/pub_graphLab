@@ -440,6 +440,7 @@
   function handleFog(s) {
     // handle fog over svg canvas
     // remove fog from previous call to show(); install fresh fog
+    console.log ('foggy', s.select("#foggy"));
     if (s.select("#foggy") !== null) {
       s.select("#foggy").remove();
     }
