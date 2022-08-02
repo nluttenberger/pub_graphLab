@@ -538,14 +538,14 @@
         });
         fog.append(elClone);
         // right click: remove shown node
-        elClone.node.oncontextmenu = function (event) {
+        /*elClone.node.oncontextmenu = function (event) {
           event.preventDefault();
           fog.remove();
           fog = null;
           let elId = elCloneId.substr(0, elCloneId.indexOf('-'));
           //remove node from both svg and jsnx
           remove(elId, s);
-        }
+        }*/
       }
     })
   }
