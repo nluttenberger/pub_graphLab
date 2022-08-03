@@ -444,6 +444,7 @@
     if (s.select("#foggy") !== null) {
       let arr = fog.children();
       console.log (arr);
+      for (let ele of arr) {ele => ele.remove()}
       s.select("#foggy").remove();
       fog = s.g();
     } else {
@@ -785,7 +786,6 @@
         if (val <= q34) {
           node.select('ellipse').attr({class : 'prev3'});} else {
         node.select('ellipse').attr({class : 'prev4'});
-        console.log ('assigned prev4', ndId)
             }
           }
         }
