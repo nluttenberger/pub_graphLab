@@ -442,11 +442,9 @@
     // remove fog from previous call to show(); install fresh fog
     // console.log ('foggy', s.select("#foggy"));
     if (s.select("#foggy") !== null) {
-      console.log ('foggy', s.select("#foggy"));
-      s.selectAll('#foggy *').forEach( function(el) {
-        console.log (el);
-      });
-      // s.select("#foggy").remove();
+      let arr = fog.children();
+      console.log (arr);
+      s.select("#foggy").remove();
     }
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
     fog.click(function () {
@@ -531,7 +529,7 @@
 
   function showIngredientsByPrev(prevClass, s) {
     // click handler for prevalence legend entries
-    fog = s.g();
+    // fog = s.g();
     handleFog(s);
     s.selectAll("[class='node']").forEach(function (el) {
       if (el.select('ellipse').attr('class') === prevClass) {
