@@ -445,6 +445,9 @@
       let arr = fog.children();
       console.log (arr);
       s.select("#foggy").remove();
+      fog = s.g();
+    } else {
+      fog = s.g();
     }
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
     fog.click(function () {
