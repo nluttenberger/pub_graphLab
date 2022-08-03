@@ -446,7 +446,7 @@
       s.selectAll('#foggy *').forEach( function(el) {
         console.log (el);
       });
-      s.select("#foggy").remove();
+      // s.select("#foggy").remove();
     }
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
     fog.click(function () {
