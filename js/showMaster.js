@@ -440,8 +440,10 @@
   function handleFog(s) {
     // handle fog over svg canvas
     // remove fog from previous call to show(); install fresh fog
-    console.log ('foggy', s.select("#foggy"));
+    // console.log ('foggy', s.select("#foggy"));
     if (s.select("#foggy") !== null) {
+      let childarray = s.select("#foggy").children();
+      console.log (childarray);
       s.select("#foggy").remove();
     }
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
@@ -533,9 +535,7 @@
       if (el.select('ellipse').attr('class') === prevClass) {
         let elClone = el.clone();
         let elCloneId = el.attr("id").concat("-clone");
-        elClone.attr({
-          "id": elCloneId
-        });
+        elClone.attr({"id": elCloneId});
         fog.append(elClone);
         // right click: remove shown node
         /*elClone.node.oncontextmenu = function (event) {
@@ -768,6 +768,7 @@
     let q14 = ss.quantile (prevArr, 0.25);
     let q12 = ss.quantile (prevArr, 0.5);
     let q34 = ss.quantile (prevArr, 0.75);
+    console.log ('q14: ', q14, 'q12: ', q12, 'q34: ', q34, 'total: ', prevArr.length)
     svgGraphs[konstruktionTab].selectAll("g").forEach(function (node) {
       if (node.attr('class') === 'node') {
         let ndId;
