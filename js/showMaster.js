@@ -444,7 +444,7 @@
     if (s.select("#foggy") !== null) {
       let arr = fog.children();
       console.log (arr);
-      s.select("fog").clear();
+      s.clear();
       // s.select("#foggy").remove();
       fog = s.g();
     } else {
