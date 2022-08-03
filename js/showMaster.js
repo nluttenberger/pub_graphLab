@@ -442,8 +442,10 @@
     // remove fog from previous call to show(); install fresh fog
     // console.log ('foggy', s.select("#foggy"));
     if (s.select("#foggy") !== null) {
-      let childarray = s.select("#foggy").children();
-      console.log (childarray);
+      console.log ('foggy', s.select("#foggy"));
+      s.selectAll('#foggy *').forEach( function(el) {
+        console.log (el);
+      });
       s.select("#foggy").remove();
     }
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
