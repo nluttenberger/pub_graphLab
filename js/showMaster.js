@@ -1,5 +1,7 @@
   'use strict';
 
+console.log ('v03');
+
   // global variables
   let myColl;                   // collection name from URL query param
   let igtList;
@@ -444,13 +446,14 @@
     if (s.select("#foggy") !== null) {
       let arr = fog.children();
       console.log (arr);
-      fog.children().clear();
       s.select("#foggy").remove();
       fog = s.g();
+      fog.attr({id: 'foggy'});
     } else {
       fog = s.g();
+      fog.attr({id: 'foggy'});
     }
-    fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer',  id: 'foggy'});
+    fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
