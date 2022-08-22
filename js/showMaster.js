@@ -31,6 +31,26 @@ console.log ('v03');
   let id2Occ    = new Map();
   let id2Weight = [];
 
+  let cat2Text = new Map;
+  cat2Text.set('i-meat', 'Fleisch');
+  cat2Text.set('i-fish', 'Fisch');
+  cat2Text.set('i-herb', 'Kräuter');
+  cat2Text.set('i-spice', 'Gewürz');
+  cat2Text.set('i-veg', 'Gemüse');
+  cat2Text.set('i-fruit', 'Frucht');
+  cat2Text.set('i-onion', 'Zwiebel');
+  cat2Text.set('i-nuts', 'Nüsse');
+  cat2Text.set('i-carb', 'Kohlenhydrate');
+  cat2Text.set('i-sweet', 'süß');
+  cat2Text.set('i-alc', 'Alkohol');
+  cat2Text.set('i-condi', 'Würze');
+  cat2Text.set('i-milk', 'Milch');
+  cat2Text.set('i-egg', 'Ei');
+  cat2Text.set('i-fat', 'Fett');
+  cat2Text.set('i-etc', 'etc');
+
+
+
   let fog = null;
   // fog for svg graph canvas
   let svgSpaces = [   // canvas divs inside accordion tabs for svg graph instances
@@ -511,6 +531,7 @@ console.log ('v03');
     // click handler for category legend entries
     fog = s.g();
     handleFog(s);
+    countIngredientsByCat();
     let col = window.getComputedStyle(cat, null).getPropertyValue("background-color");
     s.selectAll("[class='node']").forEach(function (el) {
       if (el.select('ellipse').attr('fill') === col) {
@@ -531,6 +552,24 @@ console.log ('v03');
         }
       }
     })
+  }
+
+  function countIngredientsByCat() {
+    let cols = $("#farblegendeBody table td div");
+
+
+    let arr = jQuery.makeArray(cols);
+    let ellis = jQuery.makeArray($("#graph0 ellipse"));
+    let classes = [];
+    for (let elli of ellis) {
+      classes.push(elli.attributes.getNamedItem('class').value);
+    }
+    const occurrences = classes.reduce(function (acc, curr) {
+      return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+    }, {});
+    for (const [key, value] of Object.entries(occurrences)) {
+      console.log(`${cat2Text.get(key)}: ${value}`);
+    }
   }
 
   function showIngredientsByPrev(prevClass, s) {
@@ -573,7 +612,7 @@ console.log ('v03');
         rcpList[i].ingredients.forEach((igt, idx) => mapping.set (idx, igt));
         jsnx.relabelNodes(R, mapping, false);
         R.edges(true).forEach(function (edge) {
-            let idArr =[];
+            let idArr = [];
             idArr.push(edge[0]);
             idArr.push(edge[1]);
             idArr.sort(function (a, b) {
