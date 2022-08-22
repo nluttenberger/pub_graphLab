@@ -174,6 +174,7 @@ console.log ('v03');
       $('#' + 'kohlsuppeAnzZutaten1').html(nn);
       $('#' + 'cntMiddle').html(countMiddle());
       $('#' + 'cntZero').html(countZero());
+      $('#' + 'fracZeroMiddle').html(Math.round(100*countZero()/countMiddle())/100);
     }).catch (function (err) {
       alert(err);
     });
@@ -444,8 +445,6 @@ console.log ('v03');
     // remove fog from previous call to show(); install fresh fog
     // console.log ('foggy', s.select("#foggy"));
     if (s.select("#foggy") !== null) {
-      let arr = fog.children();
-      console.log (arr);
       s.select("#foggy").remove();
       fog = s.g();
       fog.attr({id: 'foggy'});
@@ -482,7 +481,7 @@ console.log ('v03');
       remove(elId, s);
     };*/
     // append ingredient node neighbour and edge clones to fog
-    let keller =[];
+    let keller = [];
     s.selectAll("[class='edge']").forEach(function (el) {
       let tit = el.attr("id");
       let f = tit.substr(0, tit.indexOf('-'));

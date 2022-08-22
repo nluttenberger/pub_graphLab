@@ -21,21 +21,23 @@
       <p>In der Rezeptsammlung <span class="rcpColl font-italic"></span> setzen sich die <b>big five</b> wie
         folgt zusammen: </p>
       <ol>
-        <li>Verwende ich die Prävalenz-Werte, dann sind Zwiebel, Knoblauch, Chili, Ei und Tomate die <span
+        <li>Verwende ich die Prävalenz-Werte, dann sind Knoblauch, Olivenöl, Chilischote, Zitrone und Limette die <span
           class="spanBtn" onclick="showBigFive(Prävalenz)"><i>big five<sub>P</sub></i></span>.</li>
-        <li>Zwiebel, Knoblauch, Chili, Ei und Tomate bilden ebenfalls die <span class="spanBtn" onclick="showBigFive(Nachbarn)">
+        <li>Knoblauch, Olivenöl, Chilischote, Zitrone und Limette bilden ebenfalls die <span class="spanBtn"
+                                                                                    onclick="showBigFive(Nachbarn)">
           <i>big five<sub>N</sub></i></span>.</li>
-        <li>Zwiebel, Knoblauch, Chili, Ei und Tomate bilden ebenfalls die <span class="spanBtn" onclick="showBigFive(Knotengrad)">
+        <li>Knoblauch, Olivenöl, Chilischote, Zwiebel und Limette bilden die <span class="spanBtn"
+                                                                                 onclick="showBigFive(Knotengrad)">
           <i>big five<sub>D</sub></i></span>. </li>
         <li>Wenn man schließlich den <i>betweenness</i>-Wert benutzt, um die <span class="spanBtn"
-          onclick="showBigFive(Betweenness)"><i>big five<sub>B</sub></i></span> zu ermitteln, zeigt sich Paprika statt Tomate
-          unter den <i>big five</i>.</li>
+          onclick="showBigFive(Betweenness)"><i>big five<sub>B</sub></i></span> zu ermitteln, zeigen sich wieder Knoblauch, Olivenöl, Chilischote, Zitrone und Limette
+          wie schon zuvor bei den <i>big five<sub>P</sub></i> und den <i>big five<sub>N</sub></i>.</li>
       </ol>
       <p>Mittelerde wird von den <span class="spanBtn" onclick="showMittelerde()">hier</span> gezeigten
         Zutaten gebildet. Immerhin gehören <span id="cntMiddle"></span> Zutaten in diese Klasse.</p>
       <p>Die Nullknoten sind die <span class="spanBtn" onclick="showNullknoten()">hier</span> gezeigten
         Zutaten. Immerhin gehören <span id="cntZero"></span> Zutaten in diese Klasse. Die Nullknoten sind über 15 von insgesamt
-        16 Zutatenklassen verteilt. Es gibt 1,2 Nullknoten je Mittelerde-Knoten.
+        16 Zutatenklassen verteilt. Es gibt <span id="fracZeroMiddle"></span> Nullknoten je Mittelerde-Knoten.
       </p>
     </div>
     <!-- SI-Zahl //-->
