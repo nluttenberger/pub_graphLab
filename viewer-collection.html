@@ -479,6 +479,7 @@
             <div onclick="flyOut('factSheet')" style="z-index: 2010; font-size: 1.8em" class="tr tout">&times;</div>
           </div>
           <div>
+            <!-- fact sheet table-->
             <table class="mt-5 mb-5 table-sm table-striped">
               <tbody>
                 <tr class="mt-3">
@@ -495,30 +496,31 @@
                 </tr>
                 <tr class="mt-3">
                   <td>Anzahl Kanten</td>
-                  <td id="ctEdges" class="text-right pl-5"></td>
-                </tr>
-                <tr class="mt-3">
-                  <td class="pl-3">davon: Mehrfachkanten</td>
-                  <td id="ctMultiEdges" class="text-right pl-5"></td>
-                </tr>
-                <tr class="mt-3">
-                  <td>Anzahl voneinander verschiedener Kanten</td>
                   <td id="ctDistinctEdges" class="text-right pl-5"></td>
                 </tr>
                 <tr class="mt-3">
-                  <td class="pl-3">davon: Mehrfachkanten</td>
+                  <td>Anzahl Kanten mit Gewicht &gt; 1</td>
                   <td id="ctDistinctMultiEdges" class="text-right pl-5"></td>
                 </tr>
                 <tr class="mt-3">
+                  <td>Summe der Kantengewichte</td>
+                  <td id="ctEdges" class="text-right pl-5"></td>
+                </tr>
+                <!--<tr class="mt-3">
+                  <td class="pl-3">Kanten mit Kantengewicht > 1</td>
+                  <td id="ctMultiEdges" class="text-right pl-5"></td>
+                </tr>-->
+
+                <!--<tr class="mt-3">
                   <td>mittlere Anz. Nachbarn</td>
                   <td id="avgCountNeighbors" class="text-right pl-5"></td>
-                </tr>
+                </tr>-->
                 <tr class="mt-3">
-                  <td>mittlere Anz. voneinander verschiedener Nachbarn</td>
+                  <td>mittlere Anzahl Nachbarn</td>
                   <td id="avgCountDistinctNeighbors" class="text-right pl-5"></td>
                 </tr>
                 <tr class="mt-3">
-                  <td>Graphdichte (voneinander verschiedene Kanten)</td>
+                  <td>Graphdichte</td>
                   <td id="density" class="text-right pl-5"></td>
                 </tr>
                 <tr class="mt-3">
@@ -529,6 +531,91 @@
                   <td>Anzahl Graph-Komponenten</td>
                   <td id="ctComponents" class="text-right pl-5"></td>
                 </tr>
+              </tbody>
+            </table>
+            <!-- ingredient category population table-->
+            <table>
+              <tbody>
+              <tr>
+                <td><div class="i-meat" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Fleisch</td>
+                <td class="px-3 txtRight"><span id="cnti-meat"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-fish" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Fisch</td>
+                <td class="px-3 txtRight"><span id="cnti-fish"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-herb" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Kräuter</td>
+                <td class="px-3 txtRight"><span id="cnti-herb"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-spice" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Gewürz</td>
+                <td class="px-3 txtRight"><span id="cnti-spice"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-veg" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Gemüse</td>
+                <td class="px-3"><span id="cnti-veg"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-fruit" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Frucht</td>
+                <td class="px-3 txtRight"><span id="cnti-fruit"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-onion" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Zwiebel</td>
+                <td class="px-3 txtRight"><span id="cnti-onion"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-nuts" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Nüsse</td>
+                <td class="px-3 txtRight"><span id="cnti-nuts"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-carb" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Kohlenhydrate</td>
+                <td class="px-3 txtRight"><span id="cnti-carb"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-sweet" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">süß</td>
+                <td class="px-3 txtRight"><span id="cnti-sweet"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-alc" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Alkohol</td>
+                <td class="px-3 txtRight"><span id="cnti-alc"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-condi" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Würze</td>
+                <td class="px-3 txtRight"><span id="cnti-condi"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-milk" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Milch</td>
+                <td class="px-3 txtRight"><span id="cnti-milk"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-egg" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Ei</td>
+                <td class="px-3 txtRight"><span id="cnti-egg"></span></td>
+              </tr>
+              <tr>
+                <td><div class="i-fat" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">Fett</td>
+                <td class="px-3 txtRight"><span id="cnti-fat"></span></td>
+                <td class="px-3">&nbsp;</td>
+
+                <td><div class="i-etc" style="width: 16px; height: 16px;"></div></td>
+                <td class="px-3">etc</td>
+                <td class="px-3 txtRight"><span id="cnti-etc"></span></td>
+              </tr>
               </tbody>
             </table>
           </div>

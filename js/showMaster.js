@@ -531,7 +531,6 @@ console.log ('v03');
     // click handler for category legend entries
     fog = s.g();
     handleFog(s);
-    countIngredientsByCat();
     let col = window.getComputedStyle(cat, null).getPropertyValue("background-color");
     s.selectAll("[class='node']").forEach(function (el) {
       if (el.select('ellipse').attr('fill') === col) {
@@ -556,8 +555,6 @@ console.log ('v03');
 
   function countIngredientsByCat() {
     let cols = $("#farblegendeBody table td div");
-
-
     let arr = jQuery.makeArray(cols);
     let ellis = jQuery.makeArray($("#graph0 ellipse"));
     let classes = [];
@@ -569,6 +566,8 @@ console.log ('v03');
     }, {});
     for (const [key, value] of Object.entries(occurrences)) {
       console.log(`${cat2Text.get(key)}: ${value}`);
+      let cellId = 'cnt'+key;
+      $('#' + cellId).html(value);
     }
   }
 
@@ -1313,6 +1312,7 @@ console.log ('v03');
   function flyInFacts(chartAreaId) {
     chartAreas.forEach (area => flyOut(area));
     chartAreas.push(chartAreaId);
+    countIngredientsByCat();
     $('#' + chartAreaId).addClass('stretchLeft').removeClass('stretchRight').css("visibility", "visible");
     $('#' + 'ctRecipes').html(ctRecipes);
     $('#' + 'ctIngredients').html(ctIngredients);

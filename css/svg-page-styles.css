@@ -104,6 +104,9 @@ svg {
   height: 120%;
   overflow-y: scroll;
 }
+.txtRight {
+  text-align: right;
+}
 #ChartArea {
   max-width: 60%;
   z-index: 2000;
