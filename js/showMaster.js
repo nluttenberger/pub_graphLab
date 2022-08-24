@@ -102,10 +102,13 @@ console.log ('v03');
   let avgNumberIngredientsPerRecipe;
   let ctEdges;
   let ctMultiEdges;
+  let ctSingleEdges;
   let ctDistinctEdges;
   let ctDistinctMultiEdges;
+  let sumWeightsMultiEdges;
   let avgCountNeighbors;
   let avgCountDistinctNeighbors;
+  let avgWeightMultiEdges;
   let density;
   let entropy;
   let connectedComponents;
@@ -451,6 +454,9 @@ console.log ('v03');
       if (el[1] > 1) ctDistinctMultiEdges++
     });
     connectedComponents = connComp();
+    ctSingleEdges = ctDistinctEdges - ctDistinctMultiEdges;
+    sumWeightsMultiEdges = ctEdges - ctSingleEdges;
+    avgWeightMultiEdges = Math.round(100*sumWeightsMultiEdges/ctDistinctMultiEdges)/100;
   }
 
   function dataTableBuilder() {
@@ -1326,6 +1332,9 @@ console.log ('v03');
     $('#' + 'density').html(density);
     $('#' + 'entropy').html(Math.round(10000*ingredientEntropy())/10000 + ' bits');
     $('#' + 'ctComponents').html(connectedComponents);
+    $('#' + 'ctSingleEdges').html(ctSingleEdges);
+    $('#' + 'sumWeightsMultiEdges').html(sumWeightsMultiEdges);
+    $('#' + 'avgWeightMultiEdges').html(avgWeightMultiEdges);
   }
 
   function flyInMultipleEdgesHeatmap(chartAreaId, chartSpace) {
