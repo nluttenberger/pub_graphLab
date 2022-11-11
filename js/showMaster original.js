@@ -478,7 +478,7 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
-    fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    fog.rect(0, 0, 12000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
@@ -513,29 +513,13 @@ console.log ('v03');
       let f = tit.substr(0, tit.indexOf('-'));
       let l = tit.substr(tit.indexOf('-') + 2);
       if (f === ingredient || l === ingredient) {
-        let x = s.select('#'.concat(l)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           fog.append(el.clone());
-        }
-        x = s.select('#'.concat(f)).select('ellipse');
-        if (x.hasClass('i-veg')) {
-          fog.append(el.clone());
-        }
-        //fog.append(el.clone());
       }
       if (f === ingredient) {
-        let x = s.select('#'.concat(l)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           keller.push(s.select('#'.concat(l)).clone());
-        }
-          //keller.push(s.select('#'.concat(l)).clone());
       }
       if (l === ingredient) {
-        let x = s.select('#'.concat(f)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           keller.push(s.select('#'.concat(f)).clone());
-        }
-          //keller.push(s.select('#'.concat(f)).clone());
       }
     });
     keller.forEach(function (el) {
