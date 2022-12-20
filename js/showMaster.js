@@ -478,7 +478,7 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
-    fog.rect(0, 0, 22000, 30000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    fog.rect(0, 0, 30000, 25000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
