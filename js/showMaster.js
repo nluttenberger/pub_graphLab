@@ -50,7 +50,9 @@ console.log ('v03');
   cat2Text.set('i-etc', 'etc');
 
 
-
+  let vB;
+  let BBh;
+  let BBw;
   let fog = null;
   // fog for svg graph canvas
   let svgSpaces = [   // canvas divs inside accordion tabs for svg graph instances
@@ -333,6 +335,10 @@ console.log ('v03');
               child.node.innerHTML = value;
               } else {
                 let att = key.substr((key.indexOf('#') + 1), key.length);
+                /*if (key = "#viewBox") {
+                  console.log (graph.getBBox().vb)
+                  value = graph.getBBox().vb
+                }*/
                 parent.attr({[att]: value});
               }
           }
@@ -353,6 +359,11 @@ console.log ('v03');
     // set node font-size
     // attach click handlers to svg ingredient nodes and set their title elements
     svgGraphs.forEach((graph, i) => {
+      vB = graph.getBBox().vb
+      BBh = graph.getBBox().h
+      BBw = graph.getBBox().w
+      //console.log (graph.getBBox().vb)
+      graph.attr ({viewBox: vB})
       graph.selectAll("[class='node']").forEach(function (nd) {
         nd.attr("cursor", "pointer");
         nd.node.onclick = function () {
@@ -478,7 +489,9 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
-    fog.rect(0, 0, 30000, 25000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    console.log (vB)
+
+    fog.rect(0, 0, BBw, BBh+100).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
