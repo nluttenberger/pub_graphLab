@@ -1441,12 +1441,16 @@ console.log ('v03');
   }
 
   function barChart(chartSpace, col) {
+    let xx = [];
+    let yy = [];
     let xVal = [];
     let yVal = [];
     dataTable.forEach(function (el, i) {
-      xVal[i] = el[col];
-      yVal[i] = el[Label];
+      xx[i] = el[col];
+      yy[i] = el[Label];
     });
+    xVal = xx.slice(0,200);
+    yVal = yy.slice(0,200);
     let trace1 = {
       x: xVal,
       y: yVal,
@@ -1574,10 +1578,24 @@ console.log ('v03');
       // edge weight //
       case 'wt': {
         binsize = 1;
-        xVal = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
-        yVal = frequencies(wtArr,binsize).slice(1);
-        plotTitle = 'Histogramm Zutatenbeziehungen'
-        console.log ('Schiefe des Gewichtshistogramms: ', ss.sampleSkewness(yVal));
+        /*xVal = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
+        yVal = frequencies(wtArr,binsize).slice(1);*/
+        let xx;
+        let xxx = [];
+        let yy;
+        xx = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
+        yy = frequencies(wtArr,binsize).slice(1);
+
+        xVal = xx.map(function(val, idx){
+          if (yy[idx] !== 0) {xxx.push(val)}
+        })
+        xVal = xxx.map(String);
+        yVal = yy.filter(val => val !== 0);
+        //console.log ('xVal: ', xVal)
+        //console.log ('yVal: ', yVal)
+
+        //plotTitle = 'Histogramm Zutatenbeziehungen'
+        //console.log ('Schiefe des Gewichtshistogramms: ', ss.sampleSkewness(yVal));
         xaxisText = 'Kantengewicht';
         yaxisText = 'Häufigkeit';
         break;
@@ -1621,11 +1639,13 @@ console.log ('v03');
       textposition: 'outside',
       hoverinfo: 'x+y',
       orientation: 'v',
+      textangle: 90,
       marker: {
         color: 'rgb(66,114,138)',
       },
       textfont: {
-        color: 'rgb(128,128,128)'
+        color: 'rgb(128,128,128)',
+        size: 12
       }
     };
 
@@ -1633,29 +1653,23 @@ console.log ('v03');
     let layout = {
       autosize: true,
       automargin: true,
-      /*title: {
-        text: plotTitle,
-        font: {
-          family: 'Noto sans, Arial',
-          size: 20
-        },
-        xref: 'paper',
-        x: 0.5,
-        yref: 'paper',
-        y: 0.95,
-      },*/
       xaxis: {
+        autotypenumbers: 'strict',
         side: 'bottom',
-        tickmode: "linear",
-        tick0: binsize,
-        dtick: 5 * binsize,
+        tickmode: 'array',
+        tickvals: xVal,
+        ticktext: xVal,
+        //tick0: binsize,
+        //dtick: binsize,
+        //dtick: 5 * binsize,
         tickangle: 90,
         title: {
           text: xaxisText
         },
-        //tickprefix:'≤',
+        type: 'category'
       },
       yaxis: {
+
         title: {
           text: yaxisText
         }
