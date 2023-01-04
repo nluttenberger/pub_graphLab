@@ -49,7 +49,6 @@ console.log ('v03');
   cat2Text.set('i-fat', 'Fett');
   cat2Text.set('i-etc', 'etc');
 
-
   let vB;
   let BBh;
   let BBw;
@@ -1102,6 +1101,7 @@ console.log ('v03');
   }
 
   function visuESData (chartAreaId, chartSpace, selectData) {
+    $('#barChartSharedIngredients').height(ctRecipes*20)
     setSISelect (selectData);
     flyIn (chartAreaId);
     showESData (chartSpace,selectData)
@@ -1659,9 +1659,6 @@ console.log ('v03');
         tickmode: 'array',
         tickvals: xVal,
         ticktext: xVal,
-        //tick0: binsize,
-        //dtick: binsize,
-        //dtick: 5 * binsize,
         tickangle: 90,
         title: {
           text: xaxisText
@@ -1669,7 +1666,6 @@ console.log ('v03');
         type: 'category'
       },
       yaxis: {
-
         title: {
           text: yaxisText
         }
