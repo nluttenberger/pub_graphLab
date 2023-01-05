@@ -125,49 +125,40 @@ console.log ('v03');
     // fetch combined jsnx and svg graphs in json format, build graphs
     let g_url = `${myColl}/combinedGraph.zip`;
     fetch(g_url, {
-      cache: "no-store"})
-      .then(function (response) {                       // 2) filter on 200 OK
+      cache: "no-store"
+    })
+      .then(function (response) {                     // 2) filter on 200 OK
         if (response.status === 200 || response.status === 0) {
           return Promise.resolve(response.blob());
         } else {
           return Promise.reject(new Error(response.statusText));
         }
       })
-      .then(JSZip.loadAsync)                            // 3) chain with the zip promise
+      .then(JSZip.loadAsync)                                   // 3) chain with the zip promise
       .then(function (zip) {
         return zip.file("combinedGraph.json").async("string"); // 4) chain with the text content promise
       })
-      .then(function success(text) {                    // 5) display the result
-        console.log (text)
+      .then(function success(gText) {                // 5) display the result
+        //console.log(text)
+        // store graph.json locally
+        sessionStorage.setItem("srcGraph", gText);
+        let graph = JSON.parse(gText);
+        document.title = graph.title;
+        // build the jsnx graph
+        jsnxGraphBuilder(graph);
+        // build svg graph instances
+        svgSpaces.forEach((space, i) => {
+          svgGraphs[i] = Snap(space);
+        });
+        svgGraphBuilder(graph);
+        clack();
+        dataTableBuilder();
+        $(".rcpColl").text(myColl);
+        fetchInterpretation();
       }, function error(e) {
-        alert ("Sch ... ")
+        alert("Sch ... ")
       });
-
-
-
-
-    /*}).then(function (response) {
-      if (response.ok) return response.text();
-    }).then(function (gText) {
-      // store graph.json locally
-      sessionStorage.setItem("srcGraph", gText);
-      let graph = JSON.parse(gText);
-      document.title = graph.title;
-      // build the jsnx graph
-      jsnxGraphBuilder(graph);
-      // build svg graph instances
-      svgSpaces.forEach((space, i) => {
-        svgGraphs[i] = Snap(space);
-      });
-      svgGraphBuilder(graph);
-      clack();
-      dataTableBuilder();
-      $(".rcpColl").text(myColl);
-      fetchInterpretation();
-    }). catch (function (err) {
-      alert(err);
-    });
-  }*/
+  }
 
 /*  function fetchGraph () {
     // fetch combined jsnx and svg graphs in json format, build graphs
@@ -631,7 +622,7 @@ console.log ('v03');
       return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
     for (const [key, value] of Object.entries(occurrences)) {
-      console.log(`${cat2Text.get(key)}: ${value}`);
+      //console.log(`${cat2Text.get(key)}: ${value}`);
       let cellId = 'cnt'+key;
       $('#' + cellId).html(value);
     }
