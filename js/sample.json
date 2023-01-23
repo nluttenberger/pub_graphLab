@@ -1,0 +1,58 @@
+{
+    "title": "Vergleich HD-YO Gemüse",
+    "ingredients": [
+        "zwiebel",
+        "knoblauch",
+        "essig",
+        "karotten"
+    ],
+    "recipes": [
+        {
+            "Gurkensalat": [
+                "gurke",
+                "zwiebel",
+                "sahne"
+            ]
+        },
+        {
+            "Karotten": [
+                "karotten",
+                "essig",
+                "öl"
+            ]
+        },
+        {
+            "Reis mit Sauce": [
+                "reis",
+                "zwiebel",
+                "öl"
+            ]
+        },
+        {
+            "Quatsch mit Knoblauch": [
+                "quatsch",
+                "essig",
+                "öl"
+            ]
+        }
+    ],
+    "collections": [
+        {
+            "HD Gemüse": {
+                "author": "Henriette Davidis",
+                "recipes": [
+                    "Gurkensalat",
+                    "Karotten"
+                ]
+            },
+            "YO Gemüse": {
+                "author": "Yotam Ottolenghi",
+                "recipes": [
+                    "Reis mit Sauce",
+                    "Quatsch mit Knoblauch"
+                ]
+            }
+        }
+    ],
+    "svg": ""
+}
