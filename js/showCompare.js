@@ -262,6 +262,15 @@ console.log ('v03');
       return acc + x * Math.log2(x);}, 0)
   }
 
+  function capUnion (L,R) {
+    let w;
+    for (let e of R.edges(true)) {
+
+
+      console.log (e.get('weight'))
+    }
+  }
+
   // building the jsnx and svg graphs, and the data table for diagramms
   function jsnxGraphBuilder(graph) {
     // build jsnx graph, compute some node properties and other values
@@ -286,6 +295,11 @@ console.log ('v03');
         });
         H.adj.get(edge[0]).get(edge[1]).id = `${id[0]}--${id[1]}`;
       });
+      capUnion (G,H);
+
+
+
+
       G.addNodesFrom(H.nodes(true));
       G.addEdgesFrom(H.edges(true));
     });
