@@ -264,11 +264,14 @@ console.log ('v03');
 
   function capUnion (L,R) {
     let w;
+    let s, t;
     for (let e of R.edges(true)) {
-
-
-      console.log (e.get('weight'))
+      s=e[0];
+      t=e[1];
+      R.adj.get(s).get(t).weight = 1;
+      console.log (e[0], e[1], e[2].id, e[2].weight)
     }
+    console.log (R.edges().length)
   }
 
   // building the jsnx and svg graphs, and the data table for diagramms
