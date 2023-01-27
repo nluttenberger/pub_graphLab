@@ -8,7 +8,7 @@ console.log ('v03');
   let rcpList;
   let rcpNameList = [];
   // jsnx undirected multigraph
-  let G = new jsnx.MultiGraph();
+  let G = new jsnx.Graph();
   // jsnx undirected graph with weight attribute
   let G1 = new jsnx.Graph();
   let Gclone;
@@ -265,16 +265,19 @@ console.log ('v03');
   function capUnion (L,R) {
     let w;
     let s, t;
+    //console.log (R.edges(true))
     for (let e of R.edges(true)) {
       s=e[0];
       t=e[1];
-      //R.adj.get(s).get(t).weight = 1;
-      //console.log (e[0], e[1], e[2].id, e[2].weight)
-      //console.log (s, t, 'weight' in e[2])
-      ('weight' in e[2]) ? w = e[2].weight : w = 1;
-      L.addEdge(s,t,{'weight':w, 'id':e[2].id});
+      L.addEdge(s,t,{'id':e[2].id});
+      if (L.adj.get(s).get(t).weight === undefined) {
+        L.addEdge(s,t,{'weight':1})
+      } else {
+        w = L.adj.get(s).get(t).weight + 1
+        L.addEdge(s,t,{'weight':w})
+      }
     }
-    //console.log (L.edges(true))
+    console.log (L.edges(true))
   }
 
   // building the jsnx and svg graphs, and the data table for diagramms
@@ -285,7 +288,7 @@ console.log ('v03');
     rcpList = graph.recipes;
     // list of all recipes
     // set up jsnx graph from recipe and ingredient values
-    console.log (rcpList)
+    //console.log (rcpList)
     let n;
     rcpList.forEach(function (recipe) {
       n = recipe.ingredients.length;
@@ -303,7 +306,7 @@ console.log ('v03');
         H.adj.get(edge[0]).get(edge[1]).id = `${id[0]}--${id[1]}`;
       });
       capUnion (G,H);
-      console.log (G.edges(true))
+      //console.log (G.edges(true))
 
 
 
