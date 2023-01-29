@@ -7,7 +7,7 @@ console.log ('v03');
   let igtList;
   let rcpList;
   let rcpNameList = [];
-  // jsnx undirected multigraph
+  // jsnx undirected graph with weight attribute
   let G = new jsnx.Graph();
   // jsnx undirected graph with weight attribute
   let G1 = new jsnx.Graph();
@@ -263,9 +263,7 @@ console.log ('v03');
   }
 
   function capUnion (L,R) {
-    let w;
     let s, t;
-    //console.log (R.edges(true))
     for (let e of R.edges(true)) {
       s=e[0];
       t=e[1];
@@ -273,28 +271,21 @@ console.log ('v03');
       if (L.adj.get(s).get(t).weight === undefined) {
         L.addEdge(s,t,{'weight':1})
       } else {
-        w = L.adj.get(s).get(t).weight + 1
-        L.addEdge(s,t,{'weight':w})
+        L.adj.get(s).get(t).weight += 1
       }
     }
-    console.log (L.edges(true))
+    //console.log (L.edges(true))
   }
 
-  // building the jsnx and svg graphs, and the data table for diagramms
-  function jsnxGraphBuilder(graph) {
-    // build jsnx graph, compute some node properties and other values
-    igtList = graph.ingredients;
-    // list of all ingredients
-    rcpList = graph.recipes;
-    // list of all recipes
-    // set up jsnx graph from recipe and ingredient values
-    //console.log (rcpList)
+  function buildGraphFromIngredientArray(igdtListArr) {
+    let Graph = new jsnx.Graph();
     let n;
-    rcpList.forEach(function (recipe) {
-      n = recipe.ingredients.length;
+    igdtListArr.forEach(function (igdtList) {
+      n = igdtList.length;
+      // build recipe graph
       H = jsnx.completeGraph(n, new jsnx.Graph());
       let mapping = new Map();
-      recipe.ingredients.forEach ((igt, idx) => mapping.set (idx, igt));
+      igdtList.forEach ((igt, idx) => mapping.set (idx, igt));
       jsnx.relabelNodes (H, mapping, false);
       H.edges(true).forEach (function (edge) {
         let id = [];
@@ -305,14 +296,60 @@ console.log ('v03');
         });
         H.adj.get(edge[0]).get(edge[1]).id = `${id[0]}--${id[1]}`;
       });
-      capUnion (G,H);
-      //console.log (G.edges(true))
-
-
-
+      capUnion (Graph,H);
       //G.addNodesFrom(H.nodes(true));
       //G.addEdgesFrom(H.edges(true));
+      //console.log (JSON.stringify(G.edges(true)))
     });
+    return Graph
+  }
+
+  // building the jsnx and svg graphs, and the data table for diagramms
+  function jsnxGraphBuilder(graph) {
+    // list of all ingredients
+    igtList = graph.ingredients;
+    // list of all recipes
+    rcpList = graph.recipes;
+
+    // compute A and B collections
+    const a_coll = graph.collections[0];
+    const b_coll = graph.collections[1];
+    const a_auth = Object.values(a_coll)[0].author;
+    const b_auth = Object.values(b_coll)[0].author;
+    const a_rcp = Object.values(a_coll)[0].recipes;
+    const b_rcp = Object.values(b_coll)[0].recipes;
+    let A = new jsnx.Graph();
+    let B = new jsnx.Graph();
+
+    // compute ingredient lists for collection A
+    let A_rcp = [];
+    a_rcp.forEach((rcp) => {
+      let xx = rcpList.filter(obj => obj.recipeName===rcp);
+      A_rcp.push (xx[0].ingredients)
+    })
+    A = buildGraphFromIngredientArray(A_rcp);
+
+    // compute ingredient lists for collection B
+    let B_rcp = [];
+    b_rcp.forEach((rcp) => {
+      let xx = rcpList.filter(obj => obj.recipeName===rcp);
+      B_rcp.push (xx[0].ingredients)
+    })
+    B = buildGraphFromIngredientArray(B_rcp);
+
+    // compute joint graph G
+    capUnion (G,A);
+    capUnion (G,B);
+
+    function cmpEdgeIds (el1,el2) {
+      return (el1[2].id === el2[2].id)
+    }
+    // build intersection graph
+    let xx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
+    console.log (xx);
+    let yy =_.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
+    console.log (yy);
+
     // compute number of recipes
     ctRecipes = rcpList.length;
     prevStep = 100 / ctRecipes;
@@ -1181,6 +1218,8 @@ console.log ('v03');
     sortByCol(rcpSiArr, dir, col, l2sort);
     showESData (chartSpace,selectData)
   }
+
+  // clustering coefficients
 
   function flyInClCo (chartAreaId, chartSpace) {
     chartAreas.forEach (area => flyOut(area));
