@@ -192,6 +192,10 @@
                       <a class="nav-link" id="Daten-tab" data-toggle="tab" href="#Daten" role="tab"
                          aria-controls="Daten" aria-selected="false">Daten</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="Vergleich-tab" data-toggle="tab" href="#Vergleich" role="tab"
+                         aria-controls="Daten" aria-selected="false">Vergleich</a>
+                    </li>
                   </ul>
                   <div class="tab-content" id="interactionTabContent">
                     <!-- Knotenfärbung -->
@@ -323,6 +327,20 @@
                         Tipp: In dieser Rezeptsammlung tauchen <i>betweenness</i>-Werte zwischen 0 und <span class="maxBetw"></span>
                         auf.
                       </p>
+                    </div>
+                    <!-- Vergleich -->
+                    <div class="tab-pane p-3 fade" id="Vergleich" role="tabpanel" aria-labelledby="contact-tab">
+                      <p>
+                        Vergleich der Subgraphen A und B
+                      </p>
+                      <form>
+                        <button id="graph_A" class="btn btn-secondary btn-sm" type="button"
+                                onclick="showSubgraph(svgGraphs[konstruktionTab],A)">Graph A</button>
+                        <button id="graph_B" class="btn btn-secondary btn-sm" type="button"
+                                onclick="showSubgraph(svgGraphs[konstruktionTab],B)">Graph B</button>
+                        <button id="graph_Intersect" class="btn btn-secondary btn-sm" type="button"
+                                onclick="showSubgraph(svgGraphs[konstruktionTab],Intersect)">Graph A ∩ B</button>
+                      </form>
                     </div>
                   </div>
                 </div>

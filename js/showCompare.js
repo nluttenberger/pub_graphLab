@@ -9,6 +9,9 @@ console.log ('v03');
   let rcpNameList = [];
   // jsnx undirected graph with weight attribute
   let G = new jsnx.Graph();
+  let A = new jsnx.Graph();
+  let B = new jsnx.Graph();
+  let Intersect = new jsnx.Graph();
   // jsnx undirected graph with weight attribute
   let G1 = new jsnx.Graph();
   let Gclone;
@@ -228,11 +231,7 @@ console.log ('v03');
       $('#' + 'lorbeerPrev').html(prev.get ('lorbeer'));
       let ii;
       let nn;
-      /*for (ii = 0; ii < rcpList.length; ii++) {
-        if (rcpList[ii].recipeName === 'Kohlsuppe asiatisch') {
-          nn = rcpList[ii].ingredients.length;
-        }
-      }*/
+
       $('#' + 'kohlsuppeAnzZutaten').html(nn);
       $('#' + 'kohlsuppeAnzZutaten1').html(nn);
       $('#' + 'cntMiddle').html(countMiddle());
@@ -318,8 +317,6 @@ console.log ('v03');
     const b_auth = Object.values(b_coll)[0].author;
     const a_rcp = Object.values(a_coll)[0].recipes;
     const b_rcp = Object.values(b_coll)[0].recipes;
-    let A = new jsnx.Graph();
-    let B = new jsnx.Graph();
 
     // compute ingredient lists for collection A
     let A_rcp = [];
@@ -337,7 +334,7 @@ console.log ('v03');
     })
     B = buildGraphFromIngredientArray(B_rcp);
 
-    // compute joint graph G
+    // compute union graph G
     capUnion (G,A);
     capUnion (G,B);
 
@@ -346,10 +343,11 @@ console.log ('v03');
     }
     // build intersection graph
     let xx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
-    console.log (xx);
-    let yy =_.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
-    console.log (yy);
-
+    let yy = _.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
+    Intersect.addEdgesFrom(xx);
+    Intersect.addNodesFrom(yy);
+    //console.log (Intersect.edges(true));
+    //console.log (Intersect.nodes(true))
     // compute number of recipes
     ctRecipes = rcpList.length;
     prevStep = 100 / ctRecipes;
@@ -588,9 +586,9 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
-    console.log (vB)
+    //console.log (vB)
 
-    fog.rect(0, 0, BBw, BBh+100).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    fog.rect(0, 0, BBw+200, BBh+100).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
@@ -749,6 +747,20 @@ console.log ('v03');
         break;
       }
     }
+  }
+
+  function showSubgraph (s, SG) {
+    fog = s.g();
+    handleFog(s);
+    SG.edges(true).forEach(function (edge) {
+      let edgeToFind = SG.adj.get (edge[0]).get (edge[1]).id;
+      let el = s.select('#'.concat(edgeToFind));
+      fog.append(el.clone());
+    });
+    SG.nodes(true).forEach (function (nd) {
+      let el = s.select('#'.concat(nd[0]));
+      fog.append(el.clone());
+    });
   }
 
   function clustCoeff() {
