@@ -280,6 +280,7 @@ console.log ('v03');
     let Graph = new jsnx.Graph();
     let n;
     igdtListArr.forEach(function (igdtList) {
+      console.log (igdtList);
       n = igdtList.length;
       // build recipe graph
       H = jsnx.completeGraph(n, new jsnx.Graph());
@@ -295,6 +296,7 @@ console.log ('v03');
         });
         H.adj.get(edge[0]).get(edge[1]).id = `${id[0]}--${id[1]}`;
       });
+      //console.log (H.edges(true))
       capUnion (Graph,H);
       //G.addNodesFrom(H.nodes(true));
       //G.addEdgesFrom(H.edges(true));
@@ -325,6 +327,8 @@ console.log ('v03');
       A_rcp.push (xx[0].ingredients)
     })
     A = buildGraphFromIngredientArray(A_rcp);
+    //console.log (A.edges(true))
+    //console.log (A.nodes(true))
 
     // compute ingredient lists for collection B
     let B_rcp = [];
@@ -333,6 +337,8 @@ console.log ('v03');
       B_rcp.push (xx[0].ingredients)
     })
     B = buildGraphFromIngredientArray(B_rcp);
+    //console.log (B.edges(true))
+    //console.log (B.nodes(true))
 
     // compute union graph G
     capUnion (G,A);
