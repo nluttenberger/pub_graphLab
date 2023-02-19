@@ -1250,6 +1250,27 @@
                         },
                         {
                             "#class": "node",
+                            "#id": "lauch",
+                            "#data-sub": "b",
+                            "title": {},
+                            "ellipse": {
+                                "#class": "i-veg",
+                                "#cx": "176",
+                                "#cy": "1504.586",
+                                "#rx": "108",
+                                "#ry": "108"
+                            },
+                            "text": {
+                                "#x": "176",
+                                "#y": "1534.586",
+                                "#text-anchor": "middle",
+                                "#font-family": "Arial",
+                                "#font-size": "23",
+                                "#text-content": "Lauch"
+                            }
+                        },
+                        {
+                            "#class": "node",
                             "#id": "sahne",
                             "#data-sub": "b",
                             "title": {},
