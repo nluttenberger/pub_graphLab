@@ -58,7 +58,9 @@
                     "Backofen-Pilze",
                     "Erbsenauflauf"
                 ]
-            },
+            }
+        },
+        {
             "B": {
                 "name": "Flavour",
                 "author": "Yotam Ottolenghi",

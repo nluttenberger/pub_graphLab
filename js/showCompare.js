@@ -315,6 +315,8 @@ console.log ('v03');
     // compute A and B collections
     const a_coll = graph.collections[0];
     const b_coll = graph.collections[1];
+    console.log (a_coll)
+    console.log (b_coll)
     const a_auth = Object.values(a_coll)[0].author;
     const b_auth = Object.values(b_coll)[0].author;
     const a_rcp = Object.values(a_coll)[0].recipes;

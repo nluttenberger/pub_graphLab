@@ -8,13 +8,15 @@
                     "Backofen-Pilze",
                     "Erbsenauflauf"
                 ]
-            },
+            }
+        },
+        {
             "B": {
                 "name": "Flavour",
                 "author": "Yotam Ottolenghi",
                 "recipes": [
-                    "Backofen-Pilze",
-                    "Erbsenauflauf"
+                    "Gurkensalat mit Kartoffelpüree",
+                    "Lauchgemüse"
                 ]
             }
         }
