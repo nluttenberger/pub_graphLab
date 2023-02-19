@@ -1,0 +1,22 @@
+{
+    "collections": [
+        {
+            "A": {
+                "name": "HD-Gemüse",
+                "author": "Henriette Davidis",
+                "recipes": [
+                    "Backofen-Pilze",
+                    "Erbsenauflauf"
+                ]
+            },
+            "B": {
+                "name": "Flavour",
+                "author": "Yotam Ottolenghi",
+                "recipes": [
+                    "Backofen-Pilze",
+                    "Erbsenauflauf"
+                ]
+            }
+        }
+    ]
+}
