@@ -273,20 +273,27 @@ console.log ('v03');
         L.adj.get(s).get(t).weight += 1
       }
     }
-    //console.log (L.edges(true))
   }
 
   function buildGraphFromIngredientArray(igdtListArr) {
     let Graph = new jsnx.Graph();
     let n;
     igdtListArr.forEach(function (igdtList) {
-      console.log (igdtList);
       n = igdtList.length;
-      // build recipe graph
       H = jsnx.completeGraph(n, new jsnx.Graph());
       let mapping = new Map();
       igdtList.forEach ((igt, idx) => mapping.set (idx, igt));
+
+      igdtList.forEach (function (igt) {
+        console.log (igt, '  ', igt.class)
+        }
+
+      )
+
+
       jsnx.relabelNodes (H, mapping, false);
+
+      console.log (H.nodes(true))
       H.edges(true).forEach (function (edge) {
         let id = [];
         id.push(edge[0]);
@@ -296,11 +303,9 @@ console.log ('v03');
         });
         H.adj.get(edge[0]).get(edge[1]).id = `${id[0]}--${id[1]}`;
       });
-      //console.log (H.edges(true))
       capUnion (Graph,H);
       //G.addNodesFrom(H.nodes(true));
       //G.addEdgesFrom(H.edges(true));
-      //console.log (JSON.stringify(G.edges(true)))
     });
     return Graph
   }
@@ -315,8 +320,8 @@ console.log ('v03');
     // compute A and B collections
     const a_coll = graph.collections[0];
     const b_coll = graph.collections[1];
-    console.log (a_coll)
-    console.log (b_coll)
+    //console.log (a_coll)
+    //console.log (b_coll)
     const a_auth = Object.values(a_coll)[0].author;
     const b_auth = Object.values(b_coll)[0].author;
     const a_rcp = Object.values(a_coll)[0].recipes;
@@ -329,8 +334,6 @@ console.log ('v03');
       A_rcp.push (xx[0].ingredients)
     })
     A = buildGraphFromIngredientArray(A_rcp);
-    //console.log (A.edges(true))
-    //console.log (A.nodes(true))
 
     // compute ingredient lists for collection B
     let B_rcp = [];
@@ -339,25 +342,21 @@ console.log ('v03');
       B_rcp.push (xx[0].ingredients)
     })
     B = buildGraphFromIngredientArray(B_rcp);
-    //console.log (B.edges(true))
-    //console.log (B.nodes(true))
 
     // compute union graph G
     capUnion (G,A);
     capUnion (G,B);
 
-    console.log ('number of edges: ', G.numberOfEdges())
-
     function cmpEdgeIds (el1,el2) {
       return (el1[2].id === el2[2].id)
     }
+
     // build intersection graph
     let xx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
     let yy = _.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
     Intersect.addEdgesFrom(xx);
     Intersect.addNodesFrom(yy);
-    //console.log (Intersect.edges(true));
-    //console.log (Intersect.nodes(true))
+
     // compute number of recipes
     ctRecipes = rcpList.length;
     prevStep = 100 / ctRecipes;
@@ -382,6 +381,7 @@ console.log ('v03');
     for (let ingredient of graph.ingredients) {
       label2Id.set (ingredient.label, ingredient.id)
     }
+    console.log (label2Id)
     id2Label.clear();
     for (let ingredient of graph.ingredients) {
       id2Label.set (ingredient.id, ingredient.label)
@@ -404,10 +404,16 @@ console.log ('v03');
     degr.clear();
     degr = jsnx.degree(G);
     neigh.clear();
+
+    console.log ("Entry")
+
     for (let ingredient of graph.ingredients) {
-        neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
+      console.log (G.neighbors(ingredient.id))
+        //neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
     }
-    betw.clear();
+
+    console.log ("Leaving")
+
     betw = jsnx.betweennessCentrality(G, {
         'normalized': false
     });
