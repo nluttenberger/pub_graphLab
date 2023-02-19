@@ -307,7 +307,7 @@ console.log ('v03');
 
   // building the jsnx and svg graphs, and the data table for diagramms
   function jsnxGraphBuilder(graph) {
-    /*// list of all ingredients
+    // list of all ingredients
     igtList = graph.ingredients;
     // list of all recipes
     rcpList = graph.recipes;
@@ -411,7 +411,7 @@ console.log ('v03');
     });
     betw.forEach((v, k) => betw.set (k, Math.round(1000 * v) / 1000));
     // all other sample values are computed here
-    computeSampleInfo();*/
+    computeSampleInfo();
   }
 
   function svgGraphBuilder(g) {
