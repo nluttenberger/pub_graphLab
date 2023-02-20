@@ -774,9 +774,39 @@ console.log ('v03');
   }
 
   function showSubgraph (s, SG) {
-    fog = s.g();
+    //fog = s.g();
     handleFog(s);
-    SG.edges(true).forEach(function (edge) {
+    let el;
+    switch (SG) {
+      case 'A':
+        el = s.use().attr('href', '#AEdges');
+        fog.append(el);
+        el = s.use().attr('href', '#intersectEdges');
+        fog.append(el);
+        el = s.use().attr('href', '#ANodes');
+        fog.append(el);
+        el = s.use().attr('href', '#intersectNodes');
+        fog.append(el);
+        break;
+      case 'B':
+        el = s.use().attr('href', '#BEdges');
+        fog.append(el);
+        el = s.use().attr('href', '#intersectEdges');
+        fog.append(el);
+        el = s.use().attr('href', '#BNodes');
+        fog.append(el);
+        el = s.use().attr('href', '#intersectNodes');
+        fog.append(el);
+        break;
+      case('Intersect'):
+        el = s.use().attr('href', '#intersectEdges');
+        fog.append(el);
+        el = s.use().attr('href', '#intersectNodes');
+        fog.append(el);
+        break;
+    }
+
+    /*SG.edges(true).forEach(function (edge) {
       let edgeToFind = SG.adj.get (edge[0]).get (edge[1]).id;
       let el = s.select('#'.concat(edgeToFind));
       fog.append(el.clone());
@@ -784,7 +814,7 @@ console.log ('v03');
     SG.nodes(true).forEach (function (nd) {
       let el = s.select('#'.concat(nd[0]));
       fog.append(el.clone());
-    });
+    });*/
   }
 
   function clustCoeff() {
