@@ -275,25 +275,20 @@ console.log ('v03');
     }
   }
 
-  function buildGraphFromIngredientArray(igdtListArr) {
+  function buildGraphFromIngredientArray(coll, igdtListArr) {
     let Graph = new jsnx.Graph();
+    igtList.forEach(function (igt) {
+      if (igt.sub === coll || igt.sub === 'AB') {
+        Graph.addNode(igt.id,{'sub':igt.sub,'label':igt.label,'class':igt.class,'occ':igt.occurs})
+      }
+    })
     let n;
     igdtListArr.forEach(function (igdtList) {
       n = igdtList.length;
       H = jsnx.completeGraph(n, new jsnx.Graph());
       let mapping = new Map();
       igdtList.forEach ((igt, idx) => mapping.set (idx, igt));
-
-      igdtList.forEach (function (igt) {
-        console.log (igt, '  ', igt.class)
-        }
-
-      )
-
-
       jsnx.relabelNodes (H, mapping, false);
-
-      console.log (H.nodes(true))
       H.edges(true).forEach (function (edge) {
         let id = [];
         id.push(edge[0]);
@@ -310,52 +305,66 @@ console.log ('v03');
     return Graph
   }
 
-  // building the jsnx and svg graphs, and the data table for diagramms
+  // building the jsnx graphs
   function jsnxGraphBuilder(graph) {
-    // list of all ingredients
     igtList = graph.ingredients;
-    // list of all recipes
     rcpList = graph.recipes;
-
-    // compute A and B collections
+    igtList.forEach(function (igt) {
+      G.addNode(igt.id,{'sub':igt.sub,'label':igt.label,'class':igt.class,'occ':igt.occurs})
+    })
+    // compute A and B  graphs
     const a_coll = graph.collections[0];
     const b_coll = graph.collections[1];
-    //console.log (a_coll)
-    //console.log (b_coll)
     const a_auth = Object.values(a_coll)[0].author;
     const b_auth = Object.values(b_coll)[0].author;
     const a_rcp = Object.values(a_coll)[0].recipes;
     const b_rcp = Object.values(b_coll)[0].recipes;
-
-    // compute ingredient lists for collection A
     let A_rcp = [];
     a_rcp.forEach((rcp) => {
       let xx = rcpList.filter(obj => obj.recipeName===rcp);
       A_rcp.push (xx[0].ingredients)
     })
-    A = buildGraphFromIngredientArray(A_rcp);
-
-    // compute ingredient lists for collection B
+    A = buildGraphFromIngredientArray('A', A_rcp);
     let B_rcp = [];
     b_rcp.forEach((rcp) => {
       let xx = rcpList.filter(obj => obj.recipeName===rcp);
       B_rcp.push (xx[0].ingredients)
     })
-    B = buildGraphFromIngredientArray(B_rcp);
-
-    // compute union graph G
+    B = buildGraphFromIngredientArray('B', B_rcp);
+    // build union graph G
     capUnion (G,A);
     capUnion (G,B);
-
+    // build intersection graph
     function cmpEdgeIds (el1,el2) {
       return (el1[2].id === el2[2].id)
     }
-
-    // build intersection graph
     let xx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
     let yy = _.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
+
+    // compute edge weights for intersection graph
+    let e_id;
+    let w_A;
+    let w_B;
+    for (let i = 0; i < xx.length;i++) {
+      e_id = xx[i][2].id;
+      for (let j = 0; j < A.edges(true).length; j++){
+        if (A.edges(true)[j][2].id === e_id ){
+          w_A = A.edges(true)[j][2].weight;
+          break;
+        }
+      }
+      for (let j = 0; j < B.edges(true).length; j++){
+        if (B.edges(true)[j][2].id === e_id ){
+          w_B = B.edges(true)[j][2].weight;
+          break;
+        }
+      }
+      xx[i][2].weight = w_A + w_B;
+    }
+
     Intersect.addEdgesFrom(xx);
     Intersect.addNodesFrom(yy);
+    console.log (Intersect.edges(true));
 
     // compute number of recipes
     ctRecipes = rcpList.length;
@@ -381,7 +390,7 @@ console.log ('v03');
     for (let ingredient of graph.ingredients) {
       label2Id.set (ingredient.label, ingredient.id)
     }
-    console.log (label2Id)
+
     id2Label.clear();
     for (let ingredient of graph.ingredients) {
       id2Label.set (ingredient.id, ingredient.label)
@@ -408,8 +417,7 @@ console.log ('v03');
     console.log ("Entry")
 
     for (let ingredient of graph.ingredients) {
-      console.log (G.neighbors(ingredient.id))
-        //neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
+        neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
     }
 
     console.log ("Leaving")
