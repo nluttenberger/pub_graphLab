@@ -88,7 +88,7 @@ console.log ('v03');
   const excl = 1;
   const shared = 2;
   const sharedW = 3;
-  // array holding values for exclusive/shard ingredients
+  // array holding values for exclusive/shared ingredients
   let rcpSiArr = [];
   let rcpSIArrSelect;
   let btnIds = [undefined, undefined, 'btnPrev', 'btnNeigh', 'btnDegr', 'btnBetw'];
