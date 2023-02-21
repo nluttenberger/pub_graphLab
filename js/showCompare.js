@@ -282,6 +282,8 @@ console.log ('v03');
         Graph.addNode(igt.id,{'sub':igt.sub,'label':igt.label,'class':igt.class,'occ':igt.occurs})
       }
     })
+
+    console.log (Graph.nodes(true))
     let n;
     igdtListArr.forEach(function (igdtList) {
       n = igdtList.length;
@@ -364,7 +366,6 @@ console.log ('v03');
 
     Intersect.addEdgesFrom(xx);
     Intersect.addNodesFrom(yy);
-    console.log (Intersect.edges(true));
 
     // compute number of recipes
     ctRecipes = rcpList.length;
