@@ -126,6 +126,7 @@ console.log ('v03');
 
   function fetchGraph () {
     // fetch combined jsnx and svg graphs in json format, build graphs
+    alert ("title built")
     let g_url = `${myColl}/combinedGraph.zip`;
     fetch(g_url, {
       cache: "no-store"
@@ -147,12 +148,14 @@ console.log ('v03');
         sessionStorage.setItem("srcGraph", gText);
         let graph = JSON.parse(gText);
         document.title = graph.title;
+
         // build the jsnx graph
         jsnxGraphBuilder(graph);
         // build svg graph instances
         svgSpaces.forEach((space, i) => {
           svgGraphs[i] = Snap(space);
         });
+
         svgGraphBuilder(graph);
         clack();
         dataTableBuilder();
@@ -283,7 +286,6 @@ console.log ('v03');
       }
     })
 
-    console.log (Graph.nodes(true))
     let n;
     igdtListArr.forEach(function (igdtList) {
       n = igdtList.length;
@@ -414,14 +416,10 @@ console.log ('v03');
     degr.clear();
     degr = jsnx.degree(G);
     neigh.clear();
-
-    console.log ("Entry")
-
+    
     for (let ingredient of graph.ingredients) {
         neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
     }
-
-    console.log ("Leaving")
 
     betw = jsnx.betweennessCentrality(G, {
         'normalized': false
