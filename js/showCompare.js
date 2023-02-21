@@ -416,7 +416,7 @@ console.log ('v03');
     degr.clear();
     degr = jsnx.degree(G);
     neigh.clear();
-    
+
     for (let ingredient of graph.ingredients) {
         neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
     }
