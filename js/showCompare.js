@@ -126,7 +126,6 @@ console.log ('v03');
 
   function fetchGraph () {
     // fetch combined jsnx and svg graphs in json format, build graphs
-    alert ("title built")
     let g_url = `${myColl}/combinedGraph.zip`;
     fetch(g_url, {
       cache: "no-store"
@@ -148,19 +147,16 @@ console.log ('v03');
         sessionStorage.setItem("srcGraph", gText);
         let graph = JSON.parse(gText);
         document.title = graph.title;
-
         // build the jsnx graph
-        //jsnxGraphBuilder(graph);
+        jsnxGraphBuilder(graph);
         // build svg graph instances
         svgSpaces.forEach((space, i) => {
           svgGraphs[i] = Snap(space);
         });
-
-        //svgGraphBuilder(graph);
-        //clack();
+        svgGraphBuilder(graph);
+        clack();
         //dataTableBuilder();
         $(".rcpColl").text(myColl);
-
       }, function error(e) {
         alert("Sch ... ")
       });
@@ -329,51 +325,35 @@ console.log ('v03');
     const b_auth = Object.values(b_coll)[0].author;
     const a_rcp = Object.values(a_coll)[0].recipes;
     const b_rcp = Object.values(b_coll)[0].recipes;
+    let xx;
     let A_rcp = [];
     a_rcp.forEach((rcp) => {
-      let xx = rcpList.filter(obj => obj.recipeName===rcp);
+      xx = rcpList.filter(obj => obj.recipeName===rcp);
       A_rcp.push (xx[0].ingredients)
     })
     A = buildGraphFromIngredientArray('A', A_rcp);
     let B_rcp = [];
     b_rcp.forEach((rcp) => {
-      let xx = rcpList.filter(obj => obj.recipeName===rcp);
+      xx = rcpList.filter(obj => obj.recipeName===rcp);
       B_rcp.push (xx[0].ingredients)
     })
     B = buildGraphFromIngredientArray('B', B_rcp);
+
     // build union graph G
     capUnion (G,A);
     capUnion (G,B);
+
     // build intersection graph
     function cmpEdgeIds (el1,el2) {
       return (el1[2].id === el2[2].id)
     }
-    let xx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
-    let yy = _.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
-
-    // compute edge weights for intersection graph
-    let e_id;
-    let w_A;
-    let w_B;
-    for (let i = 0; i < xx.length;i++) {
-      e_id = xx[i][2].id;
-      for (let j = 0; j < A.edges(true).length; j++){
-        if (A.edges(true)[j][2].id === e_id ){
-          w_A = A.edges(true)[j][2].weight;
-          break;
-        }
-      }
-      for (let j = 0; j < B.edges(true).length; j++){
-        if (B.edges(true)[j][2].id === e_id ){
-          w_B = B.edges(true)[j][2].weight;
-          break;
-        }
-      }
-      xx[i][2].weight = w_A + w_B;
-    }
-
-    Intersect.addEdgesFrom(xx);
-    Intersect.addNodesFrom(yy);
+    let xxx = _.intersectionWith(A.edges(true),B.edges(true),cmpEdgeIds);
+    let yyy = _.intersectionWith(A.nodes(true),B.nodes(true),_.isEqual);
+    xxx.forEach((item) => {
+      item[2].weight = (G.get(item[0]).get(item[1]).weight)
+    })
+    Intersect.addEdgesFrom(xxx);
+    Intersect.addNodesFrom(yyy);
 
     // compute number of recipes
     ctRecipes = rcpList.length;
@@ -422,11 +402,9 @@ console.log ('v03');
     degr.clear();
     degr = jsnx.degree(G);
     neigh.clear();
-
     for (let ingredient of graph.ingredients) {
         neigh.set (ingredient.id, G.neighbors(ingredient.id).length)
     }
-
     betw = jsnx.betweennessCentrality(G, {
         'normalized': false
     });
@@ -479,19 +457,28 @@ console.log ('v03');
         }
       }
     })
+    svgGraphs.forEach((graph) => {
+      vB = graph.getBBox().vb
+      BBh = graph.getBBox().h
+      BBw = graph.getBBox().w
+    })
   }
 
   function clack() {
     // set node font-size
     // attach click handlers to svg ingredient nodes and set their title elements
     svgGraphs.forEach((graph, i) => {
-      vB = graph.getBBox().vb
-      BBh = graph.getBBox().h
-      BBw = graph.getBBox().w
-      //console.log (graph.getBBox().vb)
       graph.attr ({viewBox: vB})
       graph.selectAll("[class='node']").forEach(function (nd) {
         nd.attr("cursor", "pointer");
+        let igtID = nd.attr("id");
+        let p = prev.get(igtID)
+        let d = degr.get(igtID);
+        let b = betw.get(igtID);
+        let n = neigh.get(igtID);
+        let l = id2Label.get(igtID);
+        nd.select("title").node.innerHTML = `${l}\nPrävalenz: ${p}%\nAnz. Nachbarn: ${n}\nKnotengrad: ${d}\nBetweenness: ${b}`;
+
         nd.node.onclick = function () {
             showIngredient(nd.attr('id'), graph)
         };
@@ -526,12 +513,12 @@ console.log ('v03');
             );
           }
         }
-        let igtID = nd.attr("id");
-        let p = prev.get(igtID)
-        let d = degr.get(igtID);
-        let b = betw.get(igtID);
-        let n = neigh.get(igtID);
-        let l = id2Label.get(igtID);
+        igtID = nd.attr("id");
+        p = prev.get(igtID)
+        d = degr.get(igtID);
+        b = betw.get(igtID);
+        n = neigh.get(igtID);
+        l = id2Label.get(igtID);
         nd.select("title").node.innerHTML = `${l}\nPrävalenz: ${p}%\nAnz. Nachbarn: ${n}\nKnotengrad: ${d}\nBetweenness: ${b}`;
       })
     });
