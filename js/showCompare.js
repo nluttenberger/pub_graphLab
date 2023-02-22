@@ -150,17 +150,17 @@ console.log ('v03');
         document.title = graph.title;
 
         // build the jsnx graph
-        jsnxGraphBuilder(graph);
+        //jsnxGraphBuilder(graph);
         // build svg graph instances
         svgSpaces.forEach((space, i) => {
           svgGraphs[i] = Snap(space);
         });
 
-        svgGraphBuilder(graph);
-        clack();
-        dataTableBuilder();
+        //svgGraphBuilder(graph);
+        //clack();
+        //dataTableBuilder();
         $(".rcpColl").text(myColl);
-        fetchInterpretation();
+
       }, function error(e) {
         alert("Sch ... ")
       });
@@ -196,53 +196,59 @@ console.log ('v03');
 
   function fetchSource () {
     let s_url = `${myColl}/source.html`;
-    fetch(s_url,{
-      cache: "no-store"
-    }).then (function (response) {
-    if (response.ok) return response.text()
-    }).then (function (htText){
-      $('#quelleBody').html (htText);
-      $(".rcpColl").text(myColl);
-    }).catch (function (err) {
-      alert(err);
-    });
+    fetch(s_url, {cache: "no-store"})
+      .then ((response) => {
+        if (!response.ok) {
+          throw new Error('When fetching source.html the network response was: ', response.status, response.statusText);
+        }
+        return response.text();
+      })
+      .then (function (htText){
+        $('#quelleBody').html (htText);
+        $(".rcpColl").text(myColl);
+      })
+      .catch ((err) => console.log ('Could not fetch source.html: ', err)
+      );
   }
 
   function fetchInterpretation () {
     let s_url = `${myColl}/interpretation.html`;
-    fetch(s_url,{
-      cache: "no-store"
-    }).then (function (response) {
-      if (response.ok) return response.text()
-    }).then (function (htText){
-      $('#interpretationBody').html (htText);
-      $(".rcpColl").text(myColl);
-      $('#' + 'maxPrev').html(Math.ceil(Math.max(...prev.values())));
-      $('#' + 'maxNeigh').html(Math.max(...neigh.values()));
-      $('#' + 'maxDegr').html(Math.max(...degr.values()));
-      $(".maxBetw").html(Math.ceil(Math.max(...betw.values())));
-      $('#' + 'zwiebelOcc').html(id2Occ.get ('zwiebel'));
+    fetch(s_url, {cache: "no-store"})
+      .then ((response) => {
+        if (!response.ok) {
+          throw new Error('When interpretation.html the network response was: ', response.status, response.statusText);
+        }
+        return response.text();
+      })
+      .then (function (htText){
+        $('#interpretationBody').html (htText);
+        $(".rcpColl").text(myColl);
+        $('#' + 'maxPrev').html(Math.ceil(Math.max(...prev.values())));
+        $('#' + 'maxNeigh').html(Math.max(...neigh.values()));
+        $('#' + 'maxDegr').html(Math.max(...degr.values()));
+        $(".maxBetw").html(Math.ceil(Math.max(...betw.values())));
+        $('#' + 'zwiebelOcc').html(id2Occ.get ('zwiebel'));
 
-      $('#' + 'oreganoBetw').html(betw.get ('oregano'));
-      $('#' + 'rosmarinBetw').html(betw.get ('rosmarin'));
-      $('#' + 'thymianBetw').html(betw.get ('thymian'));
-      $('#' + 'zwiebelNeigh').html(neigh.get ('zwiebel'));
-      $('#' + 'nelkenNeigh').html(neigh.get ('nelken'));
-      $('#' + 'lorbeerNeigh').html(neigh.get ('lorbeer'));
-      $('#' + 'lorbeerNeigh1').html(neigh.get ('lorbeer'));
-      $('#' + 'zwiebelPrev').html(prev.get ('zwiebel'));
-      $('#' + 'lorbeerPrev').html(prev.get ('lorbeer'));
-      let ii;
-      let nn;
+        $('#' + 'oreganoBetw').html(betw.get ('oregano'));
+        $('#' + 'rosmarinBetw').html(betw.get ('rosmarin'));
+        $('#' + 'thymianBetw').html(betw.get ('thymian'));
+        $('#' + 'zwiebelNeigh').html(neigh.get ('zwiebel'));
+        $('#' + 'nelkenNeigh').html(neigh.get ('nelken'));
+        $('#' + 'lorbeerNeigh').html(neigh.get ('lorbeer'));
+        $('#' + 'lorbeerNeigh1').html(neigh.get ('lorbeer'));
+        $('#' + 'zwiebelPrev').html(prev.get ('zwiebel'));
+        $('#' + 'lorbeerPrev').html(prev.get ('lorbeer'));
+        let ii;
+        let nn;
 
-      $('#' + 'kohlsuppeAnzZutaten').html(nn);
-      $('#' + 'kohlsuppeAnzZutaten1').html(nn);
-      $('#' + 'cntMiddle').html(countMiddle());
-      $('#' + 'cntZero').html(countZero());
-      $('#' + 'fracZeroMiddle').html(Math.round(100*countZero()/countMiddle())/100);
-    }).catch (function (err) {
-      alert(err);
-    });
+        $('#' + 'kohlsuppeAnzZutaten').html(nn);
+        $('#' + 'kohlsuppeAnzZutaten1').html(nn);
+        $('#' + 'cntMiddle').html(countMiddle());
+        $('#' + 'cntZero').html(countZero());
+        $('#' + 'fracZeroMiddle').html(Math.round(100*countZero()/countMiddle())/100);
+      })
+      .catch ((err) => console.log ('Could not fetch interpretation.html: ', err)
+      );
   }
 
   function countMiddle() {
