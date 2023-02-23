@@ -472,17 +472,19 @@ console.log ('v03');
       graph.selectAll("[class='node']").forEach(function (nd) {
         nd.attr("cursor", "pointer");
         let igtID = nd.attr("id");
-        let p = prev.get(igtID)
+        let p = prev.get(igtID);
         let d = degr.get(igtID);
         let b = betw.get(igtID);
         let n = neigh.get(igtID);
         let l = id2Label.get(igtID);
         nd.select("title").node.innerHTML = `${l}\nPrävalenz: ${p}%\nAnz. Nachbarn: ${n}\nKnotengrad: ${d}\nBetweenness: ${b}`;
+        console.log (nd.outerSVG());
 
         nd.node.onclick = function () {
-            showIngredient(nd.attr('id'), graph)
+          console.log (nd)
+          showIngredient(nd.attr('id'), graph)
         };
-        
+
         if (i === experimentTab) {
           nd.node.oncontextmenu = function (event) {
             event.preventDefault();
