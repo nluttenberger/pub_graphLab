@@ -482,6 +482,7 @@ console.log ('v03');
         nd.node.onclick = function () {
             showIngredient(nd.attr('id'), graph)
         };
+        
         if (i === experimentTab) {
           nd.node.oncontextmenu = function (event) {
             event.preventDefault();
@@ -513,13 +514,13 @@ console.log ('v03');
             );
           }
         }
-        igtID = nd.attr("id");
+        /*igtID = nd.attr("id");
         p = prev.get(igtID)
         d = degr.get(igtID);
         b = betw.get(igtID);
         n = neigh.get(igtID);
         l = id2Label.get(igtID);
-        nd.select("title").node.innerHTML = `${l}\nPrävalenz: ${p}%\nAnz. Nachbarn: ${n}\nKnotengrad: ${d}\nBetweenness: ${b}`;
+        nd.select("title").node.innerHTML = `${l}\nPrävalenz: ${p}%\nAnz. Nachbarn: ${n}\nKnotengrad: ${d}\nBetweenness: ${b}`;*/
       })
     });
   }
