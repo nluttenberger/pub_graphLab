@@ -1,0 +1,73 @@
+<div class="card-body">
+  <ul class="nav nav-tabs" id="interpretationsList" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="interByIngredient" data-toggle="tab" href="#byIngredients" role="tab"
+         aria-controls="interByIngredient" aria-selected="true">Zutaten</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="interByRecipe" data-toggle="tab" href="#byRecipes" role="tab"
+         aria-controls="interByRecipe" aria-selected="false" onclick="createEStable()">SI-Zahl</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="interLorenz" data-toggle="tab" href="#byLorenz" role="tab"
+         aria-controls="interMethod" aria-selected="true"
+         onclick="flyInLorenz('LorenzCurveIngredientsArea','lineChartLorenzCurveIngredients')">Lorenz-Kurve</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="interpretations">
+    <div class="tab-pane p-3 fade show active" id="byIngredients" role="tabpanel"
+         aria-labelledby="ingredients-tab">
+      <p>In der Rezeptsammlung <span class="rcpColl font-italic"></span> setzen sich die <b>big five</b> wie
+        folgt zusammen: </p>
+        <ol>
+          <li>Verwende ich die Prävalenz-Werte, die Anzahl der Nachbarn oder den Knotengrad zur Berechnung der <i>big
+            five</i>, dann bilden Mangold, Butter, Zwiebel, Knoblauch und Olivenöl die <span class="spanBtn"
+                  onclick="showBigFive(Prävalenz)"><i>big five</i></span>. Bei den
+            <i>big five<sub>P</sub></i> kommt noch die Gelatine hinzu, die den gleichen Prävalenz-Wert hat wie die Butter
+            &ndash; wir haben hier also eigentlich die <i>big six<sub>P</sub></i>.</li>
+          <li>Wenn man schließlich den <i>betweenness</i>-Wert benutzt, um die
+            <span class="spanBtn" onclick="showBigFive(Betweenness)"> <i>big five<sub>B</sub></i></span> zu ermitteln,
+            zeigen sich Mangold, Zitrone, Zwiebel, Knoblauch und Olivenöl. Es sieht so aus, als ob die Zitrone viele Zutaten
+            "einsammelt", die mit Mangold kombiniert werden können.</li>
+        </ol>
+      <p>Mittelerde wird von den <span class="spanBtn" onclick="showMittelerde()">hier</span> gezeigten
+        Zutaten gebildet. Immerhin gehören <span id="cntMiddle"></span> Zutaten in diese Klasse. Die Mittelerde-Knoten sind über
+        16 von insgesamt 16 Zutatenklassen verteilt.</p>
+      <p>Die Nullknoten sind die <span class="spanBtn" onclick="showNullknoten()">hier</span> gezeigten
+        Zutaten. Immerhin gehören <span id="cntZero"></span> Zutaten in diese Klasse. Die Nullknoten sind über 14 von insgesamt
+        16 Zutatenklassen verteilt. Es gibt <span id="fracZeroMiddle"></span> Nullknoten je Mittelerde-Knoten.</p>
+    </div>
+    <div class="tab-pane p-3 fade show" id="byRecipes" role="tabpanel" aria-labelledby="recipes-tab">
+      <p>
+        Bei Click auf den Kopf "Zutaten" zeigen wir in einem Balkendiagramm, wieviele exklusive und wieviele gemeinsame
+        Zutaten die in der Sammlung befindlichen Rezepte haben.</p>
+      <p>
+        Bei Click auf den Knopf "SI gewichtet" zeigen wir in einem Balkendiagramm die Anzahl der
+        exklusiven Zutaten und die gewichtete Anzahl der gemeinsamen Zutaten je Rezept; als Gewicht dient die
+        Auftretenshäufigkeit der gemeinsamen Zutaten.</p>
+      <p>
+        Schließlich wird bei Click auf den Knopf "Histogramm" ein Histogramm für Anzahl der gemeinsamen Zutaten je Rezept
+        gezeigt.</p>
+      <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SI')">Zutaten</button>
+      <button class="btn-light btn-sm" type="button" onclick="visuESData('siChartArea',
+                      'barChartSharedIngredients', 'SIwei')">SI gewichtet</button>
+      <button class="btn-light btn-sm" type="button" onclick="flyInHistogram('distChartArea',
+                       'histoSI','undefined', 'si')">Histogramm SI-Zahlen</button>
+    </div>
+    <div class="tab-pane p-3 fade show" id="byLorenz" role="tabpanel" aria-labelledby="Lorenz-tab">
+      <p>Man sieht die Lorenz-Kurven für die Zutaten und für die Zutatenbeziehungen. Die zugehörigen
+        Gini-Koeffizienten haben die folgenden Werte:</p>
+      <table>
+        <tr>
+          <td>Gini-Koeffizient für die Zutaten</td>
+          <td  style="padding-left: 1em" id="GiniZutaten"><td>
+        </tr>
+        <tr>
+          <td>Gini-Koeffizient für die Zutatenbeziehungen</td>
+          <td style="padding-left: 1em" id="GiniBeziehungen"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
