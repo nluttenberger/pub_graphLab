@@ -49,8 +49,9 @@ console.log ('v03');
   cat2Text.set('i-fat', 'Fett');
   cat2Text.set('i-etc', 'etc');
 
-
-
+  let vB;
+  let BBh;
+  let BBw;
   let fog = null;
   // fog for svg graph canvas
   let svgSpaces = [   // canvas divs inside accordion tabs for svg graph instances
@@ -122,6 +123,45 @@ console.log ('v03');
 
   function fetchGraph () {
     // fetch combined jsnx and svg graphs in json format, build graphs
+    let g_url = `${myColl}/combinedGraph.zip`;
+    fetch(g_url, {
+      cache: "no-store"
+    })
+      .then(function (response) {                     // 2) filter on 200 OK
+        if (response.status === 200 || response.status === 0) {
+          return Promise.resolve(response.blob());
+        } else {
+          return Promise.reject(new Error(response.statusText));
+        }
+      })
+      .then(JSZip.loadAsync)                                   // 3) chain with the zip promise
+      .then(function (zip) {
+        return zip.file("combinedGraph.json").async("string"); // 4) chain with the text content promise
+      })
+      .then(function success(gText) {                // 5) display the result
+        //console.log(text)
+        // store graph.json locally
+        sessionStorage.setItem("srcGraph", gText);
+        let graph = JSON.parse(gText);
+        document.title = graph.title;
+        // build the jsnx graph
+        jsnxGraphBuilder(graph);
+        // build svg graph instances
+        svgSpaces.forEach((space, i) => {
+          svgGraphs[i] = Snap(space);
+        });
+        svgGraphBuilder(graph);
+        clack();
+        dataTableBuilder();
+        $(".rcpColl").text(myColl);
+        fetchInterpretation();
+      }, function error(e) {
+        alert("Sch ... ")
+      });
+  }
+
+/*  function fetchGraph () {
+    // fetch combined jsnx and svg graphs in json format, build graphs
     let g_url = `${myColl}/combinedGraph.json`;
     fetch(g_url, {
       cache: "no-store"
@@ -146,7 +186,7 @@ console.log ('v03');
     }). catch (function (err) {
       alert(err);
     });
-  }
+  }*/
 
   function fetchSource () {
     let s_url = `${myColl}/source.html`;
@@ -333,6 +373,10 @@ console.log ('v03');
               child.node.innerHTML = value;
               } else {
                 let att = key.substr((key.indexOf('#') + 1), key.length);
+                /*if (key = "#viewBox") {
+                  console.log (graph.getBBox().vb)
+                  value = graph.getBBox().vb
+                }*/
                 parent.attr({[att]: value});
               }
           }
@@ -353,6 +397,11 @@ console.log ('v03');
     // set node font-size
     // attach click handlers to svg ingredient nodes and set their title elements
     svgGraphs.forEach((graph, i) => {
+      vB = graph.getBBox().vb
+      BBh = graph.getBBox().h
+      BBw = graph.getBBox().w
+      //console.log (graph.getBBox().vb)
+      graph.attr ({viewBox: vB})
       graph.selectAll("[class='node']").forEach(function (nd) {
         nd.attr("cursor", "pointer");
         nd.node.onclick = function () {
@@ -478,7 +527,9 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
-    fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    console.log (vB)
+
+    fog.rect(0, 0, BBw, BBh+100).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
@@ -513,29 +564,13 @@ console.log ('v03');
       let f = tit.substr(0, tit.indexOf('-'));
       let l = tit.substr(tit.indexOf('-') + 2);
       if (f === ingredient || l === ingredient) {
-        let x = s.select('#'.concat(l)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           fog.append(el.clone());
-        }
-        x = s.select('#'.concat(f)).select('ellipse');
-        if (x.hasClass('i-veg')) {
-          fog.append(el.clone());
-        }
-        //fog.append(el.clone());
       }
       if (f === ingredient) {
-        let x = s.select('#'.concat(l)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           keller.push(s.select('#'.concat(l)).clone());
-        }
-          //keller.push(s.select('#'.concat(l)).clone());
       }
       if (l === ingredient) {
-        let x = s.select('#'.concat(f)).select('ellipse');
-        if (x.hasClass('i-veg')) {
           keller.push(s.select('#'.concat(f)).clone());
-        }
-          //keller.push(s.select('#'.concat(f)).clone());
       }
     });
     keller.forEach(function (el) {
@@ -587,7 +622,7 @@ console.log ('v03');
       return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
     for (const [key, value] of Object.entries(occurrences)) {
-      console.log(`${cat2Text.get(key)}: ${value}`);
+      //console.log(`${cat2Text.get(key)}: ${value}`);
       let cellId = 'cnt'+key;
       $('#' + cellId).html(value);
     }
@@ -1105,6 +1140,7 @@ console.log ('v03');
   }
 
   function visuESData (chartAreaId, chartSpace, selectData) {
+    $('#barChartSharedIngredients').height(ctRecipes*20)
     setSISelect (selectData);
     flyIn (chartAreaId);
     showESData (chartSpace,selectData)
@@ -1444,12 +1480,16 @@ console.log ('v03');
   }
 
   function barChart(chartSpace, col) {
+    let xx = [];
+    let yy = [];
     let xVal = [];
     let yVal = [];
     dataTable.forEach(function (el, i) {
-      xVal[i] = el[col];
-      yVal[i] = el[Label];
+      xx[i] = el[col];
+      yy[i] = el[Label];
     });
+    xVal = xx.slice(0,200);
+    yVal = yy.slice(0,200);
     let trace1 = {
       x: xVal,
       y: yVal,
@@ -1577,10 +1617,24 @@ console.log ('v03');
       // edge weight //
       case 'wt': {
         binsize = 1;
-        xVal = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
-        yVal = frequencies(wtArr,binsize).slice(1);
-        plotTitle = 'Histogramm Zutatenbeziehungen'
-        console.log ('Schiefe des Gewichtshistogramms: ', ss.sampleSkewness(yVal));
+        /*xVal = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
+        yVal = frequencies(wtArr,binsize).slice(1);*/
+        let xx;
+        let xxx = [];
+        let yy;
+        xx = Array.from(Array(Math.max(...wtArr)+1).keys()).slice(1);
+        yy = frequencies(wtArr,binsize).slice(1);
+
+        xVal = xx.map(function(val, idx){
+          if (yy[idx] !== 0) {xxx.push(val)}
+        })
+        xVal = xxx.map(String);
+        yVal = yy.filter(val => val !== 0);
+        //console.log ('xVal: ', xVal)
+        //console.log ('yVal: ', yVal)
+
+        //plotTitle = 'Histogramm Zutatenbeziehungen'
+        //console.log ('Schiefe des Gewichtshistogramms: ', ss.sampleSkewness(yVal));
         xaxisText = 'Kantengewicht';
         yaxisText = 'Häufigkeit';
         break;
@@ -1624,11 +1678,13 @@ console.log ('v03');
       textposition: 'outside',
       hoverinfo: 'x+y',
       orientation: 'v',
+      textangle: 90,
       marker: {
         color: 'rgb(66,114,138)',
       },
       textfont: {
-        color: 'rgb(128,128,128)'
+        color: 'rgb(128,128,128)',
+        size: 12
       }
     };
 
@@ -1636,27 +1692,17 @@ console.log ('v03');
     let layout = {
       autosize: true,
       automargin: true,
-      /*title: {
-        text: plotTitle,
-        font: {
-          family: 'Noto sans, Arial',
-          size: 20
-        },
-        xref: 'paper',
-        x: 0.5,
-        yref: 'paper',
-        y: 0.95,
-      },*/
       xaxis: {
+        autotypenumbers: 'strict',
         side: 'bottom',
-        tickmode: "linear",
-        tick0: binsize,
-        dtick: 5 * binsize,
+        tickmode: 'array',
+        tickvals: xVal,
+        ticktext: xVal,
         tickangle: 90,
         title: {
           text: xaxisText
         },
-        //tickprefix:'≤',
+        type: 'category'
       },
       yaxis: {
         title: {
