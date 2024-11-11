@@ -50,6 +50,8 @@ console.log ('v03');
   cat2Text.set('i-etc', 'etc');
 
   let viewbx;
+  let fogWidth;
+  let fogHeight;
 
   let fog = null;
   // fog for svg graph canvas
@@ -138,8 +140,10 @@ console.log ('v03');
       svgSpaces.forEach((space, i) => {
         svgGraphs[i] = Snap(space);
       });
-      viewbx = graph["svg"]["#viewbox"];
-      console.log (viewbx)
+      viewbx = graph["svg"]["#viewBox"];
+      fogWidth = viewbx.split(' ')[2]
+      fogHeight = viewbx.split(' ')[3]
+      console.log (fogWidth, fogHeight)
       svgGraphBuilder(graph);
       clack();
       dataTableBuilder();
