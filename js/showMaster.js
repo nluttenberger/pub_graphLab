@@ -485,7 +485,7 @@ console.log ('v03');
       fog.attr({id: 'foggy'});
     }
     console.log (viewbx)
-    fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
+    fog.rect(0, 0, fogWidth, fogHeight).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
       fog = null;
