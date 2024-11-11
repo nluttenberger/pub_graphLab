@@ -138,7 +138,7 @@ console.log ('v03');
       svgSpaces.forEach((space, i) => {
         svgGraphs[i] = Snap(space);
       });
-      viewbx = graph.svg.get("#viewbox");
+      viewbx = graph["svg"]["#viewbox"];
       console.log (viewbx)
       svgGraphBuilder(graph);
       clack();
