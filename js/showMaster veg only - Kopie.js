@@ -49,7 +49,7 @@ console.log ('v03');
   cat2Text.set('i-fat', 'Fett');
   cat2Text.set('i-etc', 'etc');
 
-
+  let viewbx;
 
   let fog = null;
   // fog for svg graph canvas
@@ -138,6 +138,8 @@ console.log ('v03');
       svgSpaces.forEach((space, i) => {
         svgGraphs[i] = Snap(space);
       });
+      viewbx = graph.svg.#viewbox;
+      console.log (viewbx)
       svgGraphBuilder(graph);
       clack();
       dataTableBuilder();
@@ -478,6 +480,7 @@ console.log ('v03');
       fog = s.g();
       fog.attr({id: 'foggy'});
     }
+    console.log (viewbx)
     fog.rect(0, 0, 10000, 10000).attr({fill: 'white', fillOpacity: 0.85, cursor: 'pointer'});
     fog.click(function () {
       fog.remove();
